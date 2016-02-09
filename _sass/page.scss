@@ -275,11 +275,11 @@ $button-size: 1.5rem;
 	}
 	article {
 		width: 800px;
-		height: 120px;
+		height: 135px;
 		margin-top: 5px;
 		img {
 			float: left;
-			margin: 0 0px 5px 0px;
+			margin: 0 0px 3px 0px;
 			width: 150px;
 			height: 130px;
 			border: 2px solid;
@@ -288,6 +288,7 @@ $button-size: 1.5rem;
 		article-content {
 			float: right;
 			width: 630px;
+			height: 130px;
 			h2 {
 				margin-bottom: 4px;
 				@include font-rem(20);

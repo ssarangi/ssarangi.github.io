@@ -5,10 +5,10 @@ excerpt: Constant propagation and folding are generic optimizations which can gr
 tags: [compiler, constant propagation, constant folding]
 modified: 2016-01-17
 comments: true
+image: img/blog/spiderjit/constant_folding.png
 ---
 
-# Constant Propagation & Folding:
-## Constant Folding:
+# Constant Folding:
 Before we define constant propagation, let's define constant folding. Constant folding is a step in which you can "fold" instructions when their operands are constants.
 In the instruction below we don't have to emit instructions for computing the result of this instruction. This instruction has both the operands as constants and hence can be computed at compile time, thus getting the result ```a = 20```.
 

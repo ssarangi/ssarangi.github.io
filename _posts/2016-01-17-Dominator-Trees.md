@@ -5,6 +5,7 @@ excerpt: A Dominator Tree is a CFG analysis which is used in compilers to aid in
 tags: [compiler, dominator trees, post dominator tree]
 modified: 2016-01-17
 comments: true
+image: img/blog/spiderjit/nested_if_cfg_main_page.png
 ---
 
 # So what are Dominator Trees:

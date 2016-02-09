@@ -5,6 +5,7 @@ excerpt: A structurizer is used when the IR is unstructured but the code to be g
 tags: [compiler, structurizer, unstructured control flow, structured control flow, cfg]
 modified: 2016-01-20
 comments: true
+image: /img/blog/spiderjit/nested_if_structurizer_main_page.png
 ---
 
 # Introduction
