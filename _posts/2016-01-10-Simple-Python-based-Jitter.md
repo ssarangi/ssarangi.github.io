@@ -5,6 +5,7 @@ excerpt: A simple python based JIT with a C module backend which uses mmap to ex
 tags: [python3, python, jit]
 modified: 2016-01-10
 comments: true
+image: /img/blog/spiderjit/spiderjit.png
 ---
 
 #Introduction:
