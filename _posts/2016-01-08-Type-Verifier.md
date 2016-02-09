@@ -5,7 +5,6 @@ excerpt: A Simple Type Verifier for Python Functions using Decorators. Type veri
 tags: [python3, python, decorators, type verifier]
 modified: 2016-01-08
 comments: true
-image: /img/blog/spiderjit/type_verifier.png
 ---
 
 # Introduction:

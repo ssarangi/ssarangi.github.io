@@ -42,8 +42,10 @@
       {% else %}
         {% if post.image %}
         <img src={{ post.image }}></img>
-        {% endif %}
         <article-content>
+        {% else %}
+        <article-content width=800px>
+        {% endif %}
           <h2><a href="{{ site.url }}{{ post.url }}" title="{{ post.title }}">{{ post.title }}</a></h2>
           
           {% if post.tags %}
@@ -60,6 +62,7 @@
           <p>{{ post.excerpt | strip_html | truncate: 200 }}</p>
         </article-content>
       {% endif %}
+    <hr>
     </article>
     {% endfor %}
   </div><!-- /#index -->

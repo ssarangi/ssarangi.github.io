@@ -275,20 +275,18 @@ $button-size: 1.5rem;
 	}
 	article {
 		width: 800px;
-		height: 135px;
 		margin-top: 5px;
 		img {
 			float: left;
-			margin: 0 0px 3px 0px;
-			width: 150px;
+			margin: 0 0px 15px 0px;
+			width: 18%;
 			border: 2px solid;
 			height: 130px;
-    		border-radius: 25px;
+			border-radius: 25px;
 		}
 		article-content {
 			float: right;
-			width: 630px;
-			height: 130px;
+			width: 78%;
 			h2 {
 				margin-bottom: 4px;
 				@include font-rem(20);
@@ -395,6 +393,13 @@ $button-size: 1.5rem;
 			p+p {
 				text-indent: 0;
 			}
+		}
+		hr {
+		  width: 800px;
+		  margin: 20px 0;
+		  border: 0;
+		  border-top: 1px solid #eeeeee;
+		  border-bottom: 1px solid #ffffff;
 		}
 	}
 }
