@@ -41,6 +41,9 @@
         <h2 class="link-post"><a href="{{ site.url }}{{ post.url }}" title="{{ post.title }}">{{ post.title }}</a> <a href="{{ post.link }}" target="_blank" title="{{ post.title }}"><i class="fa fa-link"></i></a></h2>
       {% else %}
         <h2><a href="{{ site.url }}{{ post.url }}" title="{{ post.title }}">{{ post.title }}</a></h2>
+        {% if post.image %}
+        <img src="http://www.w3schools.com/html/pic_mountain.jpg"></img>
+        {% endif %}
         {% if post.tags %}
           <div class="tags small">
             {% for t in post.tags %}
