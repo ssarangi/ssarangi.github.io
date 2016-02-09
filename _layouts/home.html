@@ -54,7 +54,7 @@
                 {% assign tag_color_index = forloop.index0 | mod: 5 %}
                 {% assign tag_color = tag_colors[tag_color_index] %}
                 <!-- <a title href class={{ tag_color }}>{{ t }}</a> -->
-                <a title href class="color1">{{ t }}</a>
+                <a title href="/tags/{{ t }}" class="color1">{{ t }}</a>
               {% endfor %}
             </div>
           {% endif %}
