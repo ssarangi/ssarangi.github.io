@@ -40,21 +40,25 @@
       {% if post.link %}
         <h2 class="link-post"><a href="{{ site.url }}{{ post.url }}" title="{{ post.title }}">{{ post.title }}</a> <a href="{{ post.link }}" target="_blank" title="{{ post.title }}"><i class="fa fa-link"></i></a></h2>
       {% else %}
-        <h2><a href="{{ site.url }}{{ post.url }}" title="{{ post.title }}">{{ post.title }}</a></h2>
         {% if post.image %}
-        <img src="http://www.w3schools.com/html/pic_mountain.jpg"></img>
+        <img src={{ post.image }}></img>
         {% endif %}
-        {% if post.tags %}
-          <div class="tags small">
-            {% for t in post.tags %}
-              {% assign tag_color_index = forloop.index0 | mod: 5 %}
-              {% assign tag_color = tag_colors[tag_color_index] %}
-              <!-- <a title href class={{ tag_color }}>{{ t }}</a> -->
-              <a title href class="color1">{{ t }}</a>
-            {% endfor %}
-          </div>
-        {% endif %}
-        <p>{{ post.excerpt | strip_html | truncate: 1000 }}</p>
+        <article-content>
+          <h2><a href="{{ site.url }}{{ post.url }}" title="{{ post.title }}">{{ post.title }}</a></h2>
+          
+          {% if post.tags %}
+            <div class="tags small">
+              {% for t in post.tags %}
+                {% assign tag_color_index = forloop.index0 | mod: 5 %}
+                {% assign tag_color = tag_colors[tag_color_index] %}
+                <!-- <a title href class={{ tag_color }}>{{ t }}</a> -->
+                <a title href class="color1">{{ t }}</a>
+              {% endfor %}
+            </div>
+          {% endif %}
+          
+          <p>{{ post.excerpt | strip_html | truncate: 200 }}</p>
+        </article-content>
       {% endif %}
     </article>
     {% endfor %}

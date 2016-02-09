@@ -5,6 +5,7 @@ excerpt: Regular expressions or regex are pretty popular for text searching and 
 tags: [regex, python, regular expression]
 modified: 2016-02-04
 comments: true
+image: /img/blog/regex/regex.png
 ---
 
 This post will infact link to my good friend's post [Pranabesh](http://prnbs.github.io/projects/2016/01/01/regular-expression-parser/) about regular expression. Both of us took up the challenge of implementing a regular expression engine. We implemented in both Scala and python but pretty soon the scala code became unreadable. So we transitioned to python.
