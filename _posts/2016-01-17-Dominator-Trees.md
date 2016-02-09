@@ -4,6 +4,7 @@ title: Dominator Trees - Implementation and Why are they needed?
 excerpt: A Dominator Tree is a CFG analysis which is used in compilers to aid in other optimizations. This is useful when doing optimizations like code-hoisting or code sinking etc.
 tags: [compiler, dominator trees, post dominator tree]
 modified: 2016-01-17
+comments: true
 ---
 
 # So what are Dominator Trees:

@@ -4,6 +4,7 @@ title: ZNode - A Javascript Introspection module
 excerpt: ZNode is a minimalistic browser based flowchart module. I took this project and modified it heavily so that it could do some basic javascript introspection and show them as blocks. Think of it like UML diagram generation.
 tags: [javascript, introspection, znode]
 modified: 2016-02-04
+comments: true
 ---
 [Github](https://github.com/ssarangi/JsIntrospection)
 

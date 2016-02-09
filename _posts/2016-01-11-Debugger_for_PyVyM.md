@@ -4,6 +4,7 @@ title: Debugger for PyVyM
 excerpt: PyVyM is a Virtual Machine for python and this post describes a debugger for that VM.
 tags: [python3, debugger, virtualmachine, vm]
 modified: 2016-01-11
+comments: true
 ---
 # Introduction:
 While writing the PyVyM virtual machine, I decided to write a debugger. This might not be the most sophisticated debugger but it does demonstrate the ideas needed to write this.

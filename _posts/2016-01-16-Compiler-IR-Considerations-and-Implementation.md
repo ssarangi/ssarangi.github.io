@@ -4,6 +4,7 @@ title: Compiler IR - Considerations and Implementation
 excerpt: A Compiler intermediate representation - consideration and implementation details.
 tags: [compiler, intermediate representation, llvm ir]
 modified: 2016-01-16
+comments: true
 ---
 
 # Compiler IR:

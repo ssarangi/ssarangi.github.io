@@ -4,6 +4,7 @@ title: Loopy - A Structurizer for generating structured control flow code.
 excerpt: A structurizer is used when the IR is unstructured but the code to be generated needs to be structured. A structured control flow represents idioms which are generally present in higher-level languages such as if-else, for-loop, while-loop, do-while etc.
 tags: [compiler, structurizer, unstructured control flow, structured control flow, cfg]
 modified: 2016-01-20
+comments: true
 ---
 
 # Introduction

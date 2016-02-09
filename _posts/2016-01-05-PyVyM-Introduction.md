@@ -4,6 +4,7 @@ title: PyVyM - A python based VM for 'Python'
 excerpt: A virtual machine for python designed in python. It also has an accompanying debugger which will be described in a later post.
 tags: [virtualmachine, vm, python3, python]
 modified: 2016-01-05
+comments: true
 ---
 ## [Github Link](https://github.com/ssarangi/PyVyM)
 Finally after thinking and planning for a long time, I decided to start my blog and write about some of my tinkering. So here goes. :)

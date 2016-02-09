@@ -4,6 +4,7 @@ title: Incremental text search using tries and ternary trees
 excerpt: While brushing up on algorithms, I decided to reimplement tries and ternary trees and in the process thought it would be a good idea to write a UI accompanying the code so its easier to see. Could further add timing code to this to see the performance too.
 tags: [tries, ternary trees, python, pyside]
 modified: 2016-02-04
+comments: true
 ---
 
 # Introduction:

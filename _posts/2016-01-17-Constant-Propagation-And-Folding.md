@@ -4,6 +4,7 @@ title: Constant Propagation & Folding.
 excerpt: Constant propagation and folding are generic optimizations which can greatly simplify the intermediate representation. It is the basis for other optimizations like loop unrolling, loop simplification, function inlining etc.
 tags: [compiler, constant propagation, constant folding]
 modified: 2016-01-17
+comments: true
 ---
 
 # Constant Propagation & Folding:

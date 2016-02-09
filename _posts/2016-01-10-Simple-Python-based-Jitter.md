@@ -4,6 +4,7 @@ title: A simple python based JIT
 excerpt: A simple python based JIT with a C module backend which uses mmap to execute arbitrary x86 code.
 tags: [python3, python, jit]
 modified: 2016-01-10
+comments: true
 ---
 
 #Introduction:

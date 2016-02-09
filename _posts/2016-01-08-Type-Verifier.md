@@ -4,6 +4,7 @@ title: A Simple Type Verifier for Python Functions using Decorators
 excerpt: A Simple Type Verifier for Python Functions using Decorators. Type verification is useful in debugging or when code is written to handle only a specific set of types.
 tags: [python3, python, decorators, type verifier]
 modified: 2016-01-08
+comments: true
 ---
 
 # Introduction:

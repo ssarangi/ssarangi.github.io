@@ -5,6 +5,7 @@ description: I have looked at spidermonkey and a few other JIT engines and kept 
 
 tags: [regex, python, regular expression]
 modified: 2016-02-04
+comments: true
 ---
 
 # Luajit is for Lua !!!
