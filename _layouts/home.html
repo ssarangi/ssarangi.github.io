@@ -36,11 +36,22 @@
     <h3><a href="{{ site.url}}/posts/">Recent Posts</a></h3>
     {% for post in site.posts limit:20 %}
     <article>
+      {% assign tag_colors = "color1|color2|color3|color4|color5" | split: "|" %}
       {% if post.link %}
         <h2 class="link-post"><a href="{{ site.url }}{{ post.url }}" title="{{ post.title }}">{{ post.title }}</a> <a href="{{ post.link }}" target="_blank" title="{{ post.title }}"><i class="fa fa-link"></i></a></h2>
       {% else %}
         <h2><a href="{{ site.url }}{{ post.url }}" title="{{ post.title }}">{{ post.title }}</a></h2>
-        <p>{{ post.excerpt | strip_html | truncate: 160 }}</p>
+        {% if post.tags %}
+          <div class="tags small">
+            {% for t in post.tags %}
+              {% assign tag_color_index = forloop.index0 | mod: 5 %}
+              {% assign tag_color = tag_colors[tag_color_index] %}
+              <!-- <a title href class={{ tag_color }}>{{ t }}</a> -->
+              <a title href class="color1">{{ t }}</a>
+            {% endfor %}
+          </div>
+        {% endif %}
+        <p>{{ post.excerpt | strip_html | truncate: 1000 }}</p>
       {% endif %}
     </article>
     {% endfor %}
