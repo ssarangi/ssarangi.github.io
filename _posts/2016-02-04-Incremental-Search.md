@@ -5,7 +5,6 @@ excerpt: While brushing up on algorithms, I decided to reimplement tries and ter
 tags: [tries, ternary trees, python, pyside]
 modified: 2016-02-04
 comments: true
-image: /img/blog/incremental_search/incremental_search.gif
 ---
 
 # Introduction:

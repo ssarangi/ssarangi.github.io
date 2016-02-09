@@ -275,13 +275,14 @@ $button-size: 1.5rem;
 	}
 	article {
 		width: 800px;
-		margin-top: 5px;
+		height: 110px;
+		margin-top: 0px;
 		img {
 			float: left;
 			margin: 0 0px 15px 0px;
 			width: 18%;
 			border: 2px solid;
-			height: 130px;
+			// height: 130px;
 			border-radius: 25px;
 		}
 		article-content {
