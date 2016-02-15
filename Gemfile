@@ -5,3 +5,7 @@ gem "jekyll-sitemap"
 gem "jekyll-gist"
 gem "octopress"
 gem "html-proofer"
+
+group :plugins do
+  gem 'jekyll-pandoc-multiple-formats', github: 'fauno/jekyll-pandoc-multiple-formats', branch: 'develop'
+end
