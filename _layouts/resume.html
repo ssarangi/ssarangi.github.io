@@ -21,7 +21,7 @@
                 {% endfor %}
         
                 {% for section in site.data.sections %}
-                <div class="section" id="{{ section.id }}" style="font-size: 20px"><center>{{ section.name }}</center>
+                <div class="section name" id="{{ section.id }}"><center>{{ section.name }}</center>
                     <hr /> 
                     {% capture section_layout %}resume/{{section.layout}}.html{% endcapture %}
                     {% for hash in site.data %}
