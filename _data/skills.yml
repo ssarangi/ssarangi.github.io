@@ -1,0 +1,22 @@
+- Domains:
+    primary:
+      - 3D, graphics, drivers, compilers
+    secondary:
+      - tools, debugger, dashboard
+
+- Languages:
+    primary:
+      - C++
+      - C
+      - Python
+      - C#
+    secondary:
+      - Javascript
+      - Scala
+- API:
+    primary:
+      - DirectX
+      - OpenGL
+      - Metal
+    secondary:
+      - Django

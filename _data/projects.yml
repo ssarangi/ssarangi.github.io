@@ -1,0 +1,7 @@
+- projects:
+  - Working on a dynamic language jit using python
+  - Experimenting with Luajit for python jit support. Managed to get some basic constructs running.
+  - Designed a cloth simulation using OpenGL Compute Shader support.
+  - Rendered OpenStreetMaps and used djikstra for optimal path computation with python and Vispy.
+  - Rendering of OpenStreetMaps using opengl on android.
+  

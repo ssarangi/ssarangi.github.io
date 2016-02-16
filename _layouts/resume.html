@@ -1,0 +1,39 @@
+<!doctype html>
+<html>
+    <head>
+        {% include resume/resume-head.html %}
+    </head>
+    <body>
+        <main>
+            <div class="container">
+                {% for detail in site.data.details %}
+                <div class="row">
+                    <div class="col-xs-12">
+                        <div class="name">
+                            <center>{{ detail.first_name }} {{ detail.last_name }}</center>
+                            <hr>
+                        </div>
+                        <div class="details">
+                            <center>{{ detail.city }}, {{ detail.state }} | {{ detail.email }} | {{ detail.ph }} | {{ detail.website }}</center>
+                        </div>
+                    </div>
+                </div>
+                {% endfor %}
+        
+                {% for section in site.data.sections %}
+                <div class="section" id="{{ section.id }}" style="font-size: 20px"><center>{{ section.name }}</center>
+                    <hr /> 
+                    {% capture section_layout %}resume/{{section.layout}}.html{% endcapture %}
+                    {% for hash in site.data %}
+                        {% if hash[0] == section.id %}
+                            {% assign blurb = hash[1] %}
+                            {% include {{section_layout}} %}
+                        {% endif %}
+                    {% endfor %}
+                </div>
+                {% endfor %}
+            </div>
+            <!-- Class Container -->
+        </main>
+    </body>
+</html>

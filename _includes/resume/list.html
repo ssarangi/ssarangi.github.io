@@ -1,0 +1,11 @@
+{% for section_hash in blurb %}
+  {% for section in section_hash %}
+  <ul>
+  {% for bullet in section[1] %}
+      <li>{{ bullet | markdownify }}</li>
+  {% endfor %}
+  </ul>
+
+  {% endfor %}
+
+{% endfor %}
