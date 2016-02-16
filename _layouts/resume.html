@@ -10,7 +10,7 @@
                 <div class="row">
                     <div class="col-xs-12">
                         <div class="name">
-                            <center>{{ detail.first_name }} <b>{{ detail.last_name }}</b></center>
+                            <center><b>{{ detail.first_name }} {{ detail.last_name }}</b></center>
                             <hr>
                         </div>
                         <div class="details">
@@ -21,7 +21,8 @@
                 {% endfor %}
         
                 {% for section in site.data.sections %}
-                <div class="section name" id="{{ section.id }}"><center>{{ section.name }}</center>
+                <div class="section">
+                    <div class="name" id="{{ section.id }}"><center>{{ section.name }}</center></div>
                     <hr /> 
                     {% capture section_layout %}resume/{{section.layout}}.html{% endcapture %}
                     {% for hash in site.data %}

@@ -35,9 +35,16 @@ hr {
     margin-top: 15px;
     line-height: 1;
     font-family: Arial;
+    font-size: 24px;
         
     ul {
         color: black;
+    }
+    
+    .name {
+        text-transform: uppercase;
+        font-size: 16px;
+        font-weight: bold;
     }
     
     p {
@@ -88,7 +95,7 @@ hr {
     }
     
     .summary {
-        margin: 15px 0 5px 0;
+        margin: 10px 0 10px 0;
         text-align: left;
         float: left;
         width: 100%;
