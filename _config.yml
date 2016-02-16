@@ -24,18 +24,6 @@ kramdown:
   toc_levels: 1..6
   enable_coderay: false
 
-# Jekyll assets gem
-assets:
-  dirname: assets
-  baseurl: /assets/
-  css_compressor: yui
-  js_compressor: yui
-  cachebust: hard
-  cache: false
-  gzip: nil # Cloudflare will do this
-  sources:
-    - assets/stylesheets
-
 
 # Octopress
 
