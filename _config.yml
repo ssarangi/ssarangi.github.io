@@ -42,7 +42,7 @@ titlecase: true
 # Site owner
 owner:
   name: Satyajit Sarangi
-  avatar: bio-photo.jpg
+  avatar: https://avatars3.githubusercontent.com/u/239816?v=3&s=460
   bio: "I am a software engineer currently residing in Bay Area."
   email: kernel.saty@gmail.com
   disqus-shortname: ssarangi
