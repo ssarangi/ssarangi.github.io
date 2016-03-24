@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Shaky Diagrammer
-excerpt: Digram creator for my blog
+excerpt: Diagram creator for my blog
 tags: [javascript, znode, diagrammer]
 modified: 2016-03-24
 comments: true
