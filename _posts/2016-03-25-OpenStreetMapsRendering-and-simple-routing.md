@@ -22,13 +22,13 @@ So the structure is pretty simple to understand.
 
 Each OSM file starts with a Bounding box.
 
-```xml
+```XML
 <?xml version="1.0" encoding="UTF-8"?>
 <osm version="0.6" generator="CGImap 0.4.0 (23328 thorn-02.openstreetmap.org)" copyright="OpenStreetMap and contributors" attribution="http://www.openstreetmap.org/copyright" license="http://opendatacommons.org/licenses/odbl/1-0/">
  <bounds minlat="37.4081400" minlon="-121.8716900" maxlat="37.4099500" maxlon="-121.8684400"/>
  ```
 
- 
+
 
 ## Matplotlib Rendering
 {: .center}
