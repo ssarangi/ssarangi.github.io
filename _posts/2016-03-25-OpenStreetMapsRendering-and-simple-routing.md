@@ -29,10 +29,11 @@ Each OSM file starts with a Bounding box.
 ~~~xml
 <?xml version="1.0" encoding="UTF-8"?>
 <osm version="0.6" generator="CGImap 0.4.0 (23328 thorn-02.openstreetmap.org)" copyright="OpenStreetMap and contributors" attribution="http://www.openstreetmap.org/copyright" license="http://opendatacommons.org/licenses/odbl/1-0/">
- <bounds minlat="37.4081400" minlon="-121.8716900" maxlat="37.4099500" maxlon="-121.8684400"/>
+<bounds minlat="37.4081400" minlon="-121.8716900" maxlat="37.4099500" maxlon="-121.8684400"/>
 ~~~
 
 The next step are the nodes. Every node has a unique id which is what it is referenced by along with whether its visible on the map or not. The rest of the tags are almost self-explanatory. lat, lon and id are what we will use here.
+
 ~~~xml
 <node id="65425741" visible="true" version="4" changeset="3424990" timestamp="2009-12-22T06:37:55Z" user="woodpeck_fixbot" uid="147510" lat="37.4169957" lon="-121.8541592"/>
 <node id="65443553" visible="true" version="6" changeset="6857224" timestamp="2011-01-04T03:51:20Z" user="mk408" uid="201724" lat="37.4129151" lon="-121.8624849"/>
@@ -40,14 +41,12 @@ The next step are the nodes. Every node has a unique id which is what it is refe
 <node id="65506168" visible="true" version="4" changeset="2817765" timestamp="2009-10-11T18:55:54Z" user="woodpeck_fixbot" uid="147510" lat="37.4076559" lon="-121.8691881"/>
 <node id="65511824" visible="true" version="4" changeset="3140985" timestamp="2009-11-17T13:34:37Z" user="woodpeck_fixbot" uid="147510" lat="37.4084658" lon="-121.8697810"/>
 <node id="65588013" visible="true" version="7" changeset="32500664" timestamp="2015-07-08T17:31:12Z" user="StellanL" uid="28775" lat="37.4091332" lon="-121.8702756">
-  <tag k="highway" v="traffic_signals"/>
- </node>
+<tag k="highway" v="traffic_signals"/>
+</node>
 ~~~
-
 
 A way generally represents an object, which could be a highway, residential roads, primary roads, secondary roads etc. A way would use a bunch of node id's to define its structure. The tag element identifies what the way represents.
 It might also contain auxiliary data called Tiger Data which is data released by the US Census Bureau.
-
 
 ~~~xml
 <way id="8940804" visible="true" version="8" changeset="7051091" timestamp="2011-01-22T14:48:02Z" user="mk408" uid="201724">
