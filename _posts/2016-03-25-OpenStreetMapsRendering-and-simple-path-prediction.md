@@ -18,8 +18,8 @@ OSM typically uses 2 file formats. XML or PBF. PBF is short for Google's protoco
 
 ## Matplotlib Rendering
 {: .center}
-![Matplotlib]("https://raw.githubusercontent.com/ssarangi/osmpy/master/shortest_path.png")
+![Matplotlib](https://raw.githubusercontent.com/ssarangi/osmpy/master/shortest_path.png)
 
 ## Vispy Rendering
 {: .center}
-![Matplotlib]("https://raw.githubusercontent.com/ssarangi/osmpy/master/vispy_rendering.png")
+![Matplotlib](https://raw.githubusercontent.com/ssarangi/osmpy/master/vispy_rendering.png)
