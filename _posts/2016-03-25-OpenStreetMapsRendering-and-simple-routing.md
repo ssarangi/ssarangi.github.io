@@ -43,8 +43,10 @@ The next step are the nodes. Every node has a unique id which is what it is refe
  </node>
 ~~~
 
+
 A way generally represents an object, which could be a highway, residential roads, primary roads, secondary roads etc. A way would use a bunch of node id's to define its structure. The tag element identifies what the way represents.
 It might also contain auxiliary data called Tiger Data which is data released by the US Census Bureau.
+
 
 ~~~xml
 <way id="8940804" visible="true" version="8" changeset="7051091" timestamp="2011-01-22T14:48:02Z" user="mk408" uid="201724">
