@@ -16,6 +16,20 @@ Mapbox has editors to edit and upload OSM files and their rendering is just too 
 
 OSM typically uses 2 file formats. XML or PBF. PBF is short for Google's protocol buffers which is just a compressed format. XML on the other hand is quite verbose.
 
+## XML format:
+OSM uses Nodes to represent latitudes and longitudes. These nodes are then combined to form complex structures. For example, a collection of nodes form the buildings or highways or roads etc.
+So the structure is pretty simple to understand.
+
+Each OSM file starts with a Bounding box.
+
+```xml
+<?xml version="1.0" encoding="UTF-8"?>
+<osm version="0.6" generator="CGImap 0.4.0 (23328 thorn-02.openstreetmap.org)" copyright="OpenStreetMap and contributors" attribution="http://www.openstreetmap.org/copyright" license="http://opendatacommons.org/licenses/odbl/1-0/">
+ <bounds minlat="37.4081400" minlon="-121.8716900" maxlat="37.4099500" maxlon="-121.8684400"/>
+ ```
+
+ 
+
 ## Matplotlib Rendering
 {: .center}
 ![Matplotlib](https://raw.githubusercontent.com/ssarangi/osmpy/master/shortest_path.png)
