@@ -1,6 +1,6 @@
 ---
 layout: post
-title: OpenStreetMap rendering and shortest path.
+title: OpenStreetMap rendering and simple Routing.
 excerpt: This post is about a small experiment of loading Openstreetmap files and rendering them with both matplotlib and vispy. Also tried a simple routing with dijkstra and A*.
 tags: [python, openstreetmap, vispy, dijkstra, A*]
 modified: 2016-03-25
