@@ -1661,6 +1661,8 @@ Sk.Debugger.prototype.success = function(r) {
 - Changing variable values
 - Handling yields
 - Integration with CodeMirror
+- Not enough testing
+- No Unit tests
 
 
 
