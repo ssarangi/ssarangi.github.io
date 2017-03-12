@@ -10,6 +10,6 @@ comments: true
 # Udacity's Self Driving Car Project 1
 
 <iframe scrolling="no" frameborder="0"
-    style="position: relative; height: 100%; width: 100%;"
+    style="position: relative; height: 1000; width: 100%;"
     src="http://nbviewer.jupyter.org/github/ssarangi/CarND-LaneLines-P1/blob/master/writeup.ipynb"
     frameborder="0"></iframe>
