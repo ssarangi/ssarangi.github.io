@@ -5,6 +5,7 @@ excerpt: Diagram creator for my blog
 tags: [javascript, znode, diagrammer]
 modified: 2016-03-24
 comments: true
+crosspost_to_medium: true
 ---
 [Github](https://github.com/ssarangi/shakyDiagrammer)
 [Demo](http://ssarangi.github.io/ShakyDiagrammer/)

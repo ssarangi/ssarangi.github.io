@@ -5,6 +5,7 @@ excerpt: ZNode is a minimalistic browser based flowchart module. I took this pro
 tags: [javascript, introspection, znode]
 modified: 2016-02-04
 comments: true
+crosspost_to_medium: true
 ---
 [Github](https://github.com/ssarangi/JsIntrospection)
 

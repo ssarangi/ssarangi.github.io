@@ -5,6 +5,7 @@ excerpt: Constant propagation and folding are generic optimizations which can gr
 tags: [compiler, constant propagation, constant folding]
 modified: 2016-01-17
 comments: true
+crosspost_to_medium: true
 ---
 
 # Constant Folding:

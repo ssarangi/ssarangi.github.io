@@ -5,6 +5,7 @@ excerpt: A Compiler intermediate representation - consideration and implementati
 tags: [compiler, intermediate representation, llvm ir]
 modified: 2016-01-16
 comments: true
+crosspost_to_medium: true
 ---
 
 # Compiler IR:

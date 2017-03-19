@@ -5,6 +5,7 @@ excerpt: While brushing up on algorithms, I decided to reimplement tries and ter
 tags: [tries, ternary trees, python, pyside]
 modified: 2016-02-04
 comments: true
+crosspost_to_medium: true
 ---
 
 # Introduction:

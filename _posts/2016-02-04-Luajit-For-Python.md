@@ -5,6 +5,7 @@ excerpt: I have looked at spidermonkey and a few other JIT engines and kept on r
 tags: [jit, lua, luajit, python]
 modified: 2016-02-04
 comments: true
+crosspost_to_medium: true
 ---
 
 # Luajit is for Lua !!!

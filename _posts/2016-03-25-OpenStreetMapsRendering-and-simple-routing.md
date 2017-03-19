@@ -5,6 +5,7 @@ excerpt: This post is about a small experiment of loading Openstreetmap files an
 tags: [python, openstreetmap, vispy, dijkstra, A*]
 modified: 2016-03-25
 comments: true
+crosspost_to_medium: true
 ---
 [Github](https://github.com/ssarangi/osmpy)
 

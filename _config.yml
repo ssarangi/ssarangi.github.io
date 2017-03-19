@@ -114,3 +114,11 @@ resume_social_links:
 
 # Design settings
 resume_theme:                   default
+
+jekyll-crosspost_to_medium:
+  enabled: true
+  cache: .jekyll-crosspost_to_medium
+  status: public
+  license: all-rights-reserved
+  text: '<p><i>This article was originally posted <a href=\"#{url}\" rel=\"canonical\">on my own site</a>.</i></p>'
+  backdate: true
