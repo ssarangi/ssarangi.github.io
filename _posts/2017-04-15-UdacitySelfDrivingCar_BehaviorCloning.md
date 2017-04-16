@@ -23,8 +23,8 @@ crosspost_to_medium: true
 [flip_image]: /img/blog/behaviorcloning/flipped.png "Flipped Image"
 [track1_model_loss]: /img/blog/behaviorcloning/track1_model_loss.png "Track 1 Model Loss"
 [track2_model_loss]: /img/blog/behaviorcloning/track2_model_loss.png "Track 1 Model Loss"
-[track2_recovery]: ./img/blog/behaviorcloning/track2_recovery.gif "Track 2 Recovery Img"
-[training_data]: ./img/blog/behaviorcloning/training_data.png "Training data"
+[track2_recovery]: /img/blog/behaviorcloning/track2_recovery.gif "Track 2 Recovery Img"
+[training_data]: /img/blog/behaviorcloning/training_data.png "Training data"
 
 
 After tackling the lane line detection and the traffic sign classification projects from Udacity, the third project to be tackled was another completely different project in terms of what it achieves. The project was centered around the concept of Behavior cloning which meant that we teach a Neural Network model to do a certain task by showing it how it is to be done. The concept is very similar to how you teach babies or even adults in some cases to do certain things.
