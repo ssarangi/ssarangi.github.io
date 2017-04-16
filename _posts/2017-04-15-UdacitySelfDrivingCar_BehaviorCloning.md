@@ -104,6 +104,7 @@ I drove about 5 laps each of track 1 and 5 laps of track 2. Combined with the Sa
 
 #### Recovery Image for Track 2 where car was having trouble
 The car was having trouble in the following location and hence I provided only these specific recovery images. These are mainly for the car to avoid the long poles on track 2.
+
 ![alt text][track2_recovery]
 
 #### Using Keras Image Augmentation Generator
