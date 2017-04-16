@@ -23,6 +23,8 @@ crosspost_to_medium: true
 [flip_image]: /img/blog/behaviorcloning/flipped.png "Flipped Image"
 [track1_model_loss]: /img/blog/behaviorcloning/track1_model_loss.png "Track 1 Model Loss"
 [track2_model_loss]: /img/blog/behaviorcloning/track2_model_loss.png "Track 1 Model Loss"
+[track2_recovery]: ./img/blog/behaviorcloning/track2_recovery.gif "Track 2 Recovery Img"
+[training_data]: ./img/blog/behaviorcloning/training_data.png "Training data"
 
 
 After tackling the lane line detection and the traffic sign classification projects from Udacity, the third project to be tackled was another completely different project in terms of what it achieves. The project was centered around the concept of Behavior cloning which meant that we teach a Neural Network model to do a certain task by showing it how it is to be done. The concept is very similar to how you teach babies or even adults in some cases to do certain things.
@@ -80,6 +82,9 @@ Udacity provided sample data for people to train their network on. This consiste
 ![alt text][sample_data_distribution]
 
 ### Training Data from Manual Training
+![alt text][training_data]
+
+The image above shows the training data which is generated from the simulator. All the 3 images from the left, right and center are shown here.
 ### Dataset Augmentation
 
 Data Augmentation is a big part of the experiments we carry out with this project. Although,
@@ -96,6 +101,10 @@ Since this would have been a lot of data all the augmentation was done while the
 For track 1, I decided against using explicit recovery images. My goal was to get the car to drive and recover without explicitly training on those images. Although this approach worked fine for track 1, this approach didn't work for track 2. Specifically for track 2 the car had a lot of trouble with the long bars. It would go and hit the road.
 
 I drove about 5 laps each of track 1 and 5 laps of track 2. Combined with the Sample training images, the augmentation of the images with steering angles either < -0.025 or > 0.025 to about 20 times proved to be enough data.
+
+#### Recovery Image for Track 2 where car was having trouble
+The car was having trouble in the following location and hence I provided only these specific recovery images. These are mainly for the car to avoid the long poles on track 2.
+![alt text][track2_recovery]
 
 #### Using Keras Image Augmentation Generator
 I tried using the Keras Image Augmentation Generator but constantly ran into trouble with it. Keras Image Augmentation generator is a generator which allows about 10 different image augmentation techniques. The one which I really wanted to try out was ZCA whitening. However, for ZCA whitening and std_normalization of the images, the generator had to fit the entire training data which wasn't possible and keras would constantly run out of memory. So I decided to ditch this method and write my own augmentation methods.
