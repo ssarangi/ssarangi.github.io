@@ -133,6 +133,10 @@ After reading a lot of material, I decided to use the Nvidia Model for this beha
 I also used a BatchNormalization layer after the Lambda layers. Along with that I also used L2 regularization on the layers which is not used on the nvidia model. The reason for doing this was because early on I found that since the track was relatively straight on track1 and the scenery was relatively similar, overfitting was happening very soon. It was important to keep it down.
 
 # Network Architecture & Parameters
+The nVidia model consists of 9 layers, including a normalization layer, 5 convolutional Layers and 3 fully connected layers. Although the Nvidia model uses YUV planes for the image, I decided to keep it at RGB to keep the problem simple to begin with.
+
+The convolutional layers in the nvidia model are designed to perform feature extraction and these were designed by nvidia empirically by experimentation by trying out varied layer configurations. The model uses strided convolutions in the first three convolutional layers with 2x2 stride and a 5x5 kernel and a non-strided convolution with a 3x3 kernel size in the last two convolutional layers.
+
 ![alt text][network_architecture]
 
 - *Batch Size*: I chose the batch size to be 512. I had a lot of training images so to keep training times a little lower I chose a higher batch size. I also experimented with 256, 128, 64 & 32 batch sizes and got higher validation loss.
