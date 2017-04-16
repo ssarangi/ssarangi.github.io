@@ -5,6 +5,7 @@ excerpt: This post talks about the Behavior Cloning project from Udacity where a
 tags: [python, tensorflow, keras]
 modified: 2017-04-15
 comments: true
+crosspost_to_medium: true
 ---
 # Behavioral Cloning
 ---
@@ -167,10 +168,10 @@ Since on track 2 the car's driving wasn't very smooth I tried using a Butterwort
 
 # Final Results
 ## Track 1
-[![Track 1 Final Result](report_imgs/track1_youtube.png)](https://www.youtube.com/watch?v=-GzA0qTAzWk "Track 1 Run")
+[![Track 1 Final Result](/img/blog/behaviorcloning/track1_youtube.png)](https://www.youtube.com/watch?v=-GzA0qTAzWk "Track 1 Run")
 
 ## Track 2
-[![Track 2 Final Result](report_imgs/track2_youtube.png)](https://youtu.be/eooRnceSvno "Track 2 Run")
+[![Track 2 Final Result](/img/blog/behaviorcloning/track2_youtube.png)](https://youtu.be/eooRnceSvno "Track 2 Run")
 
 
 ## Future Work:
