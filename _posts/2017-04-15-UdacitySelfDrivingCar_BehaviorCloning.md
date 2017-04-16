@@ -20,7 +20,7 @@ crosspost_to_medium: true
 [track2_conv2d_5_layer]: /img/blog/behaviorcloning/track2_conv2d_5_layers.gif "Track 2 Conv2d_5"
 [track2_final_run]: /img/blog/behaviorcloning/track2_final_run.gif "Track 2 Final Run"
 [change_brightness]: /img/blog/behaviorcloning/change_brightness.png "Change Brightness Augmentation"
-[flip_image]: /img/blog/behaviorcloningflipped.png "Flipped Image"
+[flip_image]: /img/blog/behaviorcloning/flipped.png "Flipped Image"
 [track1_model_loss]: /img/blog/behaviorcloning/track1_model_loss.png "Track 1 Model Loss"
 [track2_model_loss]: /img/blog/behaviorcloning/track2_model_loss.png "Track 1 Model Loss"
 
