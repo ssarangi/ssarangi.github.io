@@ -168,8 +168,8 @@ The animated gif's in this section show the images as the car is driving across 
 
 ## Track 1
 ![alt text][track1_model_loss]
-![Imgur1](http://i.imgur.com/BvRziqW.gifv)
-![Imgur2](http://i.imgur.com/ynZEdNP.gifv)
+![Track 1 Final Run](http://i.imgur.com/BvRziqW.gifv)
+![Track 1 Loss](http://i.imgur.com/ynZEdNP.gifv)
 
 Track 1 suffers from overfitting within just 5 epochs. This could be due to the use of more training data than necessary. Also, one way to fix this would be to add different kinds of augmentation techniques. However, the car does manage to run nicely on this track and could run continuously across the laps. I tried about 5 laps and it was still running fine.
 
