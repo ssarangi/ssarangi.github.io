@@ -262,7 +262,7 @@ Original Image:
 ![Diagram showing inheritance](/img/blog/znode/simple_inheritance_1.png "Overall Inheritance")
 
 * Random rotations between -10 and 10 degrees.
-![alt text](/img/blog/traffic_sign_classsifier/rotate_image.png "Rotated Image")
+![Jut another test](/img/blog/traffic_sign_classsifier/rotate_image.png "Rotated Image")
 * Random translation between -10 and 10 pixels in any direction.
 ![alt text](/img/blog/traffic_sign_classsifier/translate_image.png "Translated Image")
 * Random flipping horizontally or vertically or both depending on sign. There are restrictions on this since flipping a traffic sign could change it's meaning. Hence, labels have been classified on whether they can be flipped or not.
