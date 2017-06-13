@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Udacity's Self Driving Car - Traffic Sign Classification
-excerpt: This post talks about the Traffic Sign Classification Problem with Tensorflow 
+excerpt: This post talks about the Traffic Sign Classification Problem with Tensorflow
 tags: [python, tensorflow]
 modified: 2017-03-19
 comments: true
@@ -55,7 +55,7 @@ with open(validation_file, mode='rb') as f:
     valid = pickle.load(f)
 with open(testing_file, mode='rb') as f:
     test = pickle.load(f)
-    
+
 X_train, Y_train = train['features'], train['labels']
 # X_valid, Y_valid = valid['features'], valid['labels']
 X_test, Y_test = test['features'], test['labels']
@@ -83,7 +83,7 @@ def get_signname(label_id):
 
 
 ```python
-### Replace each question mark with the appropriate value. 
+### Replace each question mark with the appropriate value.
 ### Use python, pandas or numpy methods rather than hard coding the results
 import numpy as np
 
@@ -171,7 +171,7 @@ plt.show()
 
 
 
-![png](/img/blog/traffic_sign_classsifier/Traffic_Sign_Classifier_7_2.png)
+![png](/img/blog/traffic_sign_classifier/Traffic_Sign_Classifier_7_2.png)
 
 
 ### Signnames Corresponding to Integer Labels
@@ -233,7 +233,7 @@ plt.show()
 ```
 
 
-![png](/img/blog/traffic_sign_classsifier/Traffic_Sign_Classifier_10_0.png)
+![png](/img/blog/traffic_sign_classifier/Traffic_Sign_Classifier_10_0.png)
 
 
 ## Input Data Augmentation
@@ -256,23 +256,19 @@ augmentation could be performed which I wasn't sure could be handled with ImgAug
 ## Techniques
 
 Original Image:
-{: .center}
-![alt text](/img/blog/traffic_sign_classsifier/original_sample_img.png "Original Sample Image from Training Data")
-
-{: .center}
-![Diagram showing inheritance](/img/blog/znode/simple_inheritance_1.png "Overall Inheritance")
+![alt text](/img/blog/traffic_sign_classifier/original_sample_img.png "Original Sample Image from Training Data")
 
 * Random rotations between -10 and 10 degrees.
-![Jut another test](/img/blog/traffic_sign_classsifier/rotate_image.png "Rotated Image")
+![Jut another test](/img/blog/traffic_sign_classifier/rotate_image.png "Rotated Image")
 * Random translation between -10 and 10 pixels in any direction.
-![alt text](/img/blog/traffic_sign_classsifier/translate_image.png "Translated Image")
+![alt text](/img/blog/traffic_sign_classifier/translate_image.png "Translated Image")
 * Random flipping horizontally or vertically or both depending on sign. There are restrictions on this since flipping a traffic sign could change it's meaning. Hence, labels have been classified on whether they can be flipped or not.
-![alt text](/img/blog/traffic_sign_classsifier/flip_image.png "Flipped Image")
+![alt text](/img/blog/traffic_sign_classifier/flip_image.png "Flipped Image")
 * Canny Edge detection
-![alt text](/img/blog/traffic_sign_classsifier/edge_detected.png "Edge Detected Image")
+![alt text](/img/blog/traffic_sign_classifier/edge_detected.png "Edge Detected Image")
 
 
-![alt text](/img/blog/traffic_sign_classsifier/0.png "Sample Image Augmentation")
+![alt text](/img/blog/traffic_sign_classifier/0.png "Sample Image Augmentation")
 
 ----
 
@@ -787,7 +783,7 @@ In the testing phase, the biggest issue was speed and the feedback loop because 
 
 ## Simple NN1
 
-![alt text](/img/blog/traffic_sign_classsifier/simple_nn1.png "Title")
+![alt text](/img/blog/traffic_sign_classifier/simple_nn1.png "Title")
 
 
 ```python
@@ -828,7 +824,7 @@ def simple_1conv_layer_nn(x, dropout_keep_prob, cfg):
 
 ## Simple NN2
 
-![alt text](/img/blog/traffic_sign_classsifier/simple_nn2.png "Title")
+![alt text](/img/blog/traffic_sign_classifier/simple_nn2.png "Title")
 
 
 ```python
@@ -874,7 +870,7 @@ def simple_2conv_layer_nn(x, dropout_keep_prob, cfg):
     }
 
     cfg.NETWORK_PARAMS = network_params
-    
+
     return logits
 ```
 
@@ -911,7 +907,7 @@ The deep net merge layer network has essentially 4 major groups with each group 
 | Fully connected       | 1024 Outputs   									              |
 | Logits Softmax        | 43 Outputs   									              |
 
-![alt text](/img/blog/traffic_sign_classsifier/DeepNetWithMerging.png "Title")
+![alt text](/img/blog/traffic_sign_classifier/DeepNetWithMerging.png "Title")
 
 
 ```python
@@ -1020,7 +1016,7 @@ The deep net merge layer network has essentially 4 major groups with each group 
 | Fully connected       | 96 Outputs   									              |
 | Logits Softmax        | 43 Outputs   									              |
 
-![alt text](/img/blog/traffic_sign_classsifier/DeepNetNoMerging.png "Title")
+![alt text](/img/blog/traffic_sign_classifier/DeepNetNoMerging.png "Title")
 
 
 ```python
@@ -1166,7 +1162,7 @@ def LeNet_Udacity(x, dropout_keep_prob, cfg):
     # Arguments used for tf.truncated_normal, randomly defines variables for the weights and biases for each layer
     mu = 0
     sigma = 0.1
-    
+
     # SOLUTION: Layer 1: Convolutional. Input = 32x32x3. Output = 28x28x6.
     conv1_W = tf.Variable(tf.truncated_normal(shape=(5, 5, 3, 6), mean = mu, stddev = sigma))
     conv1_b = tf.Variable(tf.zeros(6))
@@ -1182,7 +1178,7 @@ def LeNet_Udacity(x, dropout_keep_prob, cfg):
     conv2_W = tf.Variable(tf.truncated_normal(shape=(5, 5, 6, 16), mean = mu, stddev = sigma))
     conv2_b = tf.Variable(tf.zeros(16))
     conv2   = tf.nn.conv2d(conv1, conv2_W, strides=[1, 1, 1, 1], padding='VALID') + conv2_b
-    
+
     # SOLUTION: Activation.
     relu = tf.nn.relu(conv2)
 
@@ -1191,12 +1187,12 @@ def LeNet_Udacity(x, dropout_keep_prob, cfg):
 
     # SOLUTION: Flatten. Input = 5x5x16. Output = 400.
     fc0   = flatten(maxpool1)
-    
+
     # SOLUTION: Layer 3: Fully Connected. Input = 400. Output = 120.
     fc1_W = tf.Variable(tf.truncated_normal(shape=(400, 120), mean = mu, stddev = sigma))
     fc1_b = tf.Variable(tf.zeros(120))
     fc1   = tf.matmul(fc0, fc1_W) + fc1_b
-    
+
     # SOLUTION: Activation.
     fc1    = tf.nn.relu(fc1)
 
@@ -1204,7 +1200,7 @@ def LeNet_Udacity(x, dropout_keep_prob, cfg):
     fc2_W  = tf.Variable(tf.truncated_normal(shape=(120, 84), mean = mu, stddev = sigma))
     fc2_b  = tf.Variable(tf.zeros(84))
     fc2    = tf.matmul(fc1, fc2_W) + fc2_b
-    
+
     # SOLUTION: Activation.
     fc2    = tf.nn.relu(fc2)
 
@@ -1212,7 +1208,7 @@ def LeNet_Udacity(x, dropout_keep_prob, cfg):
     fc3_W  = tf.Variable(tf.truncated_normal(shape=(84, 43), mean = mu, stddev = sigma))
     fc3_b  = tf.Variable(tf.zeros(43))
     logits = tf.matmul(fc2, fc3_W) + fc3_b
-    
+
      # Create a Network param dict for visualization
     network_params = {
         "conv1": conv1,
@@ -1224,7 +1220,7 @@ def LeNet_Udacity(x, dropout_keep_prob, cfg):
     }
 
     cfg.NETWORK_PARAMS = network_params
-    
+
     return logits
 ```
 
@@ -1395,7 +1391,7 @@ def train_and_test(preprocess=False, epochs=100, learning_rate=0.001, network="l
                    SAVE_MODEL=False,
                    NN_NAME=network,
                    USE_AUGMENTED_FILE=use_augmented_file)
-    
+
     tensor_ops = train(cfg)
 
     sess = tf.Session()
@@ -1448,309 +1444,309 @@ sess, lenet_tensor_ops, data, cfg = train_and_test(preprocess=False, epochs=100,
     conv2d_2: [None, 10, 10, 16]
     1.0
     Training...
-    
+
     EPOCH 1 ...
     Validation Accuracy = 0.726
-    
+
     EPOCH 2 ...
     Validation Accuracy = 0.862
-    
+
     EPOCH 3 ...
     Validation Accuracy = 0.912
-    
+
     EPOCH 4 ...
     Validation Accuracy = 0.925
-    
+
     EPOCH 5 ...
     Validation Accuracy = 0.941
-    
+
     EPOCH 6 ...
     Validation Accuracy = 0.952
-    
+
     EPOCH 7 ...
     Validation Accuracy = 0.940
-    
+
     EPOCH 8 ...
     Validation Accuracy = 0.948
-    
+
     EPOCH 9 ...
     Validation Accuracy = 0.958
-    
+
     EPOCH 10 ...
     Validation Accuracy = 0.961
-    
+
     EPOCH 11 ...
     Validation Accuracy = 0.955
-    
+
     EPOCH 12 ...
     Validation Accuracy = 0.961
-    
+
     EPOCH 13 ...
     Validation Accuracy = 0.950
-    
+
     EPOCH 14 ...
     Validation Accuracy = 0.963
-    
+
     EPOCH 15 ...
     Validation Accuracy = 0.964
-    
+
     EPOCH 16 ...
     Validation Accuracy = 0.971
-    
+
     EPOCH 17 ...
     Validation Accuracy = 0.968
-    
+
     EPOCH 18 ...
     Validation Accuracy = 0.966
-    
+
     EPOCH 19 ...
     Validation Accuracy = 0.969
-    
+
     EPOCH 20 ...
     Validation Accuracy = 0.977
-    
+
     EPOCH 21 ...
     Validation Accuracy = 0.959
-    
+
     EPOCH 22 ...
     Validation Accuracy = 0.967
-    
+
     EPOCH 23 ...
     Validation Accuracy = 0.973
-    
+
     EPOCH 24 ...
     Validation Accuracy = 0.965
-    
+
     EPOCH 25 ...
     Validation Accuracy = 0.968
-    
+
     EPOCH 26 ...
     Validation Accuracy = 0.968
-    
+
     EPOCH 27 ...
     Validation Accuracy = 0.975
-    
+
     EPOCH 28 ...
     Validation Accuracy = 0.979
-    
+
     EPOCH 29 ...
     Validation Accuracy = 0.976
-    
+
     EPOCH 30 ...
     Validation Accuracy = 0.964
-    
+
     EPOCH 31 ...
     Validation Accuracy = 0.972
-    
+
     EPOCH 32 ...
     Validation Accuracy = 0.973
-    
+
     EPOCH 33 ...
     Validation Accuracy = 0.972
-    
+
     EPOCH 34 ...
     Validation Accuracy = 0.980
-    
+
     EPOCH 35 ...
     Validation Accuracy = 0.975
-    
+
     EPOCH 36 ...
     Validation Accuracy = 0.980
-    
+
     EPOCH 37 ...
     Validation Accuracy = 0.982
-    
+
     EPOCH 38 ...
     Validation Accuracy = 0.973
-    
+
     EPOCH 39 ...
     Validation Accuracy = 0.974
-    
+
     EPOCH 40 ...
     Validation Accuracy = 0.974
-    
+
     EPOCH 41 ...
     Validation Accuracy = 0.976
-    
+
     EPOCH 42 ...
     Validation Accuracy = 0.977
-    
+
     EPOCH 43 ...
     Validation Accuracy = 0.980
-    
+
     EPOCH 44 ...
     Validation Accuracy = 0.979
-    
+
     EPOCH 45 ...
     Validation Accuracy = 0.977
-    
+
     EPOCH 46 ...
     Validation Accuracy = 0.979
-    
+
     EPOCH 47 ...
     Validation Accuracy = 0.983
-    
+
     EPOCH 48 ...
     Validation Accuracy = 0.972
-    
+
     EPOCH 49 ...
     Validation Accuracy = 0.985
-    
+
     EPOCH 50 ...
     Validation Accuracy = 0.985
-    
+
     EPOCH 51 ...
     Validation Accuracy = 0.975
-    
+
     EPOCH 52 ...
     Validation Accuracy = 0.977
-    
+
     EPOCH 53 ...
     Validation Accuracy = 0.976
-    
+
     EPOCH 54 ...
     Validation Accuracy = 0.979
-    
+
     EPOCH 55 ...
     Validation Accuracy = 0.986
-    
+
     EPOCH 56 ...
     Validation Accuracy = 0.983
-    
+
     EPOCH 57 ...
     Validation Accuracy = 0.979
-    
+
     EPOCH 58 ...
     Validation Accuracy = 0.984
-    
+
     EPOCH 59 ...
     Validation Accuracy = 0.982
-    
+
     EPOCH 60 ...
     Validation Accuracy = 0.977
-    
+
     EPOCH 61 ...
     Validation Accuracy = 0.979
-    
+
     EPOCH 62 ...
     Validation Accuracy = 0.979
-    
+
     EPOCH 63 ...
     Validation Accuracy = 0.986
-    
+
     EPOCH 64 ...
     Validation Accuracy = 0.985
-    
+
     EPOCH 65 ...
     Validation Accuracy = 0.981
-    
+
     EPOCH 66 ...
     Validation Accuracy = 0.986
-    
+
     EPOCH 67 ...
     Validation Accuracy = 0.969
-    
+
     EPOCH 68 ...
     Validation Accuracy = 0.981
-    
+
     EPOCH 69 ...
     Validation Accuracy = 0.983
-    
+
     EPOCH 70 ...
     Validation Accuracy = 0.978
-    
+
     EPOCH 71 ...
     Validation Accuracy = 0.984
-    
+
     EPOCH 72 ...
     Validation Accuracy = 0.981
-    
+
     EPOCH 73 ...
     Validation Accuracy = 0.978
-    
+
     EPOCH 74 ...
     Validation Accuracy = 0.980
-    
+
     EPOCH 75 ...
     Validation Accuracy = 0.980
-    
+
     EPOCH 76 ...
     Validation Accuracy = 0.987
-    
+
     EPOCH 77 ...
     Validation Accuracy = 0.977
-    
+
     EPOCH 78 ...
     Validation Accuracy = 0.979
-    
+
     EPOCH 79 ...
     Validation Accuracy = 0.982
-    
+
     EPOCH 80 ...
     Validation Accuracy = 0.983
-    
+
     EPOCH 81 ...
     Validation Accuracy = 0.986
-    
+
     EPOCH 82 ...
     Validation Accuracy = 0.990
-    
+
     EPOCH 83 ...
     Validation Accuracy = 0.988
-    
+
     EPOCH 84 ...
     Validation Accuracy = 0.974
-    
+
     EPOCH 85 ...
     Validation Accuracy = 0.976
-    
+
     EPOCH 86 ...
     Validation Accuracy = 0.985
-    
+
     EPOCH 87 ...
     Validation Accuracy = 0.986
-    
+
     EPOCH 88 ...
     Validation Accuracy = 0.981
-    
+
     EPOCH 89 ...
     Validation Accuracy = 0.978
-    
+
     EPOCH 90 ...
     Validation Accuracy = 0.979
-    
+
     EPOCH 91 ...
     Validation Accuracy = 0.982
-    
+
     EPOCH 92 ...
     Validation Accuracy = 0.979
-    
+
     EPOCH 93 ...
     Validation Accuracy = 0.980
-    
+
     EPOCH 94 ...
     Validation Accuracy = 0.983
-    
+
     EPOCH 95 ...
     Validation Accuracy = 0.983
-    
+
     EPOCH 96 ...
     Validation Accuracy = 0.983
-    
+
     EPOCH 97 ...
     Validation Accuracy = 0.986
-    
+
     EPOCH 98 ...
     Validation Accuracy = 0.980
-    
+
     EPOCH 99 ...
     Validation Accuracy = 0.984
-    
+
     EPOCH 100 ...
     Validation Accuracy = 0.967
-    
+
     Test Accuracy = 0.897
-    
+
        network name  epochs validation accuracy      loss test accuracy
     0         lenet     1.0                72.6  1.127257         0.897
     1         lenet     2.0                86.2  0.720474         0.897
@@ -1813,7 +1809,7 @@ sess, lenet_tensor_ops, data, cfg = train_and_test(preprocess=False, epochs=100,
     97        lenet    98.0                98.0  0.195988         0.897
     98        lenet    99.0                98.4  0.131931         0.897
     99        lenet   100.0                96.7  0.094605         0.897
-    
+
     [100 rows x 5 columns]
 
 
@@ -1822,10 +1818,10 @@ sess, lenet_tensor_ops, data, cfg = train_and_test(preprocess=False, epochs=100,
 
 
 
-![png](/img/blog/traffic_sign_classsifier/Traffic_Sign_Classifier_74_2.png)
+![png](/img/blog/traffic_sign_classifier/Traffic_Sign_Classifier_74_2.png)
 
 
-![alt text](/img/blog/traffic_sign_classsifier/75_epochs.png "Loss Function & Accuracy")
+![alt text](/img/blog/traffic_sign_classifier/75_epochs.png "Loss Function & Accuracy")
 
 It is very interesting to see that the Simple Neural network starts off with a very high loss and low accuracy but eventually picks up the accuracy. Similarly, Simple NN2 also is in the middle of the Simple NN1 and the others indicating that the number of layers plays a very important role in how the network learns eventually and for lower epochs, a higher layer network should be chosen.
 
@@ -1856,13 +1852,13 @@ plt.show()
 ```
 
 
-![png](/img/blog/traffic_sign_classsifier/Traffic_Sign_Classifier_79_0.png)
+![png](/img/blog/traffic_sign_classifier/Traffic_Sign_Classifier_79_0.png)
 
 
 ## Discussion on Test Images
 
-The test images I obtained were a mix of both german and US signs. The US signs had a different size than the german 
-signs. 
+The test images I obtained were a mix of both german and US signs. The US signs had a different size than the german
+signs.
 * German signs I got were of 32x32x3
 * US Signs had different sizes and had to be resized to 32x32x3 for the models to work. Some images lost their aspect ratio because of this.
 
@@ -1924,309 +1920,309 @@ predict(sess, lenet_tensor_ops, data.images_from_internet, data, cfg, top_k=5)
     conv2d_2: [None, 10, 10, 16]
     1.0
     Training...
-    
+
     EPOCH 1 ...
     Validation Accuracy = 0.728
-    
+
     EPOCH 2 ...
     Validation Accuracy = 0.870
-    
+
     EPOCH 3 ...
     Validation Accuracy = 0.902
-    
+
     EPOCH 4 ...
     Validation Accuracy = 0.917
-    
+
     EPOCH 5 ...
     Validation Accuracy = 0.924
-    
+
     EPOCH 6 ...
     Validation Accuracy = 0.948
-    
+
     EPOCH 7 ...
     Validation Accuracy = 0.945
-    
+
     EPOCH 8 ...
     Validation Accuracy = 0.935
-    
+
     EPOCH 9 ...
     Validation Accuracy = 0.957
-    
+
     EPOCH 10 ...
     Validation Accuracy = 0.957
-    
+
     EPOCH 11 ...
     Validation Accuracy = 0.955
-    
+
     EPOCH 12 ...
     Validation Accuracy = 0.964
-    
+
     EPOCH 13 ...
     Validation Accuracy = 0.960
-    
+
     EPOCH 14 ...
     Validation Accuracy = 0.957
-    
+
     EPOCH 15 ...
     Validation Accuracy = 0.956
-    
+
     EPOCH 16 ...
     Validation Accuracy = 0.957
-    
+
     EPOCH 17 ...
     Validation Accuracy = 0.969
-    
+
     EPOCH 18 ...
     Validation Accuracy = 0.971
-    
+
     EPOCH 19 ...
     Validation Accuracy = 0.954
-    
+
     EPOCH 20 ...
     Validation Accuracy = 0.962
-    
+
     EPOCH 21 ...
     Validation Accuracy = 0.961
-    
+
     EPOCH 22 ...
     Validation Accuracy = 0.967
-    
+
     EPOCH 23 ...
     Validation Accuracy = 0.970
-    
+
     EPOCH 24 ...
     Validation Accuracy = 0.967
-    
+
     EPOCH 25 ...
     Validation Accuracy = 0.959
-    
+
     EPOCH 26 ...
     Validation Accuracy = 0.969
-    
+
     EPOCH 27 ...
     Validation Accuracy = 0.975
-    
+
     EPOCH 28 ...
     Validation Accuracy = 0.972
-    
+
     EPOCH 29 ...
     Validation Accuracy = 0.970
-    
+
     EPOCH 30 ...
     Validation Accuracy = 0.967
-    
+
     EPOCH 31 ...
     Validation Accuracy = 0.973
-    
+
     EPOCH 32 ...
     Validation Accuracy = 0.963
-    
+
     EPOCH 33 ...
     Validation Accuracy = 0.963
-    
+
     EPOCH 34 ...
     Validation Accuracy = 0.974
-    
+
     EPOCH 35 ...
     Validation Accuracy = 0.982
-    
+
     EPOCH 36 ...
     Validation Accuracy = 0.979
-    
+
     EPOCH 37 ...
     Validation Accuracy = 0.965
-    
+
     EPOCH 38 ...
     Validation Accuracy = 0.973
-    
+
     EPOCH 39 ...
     Validation Accuracy = 0.973
-    
+
     EPOCH 40 ...
     Validation Accuracy = 0.970
-    
+
     EPOCH 41 ...
     Validation Accuracy = 0.976
-    
+
     EPOCH 42 ...
     Validation Accuracy = 0.972
-    
+
     EPOCH 43 ...
     Validation Accuracy = 0.968
-    
+
     EPOCH 44 ...
     Validation Accuracy = 0.978
-    
+
     EPOCH 45 ...
     Validation Accuracy = 0.979
-    
+
     EPOCH 46 ...
     Validation Accuracy = 0.949
-    
+
     EPOCH 47 ...
     Validation Accuracy = 0.976
-    
+
     EPOCH 48 ...
     Validation Accuracy = 0.969
-    
+
     EPOCH 49 ...
     Validation Accuracy = 0.971
-    
+
     EPOCH 50 ...
     Validation Accuracy = 0.967
-    
+
     EPOCH 51 ...
     Validation Accuracy = 0.978
-    
+
     EPOCH 52 ...
     Validation Accuracy = 0.970
-    
+
     EPOCH 53 ...
     Validation Accuracy = 0.980
-    
+
     EPOCH 54 ...
     Validation Accuracy = 0.980
-    
+
     EPOCH 55 ...
     Validation Accuracy = 0.971
-    
+
     EPOCH 56 ...
     Validation Accuracy = 0.976
-    
+
     EPOCH 57 ...
     Validation Accuracy = 0.979
-    
+
     EPOCH 58 ...
     Validation Accuracy = 0.967
-    
+
     EPOCH 59 ...
     Validation Accuracy = 0.978
-    
+
     EPOCH 60 ...
     Validation Accuracy = 0.973
-    
+
     EPOCH 61 ...
     Validation Accuracy = 0.974
-    
+
     EPOCH 62 ...
     Validation Accuracy = 0.982
-    
+
     EPOCH 63 ...
     Validation Accuracy = 0.975
-    
+
     EPOCH 64 ...
     Validation Accuracy = 0.965
-    
+
     EPOCH 65 ...
     Validation Accuracy = 0.980
-    
+
     EPOCH 66 ...
     Validation Accuracy = 0.975
-    
+
     EPOCH 67 ...
     Validation Accuracy = 0.982
-    
+
     EPOCH 68 ...
     Validation Accuracy = 0.976
-    
+
     EPOCH 69 ...
     Validation Accuracy = 0.972
-    
+
     EPOCH 70 ...
     Validation Accuracy = 0.982
-    
+
     EPOCH 71 ...
     Validation Accuracy = 0.977
-    
+
     EPOCH 72 ...
     Validation Accuracy = 0.981
-    
+
     EPOCH 73 ...
     Validation Accuracy = 0.983
-    
+
     EPOCH 74 ...
     Validation Accuracy = 0.984
-    
+
     EPOCH 75 ...
     Validation Accuracy = 0.980
-    
+
     EPOCH 76 ...
     Validation Accuracy = 0.976
-    
+
     EPOCH 77 ...
     Validation Accuracy = 0.981
-    
+
     EPOCH 78 ...
     Validation Accuracy = 0.980
-    
+
     EPOCH 79 ...
     Validation Accuracy = 0.986
-    
+
     EPOCH 80 ...
     Validation Accuracy = 0.988
-    
+
     EPOCH 81 ...
     Validation Accuracy = 0.978
-    
+
     EPOCH 82 ...
     Validation Accuracy = 0.980
-    
+
     EPOCH 83 ...
     Validation Accuracy = 0.979
-    
+
     EPOCH 84 ...
     Validation Accuracy = 0.983
-    
+
     EPOCH 85 ...
     Validation Accuracy = 0.972
-    
+
     EPOCH 86 ...
     Validation Accuracy = 0.978
-    
+
     EPOCH 87 ...
     Validation Accuracy = 0.967
-    
+
     EPOCH 88 ...
     Validation Accuracy = 0.980
-    
+
     EPOCH 89 ...
     Validation Accuracy = 0.980
-    
+
     EPOCH 90 ...
     Validation Accuracy = 0.982
-    
+
     EPOCH 91 ...
     Validation Accuracy = 0.984
-    
+
     EPOCH 92 ...
     Validation Accuracy = 0.973
-    
+
     EPOCH 93 ...
     Validation Accuracy = 0.979
-    
+
     EPOCH 94 ...
     Validation Accuracy = 0.982
-    
+
     EPOCH 95 ...
     Validation Accuracy = 0.978
-    
+
     EPOCH 96 ...
     Validation Accuracy = 0.985
-    
+
     EPOCH 97 ...
     Validation Accuracy = 0.976
-    
+
     EPOCH 98 ...
     Validation Accuracy = 0.983
-    
+
     EPOCH 99 ...
     Validation Accuracy = 0.985
-    
+
     EPOCH 100 ...
     Validation Accuracy = 0.986
-    
+
     Test Accuracy = 0.914
-    
+
        network name  epochs validation accuracy      loss test accuracy
     0         lenet     1.0                72.8  1.318967         0.914
     1         lenet     2.0                87.0  0.603555         0.914
@@ -2289,7 +2285,7 @@ predict(sess, lenet_tensor_ops, data.images_from_internet, data, cfg, top_k=5)
     97        lenet    98.0                98.3  0.078032         0.914
     98        lenet    99.0                98.5  0.100440         0.914
     99        lenet   100.0                98.6  0.076128         0.914
-    
+
     [100 rows x 5 columns]
 
 
@@ -2298,7 +2294,7 @@ predict(sess, lenet_tensor_ops, data.images_from_internet, data, cfg, top_k=5)
 
 
 
-![png](/img/blog/traffic_sign_classsifier/Traffic_Sign_Classifier_85_2.png)
+![png](/img/blog/traffic_sign_classifier/Traffic_Sign_Classifier_85_2.png)
 
 
     Predicting from Random Images: Number of Images: 48
@@ -2449,195 +2445,195 @@ predict(sess, lenet_tensor_ops, data.images_from_internet, data, cfg, top_k=5)
 
 
 
-![png](/img/blog/traffic_sign_classsifier/Traffic_Sign_Classifier_85_4.png)
+![png](/img/blog/traffic_sign_classifier/Traffic_Sign_Classifier_85_4.png)
 
 
 
-![png](/img/blog/traffic_sign_classsifier/Traffic_Sign_Classifier_85_5.png)
+![png](/img/blog/traffic_sign_classifier/Traffic_Sign_Classifier_85_5.png)
 
 
 
-![png](/img/blog/traffic_sign_classsifier/Traffic_Sign_Classifier_85_6.png)
+![png](/img/blog/traffic_sign_classifier/Traffic_Sign_Classifier_85_6.png)
 
 
 
-![png](/img/blog/traffic_sign_classsifier/Traffic_Sign_Classifier_85_7.png)
+![png](/img/blog/traffic_sign_classifier/Traffic_Sign_Classifier_85_7.png)
 
 
 
-![png](/img/blog/traffic_sign_classsifier/Traffic_Sign_Classifier_85_8.png)
+![png](/img/blog/traffic_sign_classifier/Traffic_Sign_Classifier_85_8.png)
 
 
 
-![png](/img/blog/traffic_sign_classsifier/Traffic_Sign_Classifier_85_9.png)
+![png](/img/blog/traffic_sign_classifier/Traffic_Sign_Classifier_85_9.png)
 
 
 
-![png](/img/blog/traffic_sign_classsifier/Traffic_Sign_Classifier_85_10.png)
+![png](/img/blog/traffic_sign_classifier/Traffic_Sign_Classifier_85_10.png)
 
 
 
-![png](/img/blog/traffic_sign_classsifier/Traffic_Sign_Classifier_85_11.png)
+![png](/img/blog/traffic_sign_classifier/Traffic_Sign_Classifier_85_11.png)
 
 
 
-![png](/img/blog/traffic_sign_classsifier/Traffic_Sign_Classifier_85_12.png)
+![png](/img/blog/traffic_sign_classifier/Traffic_Sign_Classifier_85_12.png)
 
 
 
-![png](/img/blog/traffic_sign_classsifier/Traffic_Sign_Classifier_85_13.png)
+![png](/img/blog/traffic_sign_classifier/Traffic_Sign_Classifier_85_13.png)
 
 
 
-![png](/img/blog/traffic_sign_classsifier/Traffic_Sign_Classifier_85_14.png)
+![png](/img/blog/traffic_sign_classifier/Traffic_Sign_Classifier_85_14.png)
 
 
 
-![png](/img/blog/traffic_sign_classsifier/Traffic_Sign_Classifier_85_15.png)
+![png](/img/blog/traffic_sign_classifier/Traffic_Sign_Classifier_85_15.png)
 
 
 
-![png](/img/blog/traffic_sign_classsifier/Traffic_Sign_Classifier_85_16.png)
+![png](/img/blog/traffic_sign_classifier/Traffic_Sign_Classifier_85_16.png)
 
 
 
-![png](/img/blog/traffic_sign_classsifier/Traffic_Sign_Classifier_85_17.png)
+![png](/img/blog/traffic_sign_classifier/Traffic_Sign_Classifier_85_17.png)
 
 
 
-![png](/img/blog/traffic_sign_classsifier/Traffic_Sign_Classifier_85_18.png)
+![png](/img/blog/traffic_sign_classifier/Traffic_Sign_Classifier_85_18.png)
 
 
 
-![png](/img/blog/traffic_sign_classsifier/Traffic_Sign_Classifier_85_19.png)
+![png](/img/blog/traffic_sign_classifier/Traffic_Sign_Classifier_85_19.png)
 
 
 
-![png](/img/blog/traffic_sign_classsifier/Traffic_Sign_Classifier_85_20.png)
+![png](/img/blog/traffic_sign_classifier/Traffic_Sign_Classifier_85_20.png)
 
 
 
-![png](/img/blog/traffic_sign_classsifier/Traffic_Sign_Classifier_85_21.png)
+![png](/img/blog/traffic_sign_classifier/Traffic_Sign_Classifier_85_21.png)
 
 
 
-![png](/img/blog/traffic_sign_classsifier/Traffic_Sign_Classifier_85_22.png)
+![png](/img/blog/traffic_sign_classifier/Traffic_Sign_Classifier_85_22.png)
 
 
 
-![png](/img/blog/traffic_sign_classsifier/Traffic_Sign_Classifier_85_23.png)
+![png](/img/blog/traffic_sign_classifier/Traffic_Sign_Classifier_85_23.png)
 
 
 
-![png](/img/blog/traffic_sign_classsifier/Traffic_Sign_Classifier_85_24.png)
+![png](/img/blog/traffic_sign_classifier/Traffic_Sign_Classifier_85_24.png)
 
 
 
-![png](/img/blog/traffic_sign_classsifier/Traffic_Sign_Classifier_85_25.png)
+![png](/img/blog/traffic_sign_classifier/Traffic_Sign_Classifier_85_25.png)
 
 
 
-![png](/img/blog/traffic_sign_classsifier/Traffic_Sign_Classifier_85_26.png)
+![png](/img/blog/traffic_sign_classifier/Traffic_Sign_Classifier_85_26.png)
 
 
 
-![png](/img/blog/traffic_sign_classsifier/Traffic_Sign_Classifier_85_27.png)
+![png](/img/blog/traffic_sign_classifier/Traffic_Sign_Classifier_85_27.png)
 
 
 
-![png](/img/blog/traffic_sign_classsifier/Traffic_Sign_Classifier_85_28.png)
+![png](/img/blog/traffic_sign_classifier/Traffic_Sign_Classifier_85_28.png)
 
 
 
-![png](/img/blog/traffic_sign_classsifier/Traffic_Sign_Classifier_85_29.png)
+![png](/img/blog/traffic_sign_classifier/Traffic_Sign_Classifier_85_29.png)
 
 
 
-![png](/img/blog/traffic_sign_classsifier/Traffic_Sign_Classifier_85_30.png)
+![png](/img/blog/traffic_sign_classifier/Traffic_Sign_Classifier_85_30.png)
 
 
 
-![png](/img/blog/traffic_sign_classsifier/Traffic_Sign_Classifier_85_31.png)
+![png](/img/blog/traffic_sign_classifier/Traffic_Sign_Classifier_85_31.png)
 
 
 
-![png](/img/blog/traffic_sign_classsifier/Traffic_Sign_Classifier_85_32.png)
+![png](/img/blog/traffic_sign_classifier/Traffic_Sign_Classifier_85_32.png)
 
 
 
-![png](/img/blog/traffic_sign_classsifier/Traffic_Sign_Classifier_85_33.png)
+![png](/img/blog/traffic_sign_classifier/Traffic_Sign_Classifier_85_33.png)
 
 
 
-![png](/img/blog/traffic_sign_classsifier/Traffic_Sign_Classifier_85_34.png)
+![png](/img/blog/traffic_sign_classifier/Traffic_Sign_Classifier_85_34.png)
 
 
 
-![png](/img/blog/traffic_sign_classsifier/Traffic_Sign_Classifier_85_35.png)
+![png](/img/blog/traffic_sign_classifier/Traffic_Sign_Classifier_85_35.png)
 
 
 
-![png](/img/blog/traffic_sign_classsifier/Traffic_Sign_Classifier_85_36.png)
+![png](/img/blog/traffic_sign_classifier/Traffic_Sign_Classifier_85_36.png)
 
 
 
-![png](/img/blog/traffic_sign_classsifier/Traffic_Sign_Classifier_85_37.png)
+![png](/img/blog/traffic_sign_classifier/Traffic_Sign_Classifier_85_37.png)
 
 
 
-![png](/img/blog/traffic_sign_classsifier/Traffic_Sign_Classifier_85_38.png)
+![png](/img/blog/traffic_sign_classifier/Traffic_Sign_Classifier_85_38.png)
 
 
 
-![png](/img/blog/traffic_sign_classsifier/Traffic_Sign_Classifier_85_39.png)
+![png](/img/blog/traffic_sign_classifier/Traffic_Sign_Classifier_85_39.png)
 
 
 
-![png](/img/blog/traffic_sign_classsifier/Traffic_Sign_Classifier_85_40.png)
+![png](/img/blog/traffic_sign_classifier/Traffic_Sign_Classifier_85_40.png)
 
 
 
-![png](/img/blog/traffic_sign_classsifier/Traffic_Sign_Classifier_85_41.png)
+![png](/img/blog/traffic_sign_classifier/Traffic_Sign_Classifier_85_41.png)
 
 
 
-![png](/img/blog/traffic_sign_classsifier/Traffic_Sign_Classifier_85_42.png)
+![png](/img/blog/traffic_sign_classifier/Traffic_Sign_Classifier_85_42.png)
 
 
 
-![png](/img/blog/traffic_sign_classsifier/Traffic_Sign_Classifier_85_43.png)
+![png](/img/blog/traffic_sign_classifier/Traffic_Sign_Classifier_85_43.png)
 
 
 
-![png](/img/blog/traffic_sign_classsifier/Traffic_Sign_Classifier_85_44.png)
+![png](/img/blog/traffic_sign_classifier/Traffic_Sign_Classifier_85_44.png)
 
 
 
-![png](/img/blog/traffic_sign_classsifier/Traffic_Sign_Classifier_85_45.png)
+![png](/img/blog/traffic_sign_classifier/Traffic_Sign_Classifier_85_45.png)
 
 
 
-![png](/img/blog/traffic_sign_classsifier/Traffic_Sign_Classifier_85_46.png)
+![png](/img/blog/traffic_sign_classifier/Traffic_Sign_Classifier_85_46.png)
 
 
 
-![png](/img/blog/traffic_sign_classsifier/Traffic_Sign_Classifier_85_47.png)
+![png](/img/blog/traffic_sign_classifier/Traffic_Sign_Classifier_85_47.png)
 
 
 
-![png](/img/blog/traffic_sign_classsifier/Traffic_Sign_Classifier_85_48.png)
+![png](/img/blog/traffic_sign_classifier/Traffic_Sign_Classifier_85_48.png)
 
 
 
-![png](/img/blog/traffic_sign_classsifier/Traffic_Sign_Classifier_85_49.png)
+![png](/img/blog/traffic_sign_classifier/Traffic_Sign_Classifier_85_49.png)
 
 
 
-![png](/img/blog/traffic_sign_classsifier/Traffic_Sign_Classifier_85_50.png)
+![png](/img/blog/traffic_sign_classifier/Traffic_Sign_Classifier_85_50.png)
 
 
 
-![png](/img/blog/traffic_sign_classsifier/Traffic_Sign_Classifier_85_51.png)
+![png](/img/blog/traffic_sign_classifier/Traffic_Sign_Classifier_85_51.png)
 
 
 ### Accuracy
@@ -2663,309 +2659,309 @@ predict(sess, lenet_tensor_ops, data.images_from_internet, data, cfg, top_k=5)
     conv2d_1: [None, 26, 26, 12]
     1.0
     Training...
-    
+
     EPOCH 1 ...
     Validation Accuracy = 0.059
-    
+
     EPOCH 2 ...
     Validation Accuracy = 0.070
-    
+
     EPOCH 3 ...
     Validation Accuracy = 0.138
-    
+
     EPOCH 4 ...
     Validation Accuracy = 0.687
-    
+
     EPOCH 5 ...
     Validation Accuracy = 0.824
-    
+
     EPOCH 6 ...
     Validation Accuracy = 0.857
-    
+
     EPOCH 7 ...
     Validation Accuracy = 0.856
-    
+
     EPOCH 8 ...
     Validation Accuracy = 0.897
-    
+
     EPOCH 9 ...
     Validation Accuracy = 0.899
-    
+
     EPOCH 10 ...
     Validation Accuracy = 0.889
-    
+
     EPOCH 11 ...
     Validation Accuracy = 0.905
-    
+
     EPOCH 12 ...
     Validation Accuracy = 0.913
-    
+
     EPOCH 13 ...
     Validation Accuracy = 0.922
-    
+
     EPOCH 14 ...
     Validation Accuracy = 0.917
-    
+
     EPOCH 15 ...
     Validation Accuracy = 0.919
-    
+
     EPOCH 16 ...
     Validation Accuracy = 0.916
-    
+
     EPOCH 17 ...
     Validation Accuracy = 0.926
-    
+
     EPOCH 18 ...
     Validation Accuracy = 0.927
-    
+
     EPOCH 19 ...
     Validation Accuracy = 0.926
-    
+
     EPOCH 20 ...
     Validation Accuracy = 0.928
-    
+
     EPOCH 21 ...
     Validation Accuracy = 0.899
-    
+
     EPOCH 22 ...
     Validation Accuracy = 0.921
-    
+
     EPOCH 23 ...
     Validation Accuracy = 0.927
-    
+
     EPOCH 24 ...
     Validation Accuracy = 0.931
-    
+
     EPOCH 25 ...
     Validation Accuracy = 0.904
-    
+
     EPOCH 26 ...
     Validation Accuracy = 0.928
-    
+
     EPOCH 27 ...
     Validation Accuracy = 0.927
-    
+
     EPOCH 28 ...
     Validation Accuracy = 0.926
-    
+
     EPOCH 29 ...
     Validation Accuracy = 0.928
-    
+
     EPOCH 30 ...
     Validation Accuracy = 0.932
-    
+
     EPOCH 31 ...
     Validation Accuracy = 0.934
-    
+
     EPOCH 32 ...
     Validation Accuracy = 0.919
-    
+
     EPOCH 33 ...
     Validation Accuracy = 0.928
-    
+
     EPOCH 34 ...
     Validation Accuracy = 0.926
-    
+
     EPOCH 35 ...
     Validation Accuracy = 0.936
-    
+
     EPOCH 36 ...
     Validation Accuracy = 0.935
-    
+
     EPOCH 37 ...
     Validation Accuracy = 0.929
-    
+
     EPOCH 38 ...
     Validation Accuracy = 0.926
-    
+
     EPOCH 39 ...
     Validation Accuracy = 0.933
-    
+
     EPOCH 40 ...
     Validation Accuracy = 0.935
-    
+
     EPOCH 41 ...
     Validation Accuracy = 0.935
-    
+
     EPOCH 42 ...
     Validation Accuracy = 0.933
-    
+
     EPOCH 43 ...
     Validation Accuracy = 0.934
-    
+
     EPOCH 44 ...
     Validation Accuracy = 0.924
-    
+
     EPOCH 45 ...
     Validation Accuracy = 0.926
-    
+
     EPOCH 46 ...
     Validation Accuracy = 0.932
-    
+
     EPOCH 47 ...
     Validation Accuracy = 0.933
-    
+
     EPOCH 48 ...
     Validation Accuracy = 0.935
-    
+
     EPOCH 49 ...
     Validation Accuracy = 0.940
-    
+
     EPOCH 50 ...
     Validation Accuracy = 0.934
-    
+
     EPOCH 51 ...
     Validation Accuracy = 0.931
-    
+
     EPOCH 52 ...
     Validation Accuracy = 0.938
-    
+
     EPOCH 53 ...
     Validation Accuracy = 0.929
-    
+
     EPOCH 54 ...
     Validation Accuracy = 0.938
-    
+
     EPOCH 55 ...
     Validation Accuracy = 0.937
-    
+
     EPOCH 56 ...
     Validation Accuracy = 0.940
-    
+
     EPOCH 57 ...
     Validation Accuracy = 0.949
-    
+
     EPOCH 58 ...
     Validation Accuracy = 0.946
-    
+
     EPOCH 59 ...
     Validation Accuracy = 0.943
-    
+
     EPOCH 60 ...
     Validation Accuracy = 0.946
-    
+
     EPOCH 61 ...
     Validation Accuracy = 0.926
-    
+
     EPOCH 62 ...
     Validation Accuracy = 0.939
-    
+
     EPOCH 63 ...
     Validation Accuracy = 0.941
-    
+
     EPOCH 64 ...
     Validation Accuracy = 0.934
-    
+
     EPOCH 65 ...
     Validation Accuracy = 0.941
-    
+
     EPOCH 66 ...
     Validation Accuracy = 0.938
-    
+
     EPOCH 67 ...
     Validation Accuracy = 0.941
-    
+
     EPOCH 68 ...
     Validation Accuracy = 0.937
-    
+
     EPOCH 69 ...
     Validation Accuracy = 0.938
-    
+
     EPOCH 70 ...
     Validation Accuracy = 0.926
-    
+
     EPOCH 71 ...
     Validation Accuracy = 0.936
-    
+
     EPOCH 72 ...
     Validation Accuracy = 0.938
-    
+
     EPOCH 73 ...
     Validation Accuracy = 0.941
-    
+
     EPOCH 74 ...
     Validation Accuracy = 0.936
-    
+
     EPOCH 75 ...
     Validation Accuracy = 0.939
-    
+
     EPOCH 76 ...
     Validation Accuracy = 0.943
-    
+
     EPOCH 77 ...
     Validation Accuracy = 0.937
-    
+
     EPOCH 78 ...
     Validation Accuracy = 0.941
-    
+
     EPOCH 79 ...
     Validation Accuracy = 0.921
-    
+
     EPOCH 80 ...
     Validation Accuracy = 0.935
-    
+
     EPOCH 81 ...
     Validation Accuracy = 0.949
-    
+
     EPOCH 82 ...
     Validation Accuracy = 0.942
-    
+
     EPOCH 83 ...
     Validation Accuracy = 0.946
-    
+
     EPOCH 84 ...
     Validation Accuracy = 0.446
-    
+
     EPOCH 85 ...
     Validation Accuracy = 0.925
-    
+
     EPOCH 86 ...
     Validation Accuracy = 0.934
-    
+
     EPOCH 87 ...
     Validation Accuracy = 0.943
-    
+
     EPOCH 88 ...
     Validation Accuracy = 0.949
-    
+
     EPOCH 89 ...
     Validation Accuracy = 0.949
-    
+
     EPOCH 90 ...
     Validation Accuracy = 0.945
-    
+
     EPOCH 91 ...
     Validation Accuracy = 0.939
-    
+
     EPOCH 92 ...
     Validation Accuracy = 0.930
-    
+
     EPOCH 93 ...
     Validation Accuracy = 0.935
-    
+
     EPOCH 94 ...
     Validation Accuracy = 0.946
-    
+
     EPOCH 95 ...
     Validation Accuracy = 0.946
-    
+
     EPOCH 96 ...
     Validation Accuracy = 0.923
-    
+
     EPOCH 97 ...
     Validation Accuracy = 0.939
-    
+
     EPOCH 98 ...
     Validation Accuracy = 0.945
-    
+
     EPOCH 99 ...
     Validation Accuracy = 0.943
-    
+
     EPOCH 100 ...
     Validation Accuracy = 0.941
-    
+
     Test Accuracy = 0.847
-    
+
        network name  epochs validation accuracy      loss test accuracy
     0    simple_nn1     1.0                 5.9  6.003674         0.847
     1    simple_nn1     2.0                 7.0  5.609311         0.847
@@ -3028,7 +3024,7 @@ predict(sess, lenet_tensor_ops, data.images_from_internet, data, cfg, top_k=5)
     97   simple_nn1    98.0                94.5  0.186816         0.847
     98   simple_nn1    99.0                94.3  0.185297         0.847
     99   simple_nn1   100.0                94.1  0.179448         0.847
-    
+
     [100 rows x 5 columns]
 
 
@@ -3037,7 +3033,7 @@ predict(sess, lenet_tensor_ops, data.images_from_internet, data, cfg, top_k=5)
 
 
 
-![png](/img/blog/traffic_sign_classsifier/Traffic_Sign_Classifier_88_2.png)
+![png](/img/blog/traffic_sign_classifier/Traffic_Sign_Classifier_88_2.png)
 
 
     Predicting from Random Images: Number of Images: 48
@@ -3188,195 +3184,195 @@ predict(sess, lenet_tensor_ops, data.images_from_internet, data, cfg, top_k=5)
 
 
 
-![png](/img/blog/traffic_sign_classsifier/Traffic_Sign_Classifier_88_4.png)
+![png](/img/blog/traffic_sign_classifier/Traffic_Sign_Classifier_88_4.png)
 
 
 
-![png](/img/blog/traffic_sign_classsifier/Traffic_Sign_Classifier_88_5.png)
+![png](/img/blog/traffic_sign_classifier/Traffic_Sign_Classifier_88_5.png)
 
 
 
-![png](/img/blog/traffic_sign_classsifier/Traffic_Sign_Classifier_88_6.png)
+![png](/img/blog/traffic_sign_classifier/Traffic_Sign_Classifier_88_6.png)
 
 
 
-![png](/img/blog/traffic_sign_classsifier/Traffic_Sign_Classifier_88_7.png)
+![png](/img/blog/traffic_sign_classifier/Traffic_Sign_Classifier_88_7.png)
 
 
 
-![png](/img/blog/traffic_sign_classsifier/Traffic_Sign_Classifier_88_8.png)
+![png](/img/blog/traffic_sign_classifier/Traffic_Sign_Classifier_88_8.png)
 
 
 
-![png](/img/blog/traffic_sign_classsifier/Traffic_Sign_Classifier_88_9.png)
+![png](/img/blog/traffic_sign_classifier/Traffic_Sign_Classifier_88_9.png)
 
 
 
-![png](/img/blog/traffic_sign_classsifier/Traffic_Sign_Classifier_88_10.png)
+![png](/img/blog/traffic_sign_classifier/Traffic_Sign_Classifier_88_10.png)
 
 
 
-![png](/img/blog/traffic_sign_classsifier/Traffic_Sign_Classifier_88_11.png)
+![png](/img/blog/traffic_sign_classifier/Traffic_Sign_Classifier_88_11.png)
 
 
 
-![png](/img/blog/traffic_sign_classsifier/Traffic_Sign_Classifier_88_12.png)
+![png](/img/blog/traffic_sign_classifier/Traffic_Sign_Classifier_88_12.png)
 
 
 
-![png](/img/blog/traffic_sign_classsifier/Traffic_Sign_Classifier_88_13.png)
+![png](/img/blog/traffic_sign_classifier/Traffic_Sign_Classifier_88_13.png)
 
 
 
-![png](/img/blog/traffic_sign_classsifier/Traffic_Sign_Classifier_88_14.png)
+![png](/img/blog/traffic_sign_classifier/Traffic_Sign_Classifier_88_14.png)
 
 
 
-![png](/img/blog/traffic_sign_classsifier/Traffic_Sign_Classifier_88_15.png)
+![png](/img/blog/traffic_sign_classifier/Traffic_Sign_Classifier_88_15.png)
 
 
 
-![png](/img/blog/traffic_sign_classsifier/Traffic_Sign_Classifier_88_16.png)
+![png](/img/blog/traffic_sign_classifier/Traffic_Sign_Classifier_88_16.png)
 
 
 
-![png](/img/blog/traffic_sign_classsifier/Traffic_Sign_Classifier_88_17.png)
+![png](/img/blog/traffic_sign_classifier/Traffic_Sign_Classifier_88_17.png)
 
 
 
-![png](/img/blog/traffic_sign_classsifier/Traffic_Sign_Classifier_88_18.png)
+![png](/img/blog/traffic_sign_classifier/Traffic_Sign_Classifier_88_18.png)
 
 
 
-![png](/img/blog/traffic_sign_classsifier/Traffic_Sign_Classifier_88_19.png)
+![png](/img/blog/traffic_sign_classifier/Traffic_Sign_Classifier_88_19.png)
 
 
 
-![png](/img/blog/traffic_sign_classsifier/Traffic_Sign_Classifier_88_20.png)
+![png](/img/blog/traffic_sign_classifier/Traffic_Sign_Classifier_88_20.png)
 
 
 
-![png](/img/blog/traffic_sign_classsifier/Traffic_Sign_Classifier_88_21.png)
+![png](/img/blog/traffic_sign_classifier/Traffic_Sign_Classifier_88_21.png)
 
 
 
-![png](/img/blog/traffic_sign_classsifier/Traffic_Sign_Classifier_88_22.png)
+![png](/img/blog/traffic_sign_classifier/Traffic_Sign_Classifier_88_22.png)
 
 
 
-![png](/img/blog/traffic_sign_classsifier/Traffic_Sign_Classifier_88_23.png)
+![png](/img/blog/traffic_sign_classifier/Traffic_Sign_Classifier_88_23.png)
 
 
 
-![png](/img/blog/traffic_sign_classsifier/Traffic_Sign_Classifier_88_24.png)
+![png](/img/blog/traffic_sign_classifier/Traffic_Sign_Classifier_88_24.png)
 
 
 
-![png](/img/blog/traffic_sign_classsifier/Traffic_Sign_Classifier_88_25.png)
+![png](/img/blog/traffic_sign_classifier/Traffic_Sign_Classifier_88_25.png)
 
 
 
-![png](/img/blog/traffic_sign_classsifier/Traffic_Sign_Classifier_88_26.png)
+![png](/img/blog/traffic_sign_classifier/Traffic_Sign_Classifier_88_26.png)
 
 
 
-![png](/img/blog/traffic_sign_classsifier/Traffic_Sign_Classifier_88_27.png)
+![png](/img/blog/traffic_sign_classifier/Traffic_Sign_Classifier_88_27.png)
 
 
 
-![png](/img/blog/traffic_sign_classsifier/Traffic_Sign_Classifier_88_28.png)
+![png](/img/blog/traffic_sign_classifier/Traffic_Sign_Classifier_88_28.png)
 
 
 
-![png](/img/blog/traffic_sign_classsifier/Traffic_Sign_Classifier_88_29.png)
+![png](/img/blog/traffic_sign_classifier/Traffic_Sign_Classifier_88_29.png)
 
 
 
-![png](/img/blog/traffic_sign_classsifier/Traffic_Sign_Classifier_88_30.png)
+![png](/img/blog/traffic_sign_classifier/Traffic_Sign_Classifier_88_30.png)
 
 
 
-![png](/img/blog/traffic_sign_classsifier/Traffic_Sign_Classifier_88_31.png)
+![png](/img/blog/traffic_sign_classifier/Traffic_Sign_Classifier_88_31.png)
 
 
 
-![png](/img/blog/traffic_sign_classsifier/Traffic_Sign_Classifier_88_32.png)
+![png](/img/blog/traffic_sign_classifier/Traffic_Sign_Classifier_88_32.png)
 
 
 
-![png](/img/blog/traffic_sign_classsifier/Traffic_Sign_Classifier_88_33.png)
+![png](/img/blog/traffic_sign_classifier/Traffic_Sign_Classifier_88_33.png)
 
 
 
-![png](/img/blog/traffic_sign_classsifier/Traffic_Sign_Classifier_88_34.png)
+![png](/img/blog/traffic_sign_classifier/Traffic_Sign_Classifier_88_34.png)
 
 
 
-![png](/img/blog/traffic_sign_classsifier/Traffic_Sign_Classifier_88_35.png)
+![png](/img/blog/traffic_sign_classifier/Traffic_Sign_Classifier_88_35.png)
 
 
 
-![png](/img/blog/traffic_sign_classsifier/Traffic_Sign_Classifier_88_36.png)
+![png](/img/blog/traffic_sign_classifier/Traffic_Sign_Classifier_88_36.png)
 
 
 
-![png](/img/blog/traffic_sign_classsifier/Traffic_Sign_Classifier_88_37.png)
+![png](/img/blog/traffic_sign_classifier/Traffic_Sign_Classifier_88_37.png)
 
 
 
-![png](/img/blog/traffic_sign_classsifier/Traffic_Sign_Classifier_88_38.png)
+![png](/img/blog/traffic_sign_classifier/Traffic_Sign_Classifier_88_38.png)
 
 
 
-![png](/img/blog/traffic_sign_classsifier/Traffic_Sign_Classifier_88_39.png)
+![png](/img/blog/traffic_sign_classifier/Traffic_Sign_Classifier_88_39.png)
 
 
 
-![png](/img/blog/traffic_sign_classsifier/Traffic_Sign_Classifier_88_40.png)
+![png](/img/blog/traffic_sign_classifier/Traffic_Sign_Classifier_88_40.png)
 
 
 
-![png](/img/blog/traffic_sign_classsifier/Traffic_Sign_Classifier_88_41.png)
+![png](/img/blog/traffic_sign_classifier/Traffic_Sign_Classifier_88_41.png)
 
 
 
-![png](/img/blog/traffic_sign_classsifier/Traffic_Sign_Classifier_88_42.png)
+![png](/img/blog/traffic_sign_classifier/Traffic_Sign_Classifier_88_42.png)
 
 
 
-![png](/img/blog/traffic_sign_classsifier/Traffic_Sign_Classifier_88_43.png)
+![png](/img/blog/traffic_sign_classifier/Traffic_Sign_Classifier_88_43.png)
 
 
 
-![png](/img/blog/traffic_sign_classsifier/Traffic_Sign_Classifier_88_44.png)
+![png](/img/blog/traffic_sign_classifier/Traffic_Sign_Classifier_88_44.png)
 
 
 
-![png](/img/blog/traffic_sign_classsifier/Traffic_Sign_Classifier_88_45.png)
+![png](/img/blog/traffic_sign_classifier/Traffic_Sign_Classifier_88_45.png)
 
 
 
-![png](/img/blog/traffic_sign_classsifier/Traffic_Sign_Classifier_88_46.png)
+![png](/img/blog/traffic_sign_classifier/Traffic_Sign_Classifier_88_46.png)
 
 
 
-![png](/img/blog/traffic_sign_classsifier/Traffic_Sign_Classifier_88_47.png)
+![png](/img/blog/traffic_sign_classifier/Traffic_Sign_Classifier_88_47.png)
 
 
 
-![png](/img/blog/traffic_sign_classsifier/Traffic_Sign_Classifier_88_48.png)
+![png](/img/blog/traffic_sign_classifier/Traffic_Sign_Classifier_88_48.png)
 
 
 
-![png](/img/blog/traffic_sign_classsifier/Traffic_Sign_Classifier_88_49.png)
+![png](/img/blog/traffic_sign_classifier/Traffic_Sign_Classifier_88_49.png)
 
 
 
-![png](/img/blog/traffic_sign_classsifier/Traffic_Sign_Classifier_88_50.png)
+![png](/img/blog/traffic_sign_classifier/Traffic_Sign_Classifier_88_50.png)
 
 
 
-![png](/img/blog/traffic_sign_classsifier/Traffic_Sign_Classifier_88_51.png)
+![png](/img/blog/traffic_sign_classifier/Traffic_Sign_Classifier_88_51.png)
 
 
 ### Accuracy
@@ -3403,309 +3399,309 @@ predict(sess, lenet_tensor_ops, data.images_from_internet, data, cfg, top_k=5)
     conv2d_1: [None, 16, 16, 24]
     1.0
     Training...
-    
+
     EPOCH 1 ...
     Validation Accuracy = 0.344
-    
+
     EPOCH 2 ...
     Validation Accuracy = 0.566
-    
+
     EPOCH 3 ...
     Validation Accuracy = 0.682
-    
+
     EPOCH 4 ...
     Validation Accuracy = 0.762
-    
+
     EPOCH 5 ...
     Validation Accuracy = 0.817
-    
+
     EPOCH 6 ...
     Validation Accuracy = 0.836
-    
+
     EPOCH 7 ...
     Validation Accuracy = 0.867
-    
+
     EPOCH 8 ...
     Validation Accuracy = 0.887
-    
+
     EPOCH 9 ...
     Validation Accuracy = 0.903
-    
+
     EPOCH 10 ...
     Validation Accuracy = 0.910
-    
+
     EPOCH 11 ...
     Validation Accuracy = 0.913
-    
+
     EPOCH 12 ...
     Validation Accuracy = 0.919
-    
+
     EPOCH 13 ...
     Validation Accuracy = 0.933
-    
+
     EPOCH 14 ...
     Validation Accuracy = 0.922
-    
+
     EPOCH 15 ...
     Validation Accuracy = 0.935
-    
+
     EPOCH 16 ...
     Validation Accuracy = 0.939
-    
+
     EPOCH 17 ...
     Validation Accuracy = 0.936
-    
+
     EPOCH 18 ...
     Validation Accuracy = 0.943
-    
+
     EPOCH 19 ...
     Validation Accuracy = 0.944
-    
+
     EPOCH 20 ...
     Validation Accuracy = 0.952
-    
+
     EPOCH 21 ...
     Validation Accuracy = 0.959
-    
+
     EPOCH 22 ...
     Validation Accuracy = 0.957
-    
+
     EPOCH 23 ...
     Validation Accuracy = 0.942
-    
+
     EPOCH 24 ...
     Validation Accuracy = 0.959
-    
+
     EPOCH 25 ...
     Validation Accuracy = 0.960
-    
+
     EPOCH 26 ...
     Validation Accuracy = 0.954
-    
+
     EPOCH 27 ...
     Validation Accuracy = 0.949
-    
+
     EPOCH 28 ...
     Validation Accuracy = 0.957
-    
+
     EPOCH 29 ...
     Validation Accuracy = 0.959
-    
+
     EPOCH 30 ...
     Validation Accuracy = 0.957
-    
+
     EPOCH 31 ...
     Validation Accuracy = 0.955
-    
+
     EPOCH 32 ...
     Validation Accuracy = 0.965
-    
+
     EPOCH 33 ...
     Validation Accuracy = 0.967
-    
+
     EPOCH 34 ...
     Validation Accuracy = 0.952
-    
+
     EPOCH 35 ...
     Validation Accuracy = 0.965
-    
+
     EPOCH 36 ...
     Validation Accuracy = 0.950
-    
+
     EPOCH 37 ...
     Validation Accuracy = 0.964
-    
+
     EPOCH 38 ...
     Validation Accuracy = 0.975
-    
+
     EPOCH 39 ...
     Validation Accuracy = 0.971
-    
+
     EPOCH 40 ...
     Validation Accuracy = 0.964
-    
+
     EPOCH 41 ...
     Validation Accuracy = 0.946
-    
+
     EPOCH 42 ...
     Validation Accuracy = 0.971
-    
+
     EPOCH 43 ...
     Validation Accuracy = 0.972
-    
+
     EPOCH 44 ...
     Validation Accuracy = 0.970
-    
+
     EPOCH 45 ...
     Validation Accuracy = 0.964
-    
+
     EPOCH 46 ...
     Validation Accuracy = 0.970
-    
+
     EPOCH 47 ...
     Validation Accuracy = 0.976
-    
+
     EPOCH 48 ...
     Validation Accuracy = 0.975
-    
+
     EPOCH 49 ...
     Validation Accuracy = 0.959
-    
+
     EPOCH 50 ...
     Validation Accuracy = 0.968
-    
+
     EPOCH 51 ...
     Validation Accuracy = 0.974
-    
+
     EPOCH 52 ...
     Validation Accuracy = 0.974
-    
+
     EPOCH 53 ...
     Validation Accuracy = 0.973
-    
+
     EPOCH 54 ...
     Validation Accuracy = 0.971
-    
+
     EPOCH 55 ...
     Validation Accuracy = 0.967
-    
+
     EPOCH 56 ...
     Validation Accuracy = 0.976
-    
+
     EPOCH 57 ...
     Validation Accuracy = 0.969
-    
+
     EPOCH 58 ...
     Validation Accuracy = 0.951
-    
+
     EPOCH 59 ...
     Validation Accuracy = 0.974
-    
+
     EPOCH 60 ...
     Validation Accuracy = 0.980
-    
+
     EPOCH 61 ...
     Validation Accuracy = 0.974
-    
+
     EPOCH 62 ...
     Validation Accuracy = 0.965
-    
+
     EPOCH 63 ...
     Validation Accuracy = 0.979
-    
+
     EPOCH 64 ...
     Validation Accuracy = 0.976
-    
+
     EPOCH 65 ...
     Validation Accuracy = 0.977
-    
+
     EPOCH 66 ...
     Validation Accuracy = 0.953
-    
+
     EPOCH 67 ...
     Validation Accuracy = 0.978
-    
+
     EPOCH 68 ...
     Validation Accuracy = 0.965
-    
+
     EPOCH 69 ...
     Validation Accuracy = 0.972
-    
+
     EPOCH 70 ...
     Validation Accuracy = 0.975
-    
+
     EPOCH 71 ...
     Validation Accuracy = 0.970
-    
+
     EPOCH 72 ...
     Validation Accuracy = 0.976
-    
+
     EPOCH 73 ...
     Validation Accuracy = 0.976
-    
+
     EPOCH 74 ...
     Validation Accuracy = 0.974
-    
+
     EPOCH 75 ...
     Validation Accuracy = 0.985
-    
+
     EPOCH 76 ...
     Validation Accuracy = 0.980
-    
+
     EPOCH 77 ...
     Validation Accuracy = 0.977
-    
+
     EPOCH 78 ...
     Validation Accuracy = 0.975
-    
+
     EPOCH 79 ...
     Validation Accuracy = 0.974
-    
+
     EPOCH 80 ...
     Validation Accuracy = 0.974
-    
+
     EPOCH 81 ...
     Validation Accuracy = 0.984
-    
+
     EPOCH 82 ...
     Validation Accuracy = 0.979
-    
+
     EPOCH 83 ...
     Validation Accuracy = 0.976
-    
+
     EPOCH 84 ...
     Validation Accuracy = 0.974
-    
+
     EPOCH 85 ...
     Validation Accuracy = 0.981
-    
+
     EPOCH 86 ...
     Validation Accuracy = 0.981
-    
+
     EPOCH 87 ...
     Validation Accuracy = 0.980
-    
+
     EPOCH 88 ...
     Validation Accuracy = 0.976
-    
+
     EPOCH 89 ...
     Validation Accuracy = 0.976
-    
+
     EPOCH 90 ...
     Validation Accuracy = 0.974
-    
+
     EPOCH 91 ...
     Validation Accuracy = 0.971
-    
+
     EPOCH 92 ...
     Validation Accuracy = 0.974
-    
+
     EPOCH 93 ...
     Validation Accuracy = 0.971
-    
+
     EPOCH 94 ...
     Validation Accuracy = 0.978
-    
+
     EPOCH 95 ...
     Validation Accuracy = 0.976
-    
+
     EPOCH 96 ...
     Validation Accuracy = 0.964
-    
+
     EPOCH 97 ...
     Validation Accuracy = 0.978
-    
+
     EPOCH 98 ...
     Validation Accuracy = 0.982
-    
+
     EPOCH 99 ...
     Validation Accuracy = 0.983
-    
+
     EPOCH 100 ...
     Validation Accuracy = 0.987
-    
+
     Test Accuracy = 0.924
-    
+
        network name  epochs validation accuracy      loss test accuracy
     0    simple_nn2     1.0                34.4  6.061636         0.924
     1    simple_nn2     2.0                56.6  1.944752         0.924
@@ -3768,7 +3764,7 @@ predict(sess, lenet_tensor_ops, data.images_from_internet, data, cfg, top_k=5)
     97   simple_nn2    98.0                98.2  0.127993         0.924
     98   simple_nn2    99.0                98.3  0.077093         0.924
     99   simple_nn2   100.0                98.7  0.096598         0.924
-    
+
     [100 rows x 5 columns]
 
 
@@ -3777,7 +3773,7 @@ predict(sess, lenet_tensor_ops, data.images_from_internet, data, cfg, top_k=5)
 
 
 
-![png](/img/blog/traffic_sign_classsifier/Traffic_Sign_Classifier_91_2.png)
+![png](/img/blog/traffic_sign_classifier/Traffic_Sign_Classifier_91_2.png)
 
 
     Predicting from Random Images: Number of Images: 48
@@ -3928,195 +3924,195 @@ predict(sess, lenet_tensor_ops, data.images_from_internet, data, cfg, top_k=5)
 
 
 
-![png](/img/blog/traffic_sign_classsifier/Traffic_Sign_Classifier_91_4.png)
+![png](/img/blog/traffic_sign_classifier/Traffic_Sign_Classifier_91_4.png)
 
 
 
-![png](/img/blog/traffic_sign_classsifier/Traffic_Sign_Classifier_91_5.png)
+![png](/img/blog/traffic_sign_classifier/Traffic_Sign_Classifier_91_5.png)
 
 
 
-![png](/img/blog/traffic_sign_classsifier/Traffic_Sign_Classifier_91_6.png)
+![png](/img/blog/traffic_sign_classifier/Traffic_Sign_Classifier_91_6.png)
 
 
 
-![png](/img/blog/traffic_sign_classsifier/Traffic_Sign_Classifier_91_7.png)
+![png](/img/blog/traffic_sign_classifier/Traffic_Sign_Classifier_91_7.png)
 
 
 
-![png](/img/blog/traffic_sign_classsifier/Traffic_Sign_Classifier_91_8.png)
+![png](/img/blog/traffic_sign_classifier/Traffic_Sign_Classifier_91_8.png)
 
 
 
-![png](/img/blog/traffic_sign_classsifier/Traffic_Sign_Classifier_91_9.png)
+![png](/img/blog/traffic_sign_classifier/Traffic_Sign_Classifier_91_9.png)
 
 
 
-![png](/img/blog/traffic_sign_classsifier/Traffic_Sign_Classifier_91_10.png)
+![png](/img/blog/traffic_sign_classifier/Traffic_Sign_Classifier_91_10.png)
 
 
 
-![png](/img/blog/traffic_sign_classsifier/Traffic_Sign_Classifier_91_11.png)
+![png](/img/blog/traffic_sign_classifier/Traffic_Sign_Classifier_91_11.png)
 
 
 
-![png](/img/blog/traffic_sign_classsifier/Traffic_Sign_Classifier_91_12.png)
+![png](/img/blog/traffic_sign_classifier/Traffic_Sign_Classifier_91_12.png)
 
 
 
-![png](/img/blog/traffic_sign_classsifier/Traffic_Sign_Classifier_91_13.png)
+![png](/img/blog/traffic_sign_classifier/Traffic_Sign_Classifier_91_13.png)
 
 
 
-![png](/img/blog/traffic_sign_classsifier/Traffic_Sign_Classifier_91_14.png)
+![png](/img/blog/traffic_sign_classifier/Traffic_Sign_Classifier_91_14.png)
 
 
 
-![png](/img/blog/traffic_sign_classsifier/Traffic_Sign_Classifier_91_15.png)
+![png](/img/blog/traffic_sign_classifier/Traffic_Sign_Classifier_91_15.png)
 
 
 
-![png](/img/blog/traffic_sign_classsifier/Traffic_Sign_Classifier_91_16.png)
+![png](/img/blog/traffic_sign_classifier/Traffic_Sign_Classifier_91_16.png)
 
 
 
-![png](/img/blog/traffic_sign_classsifier/Traffic_Sign_Classifier_91_17.png)
+![png](/img/blog/traffic_sign_classifier/Traffic_Sign_Classifier_91_17.png)
 
 
 
-![png](/img/blog/traffic_sign_classsifier/Traffic_Sign_Classifier_91_18.png)
+![png](/img/blog/traffic_sign_classifier/Traffic_Sign_Classifier_91_18.png)
 
 
 
-![png](/img/blog/traffic_sign_classsifier/Traffic_Sign_Classifier_91_19.png)
+![png](/img/blog/traffic_sign_classifier/Traffic_Sign_Classifier_91_19.png)
 
 
 
-![png](/img/blog/traffic_sign_classsifier/Traffic_Sign_Classifier_91_20.png)
+![png](/img/blog/traffic_sign_classifier/Traffic_Sign_Classifier_91_20.png)
 
 
 
-![png](/img/blog/traffic_sign_classsifier/Traffic_Sign_Classifier_91_21.png)
+![png](/img/blog/traffic_sign_classifier/Traffic_Sign_Classifier_91_21.png)
 
 
 
-![png](/img/blog/traffic_sign_classsifier/Traffic_Sign_Classifier_91_22.png)
+![png](/img/blog/traffic_sign_classifier/Traffic_Sign_Classifier_91_22.png)
 
 
 
-![png](/img/blog/traffic_sign_classsifier/Traffic_Sign_Classifier_91_23.png)
+![png](/img/blog/traffic_sign_classifier/Traffic_Sign_Classifier_91_23.png)
 
 
 
-![png](/img/blog/traffic_sign_classsifier/Traffic_Sign_Classifier_91_24.png)
+![png](/img/blog/traffic_sign_classifier/Traffic_Sign_Classifier_91_24.png)
 
 
 
-![png](/img/blog/traffic_sign_classsifier/Traffic_Sign_Classifier_91_25.png)
+![png](/img/blog/traffic_sign_classifier/Traffic_Sign_Classifier_91_25.png)
 
 
 
-![png](/img/blog/traffic_sign_classsifier/Traffic_Sign_Classifier_91_26.png)
+![png](/img/blog/traffic_sign_classifier/Traffic_Sign_Classifier_91_26.png)
 
 
 
-![png](/img/blog/traffic_sign_classsifier/Traffic_Sign_Classifier_91_27.png)
+![png](/img/blog/traffic_sign_classifier/Traffic_Sign_Classifier_91_27.png)
 
 
 
-![png](/img/blog/traffic_sign_classsifier/Traffic_Sign_Classifier_91_28.png)
+![png](/img/blog/traffic_sign_classifier/Traffic_Sign_Classifier_91_28.png)
 
 
 
-![png](/img/blog/traffic_sign_classsifier/Traffic_Sign_Classifier_91_29.png)
+![png](/img/blog/traffic_sign_classifier/Traffic_Sign_Classifier_91_29.png)
 
 
 
-![png](/img/blog/traffic_sign_classsifier/Traffic_Sign_Classifier_91_30.png)
+![png](/img/blog/traffic_sign_classifier/Traffic_Sign_Classifier_91_30.png)
 
 
 
-![png](/img/blog/traffic_sign_classsifier/Traffic_Sign_Classifier_91_31.png)
+![png](/img/blog/traffic_sign_classifier/Traffic_Sign_Classifier_91_31.png)
 
 
 
-![png](/img/blog/traffic_sign_classsifier/Traffic_Sign_Classifier_91_32.png)
+![png](/img/blog/traffic_sign_classifier/Traffic_Sign_Classifier_91_32.png)
 
 
 
-![png](/img/blog/traffic_sign_classsifier/Traffic_Sign_Classifier_91_33.png)
+![png](/img/blog/traffic_sign_classifier/Traffic_Sign_Classifier_91_33.png)
 
 
 
-![png](/img/blog/traffic_sign_classsifier/Traffic_Sign_Classifier_91_34.png)
+![png](/img/blog/traffic_sign_classifier/Traffic_Sign_Classifier_91_34.png)
 
 
 
-![png](/img/blog/traffic_sign_classsifier/Traffic_Sign_Classifier_91_35.png)
+![png](/img/blog/traffic_sign_classifier/Traffic_Sign_Classifier_91_35.png)
 
 
 
-![png](/img/blog/traffic_sign_classsifier/Traffic_Sign_Classifier_91_36.png)
+![png](/img/blog/traffic_sign_classifier/Traffic_Sign_Classifier_91_36.png)
 
 
 
-![png](/img/blog/traffic_sign_classsifier/Traffic_Sign_Classifier_91_37.png)
+![png](/img/blog/traffic_sign_classifier/Traffic_Sign_Classifier_91_37.png)
 
 
 
-![png](/img/blog/traffic_sign_classsifier/Traffic_Sign_Classifier_91_38.png)
+![png](/img/blog/traffic_sign_classifier/Traffic_Sign_Classifier_91_38.png)
 
 
 
-![png](/img/blog/traffic_sign_classsifier/Traffic_Sign_Classifier_91_39.png)
+![png](/img/blog/traffic_sign_classifier/Traffic_Sign_Classifier_91_39.png)
 
 
 
-![png](/img/blog/traffic_sign_classsifier/Traffic_Sign_Classifier_91_40.png)
+![png](/img/blog/traffic_sign_classifier/Traffic_Sign_Classifier_91_40.png)
 
 
 
-![png](/img/blog/traffic_sign_classsifier/Traffic_Sign_Classifier_91_41.png)
+![png](/img/blog/traffic_sign_classifier/Traffic_Sign_Classifier_91_41.png)
 
 
 
-![png](/img/blog/traffic_sign_classsifier/Traffic_Sign_Classifier_91_42.png)
+![png](/img/blog/traffic_sign_classifier/Traffic_Sign_Classifier_91_42.png)
 
 
 
-![png](/img/blog/traffic_sign_classsifier/Traffic_Sign_Classifier_91_43.png)
+![png](/img/blog/traffic_sign_classifier/Traffic_Sign_Classifier_91_43.png)
 
 
 
-![png](/img/blog/traffic_sign_classsifier/Traffic_Sign_Classifier_91_44.png)
+![png](/img/blog/traffic_sign_classifier/Traffic_Sign_Classifier_91_44.png)
 
 
 
-![png](/img/blog/traffic_sign_classsifier/Traffic_Sign_Classifier_91_45.png)
+![png](/img/blog/traffic_sign_classifier/Traffic_Sign_Classifier_91_45.png)
 
 
 
-![png](/img/blog/traffic_sign_classsifier/Traffic_Sign_Classifier_91_46.png)
+![png](/img/blog/traffic_sign_classifier/Traffic_Sign_Classifier_91_46.png)
 
 
 
-![png](/img/blog/traffic_sign_classsifier/Traffic_Sign_Classifier_91_47.png)
+![png](/img/blog/traffic_sign_classifier/Traffic_Sign_Classifier_91_47.png)
 
 
 
-![png](/img/blog/traffic_sign_classsifier/Traffic_Sign_Classifier_91_48.png)
+![png](/img/blog/traffic_sign_classifier/Traffic_Sign_Classifier_91_48.png)
 
 
 
-![png](/img/blog/traffic_sign_classsifier/Traffic_Sign_Classifier_91_49.png)
+![png](/img/blog/traffic_sign_classifier/Traffic_Sign_Classifier_91_49.png)
 
 
 
-![png](/img/blog/traffic_sign_classsifier/Traffic_Sign_Classifier_91_50.png)
+![png](/img/blog/traffic_sign_classifier/Traffic_Sign_Classifier_91_50.png)
 
 
 
-![png](/img/blog/traffic_sign_classsifier/Traffic_Sign_Classifier_91_51.png)
+![png](/img/blog/traffic_sign_classifier/Traffic_Sign_Classifier_91_51.png)
 
 
 ### Accuracy
@@ -4148,309 +4144,309 @@ predict(sess, lenet_tensor_ops, data.images_from_internet, data, cfg, top_k=5)
     conv2d_6: [None, 8, 8, 32]
     0.5
     Training...
-    
+
     EPOCH 1 ...
     Validation Accuracy = 0.168
-    
+
     EPOCH 2 ...
     Validation Accuracy = 0.332
-    
+
     EPOCH 3 ...
     Validation Accuracy = 0.588
-    
+
     EPOCH 4 ...
     Validation Accuracy = 0.782
-    
+
     EPOCH 5 ...
     Validation Accuracy = 0.873
-    
+
     EPOCH 6 ...
     Validation Accuracy = 0.898
-    
+
     EPOCH 7 ...
     Validation Accuracy = 0.913
-    
+
     EPOCH 8 ...
     Validation Accuracy = 0.924
-    
+
     EPOCH 9 ...
     Validation Accuracy = 0.935
-    
+
     EPOCH 10 ...
     Validation Accuracy = 0.951
-    
+
     EPOCH 11 ...
     Validation Accuracy = 0.946
-    
+
     EPOCH 12 ...
     Validation Accuracy = 0.949
-    
+
     EPOCH 13 ...
     Validation Accuracy = 0.953
-    
+
     EPOCH 14 ...
     Validation Accuracy = 0.961
-    
+
     EPOCH 15 ...
     Validation Accuracy = 0.961
-    
+
     EPOCH 16 ...
     Validation Accuracy = 0.961
-    
+
     EPOCH 17 ...
     Validation Accuracy = 0.957
-    
+
     EPOCH 18 ...
     Validation Accuracy = 0.957
-    
+
     EPOCH 19 ...
     Validation Accuracy = 0.957
-    
+
     EPOCH 20 ...
     Validation Accuracy = 0.967
-    
+
     EPOCH 21 ...
     Validation Accuracy = 0.964
-    
+
     EPOCH 22 ...
     Validation Accuracy = 0.973
-    
+
     EPOCH 23 ...
     Validation Accuracy = 0.972
-    
+
     EPOCH 24 ...
     Validation Accuracy = 0.979
-    
+
     EPOCH 25 ...
     Validation Accuracy = 0.971
-    
+
     EPOCH 26 ...
     Validation Accuracy = 0.977
-    
+
     EPOCH 27 ...
     Validation Accuracy = 0.973
-    
+
     EPOCH 28 ...
     Validation Accuracy = 0.978
-    
+
     EPOCH 29 ...
     Validation Accuracy = 0.972
-    
+
     EPOCH 30 ...
     Validation Accuracy = 0.980
-    
+
     EPOCH 31 ...
     Validation Accuracy = 0.981
-    
+
     EPOCH 32 ...
     Validation Accuracy = 0.976
-    
+
     EPOCH 33 ...
     Validation Accuracy = 0.980
-    
+
     EPOCH 34 ...
     Validation Accuracy = 0.979
-    
+
     EPOCH 35 ...
     Validation Accuracy = 0.982
-    
+
     EPOCH 36 ...
     Validation Accuracy = 0.981
-    
+
     EPOCH 37 ...
     Validation Accuracy = 0.980
-    
+
     EPOCH 38 ...
     Validation Accuracy = 0.979
-    
+
     EPOCH 39 ...
     Validation Accuracy = 0.980
-    
+
     EPOCH 40 ...
     Validation Accuracy = 0.987
-    
+
     EPOCH 41 ...
     Validation Accuracy = 0.988
-    
+
     EPOCH 42 ...
     Validation Accuracy = 0.987
-    
+
     EPOCH 43 ...
     Validation Accuracy = 0.983
-    
+
     EPOCH 44 ...
     Validation Accuracy = 0.987
-    
+
     EPOCH 45 ...
     Validation Accuracy = 0.988
-    
+
     EPOCH 46 ...
     Validation Accuracy = 0.986
-    
+
     EPOCH 47 ...
     Validation Accuracy = 0.985
-    
+
     EPOCH 48 ...
     Validation Accuracy = 0.982
-    
+
     EPOCH 49 ...
     Validation Accuracy = 0.987
-    
+
     EPOCH 50 ...
     Validation Accuracy = 0.988
-    
+
     EPOCH 51 ...
     Validation Accuracy = 0.988
-    
+
     EPOCH 52 ...
     Validation Accuracy = 0.985
-    
+
     EPOCH 53 ...
     Validation Accuracy = 0.988
-    
+
     EPOCH 54 ...
     Validation Accuracy = 0.986
-    
+
     EPOCH 55 ...
     Validation Accuracy = 0.984
-    
+
     EPOCH 56 ...
     Validation Accuracy = 0.989
-    
+
     EPOCH 57 ...
     Validation Accuracy = 0.985
-    
+
     EPOCH 58 ...
     Validation Accuracy = 0.991
-    
+
     EPOCH 59 ...
     Validation Accuracy = 0.985
-    
+
     EPOCH 60 ...
     Validation Accuracy = 0.989
-    
+
     EPOCH 61 ...
     Validation Accuracy = 0.988
-    
+
     EPOCH 62 ...
     Validation Accuracy = 0.988
-    
+
     EPOCH 63 ...
     Validation Accuracy = 0.989
-    
+
     EPOCH 64 ...
     Validation Accuracy = 0.989
-    
+
     EPOCH 65 ...
     Validation Accuracy = 0.989
-    
+
     EPOCH 66 ...
     Validation Accuracy = 0.988
-    
+
     EPOCH 67 ...
     Validation Accuracy = 0.987
-    
+
     EPOCH 68 ...
     Validation Accuracy = 0.989
-    
+
     EPOCH 69 ...
     Validation Accuracy = 0.990
-    
+
     EPOCH 70 ...
     Validation Accuracy = 0.985
-    
+
     EPOCH 71 ...
     Validation Accuracy = 0.989
-    
+
     EPOCH 72 ...
     Validation Accuracy = 0.991
-    
+
     EPOCH 73 ...
     Validation Accuracy = 0.988
-    
+
     EPOCH 74 ...
     Validation Accuracy = 0.990
-    
+
     EPOCH 75 ...
     Validation Accuracy = 0.991
-    
+
     EPOCH 76 ...
     Validation Accuracy = 0.988
-    
+
     EPOCH 77 ...
     Validation Accuracy = 0.981
-    
+
     EPOCH 78 ...
     Validation Accuracy = 0.990
-    
+
     EPOCH 79 ...
     Validation Accuracy = 0.992
-    
+
     EPOCH 80 ...
     Validation Accuracy = 0.992
-    
+
     EPOCH 81 ...
     Validation Accuracy = 0.990
-    
+
     EPOCH 82 ...
     Validation Accuracy = 0.991
-    
+
     EPOCH 83 ...
     Validation Accuracy = 0.989
-    
+
     EPOCH 84 ...
     Validation Accuracy = 0.989
-    
+
     EPOCH 85 ...
     Validation Accuracy = 0.989
-    
+
     EPOCH 86 ...
     Validation Accuracy = 0.993
-    
+
     EPOCH 87 ...
     Validation Accuracy = 0.990
-    
+
     EPOCH 88 ...
     Validation Accuracy = 0.992
-    
+
     EPOCH 89 ...
     Validation Accuracy = 0.991
-    
+
     EPOCH 90 ...
     Validation Accuracy = 0.989
-    
+
     EPOCH 91 ...
     Validation Accuracy = 0.991
-    
+
     EPOCH 92 ...
     Validation Accuracy = 0.987
-    
+
     EPOCH 93 ...
     Validation Accuracy = 0.990
-    
+
     EPOCH 94 ...
     Validation Accuracy = 0.991
-    
+
     EPOCH 95 ...
     Validation Accuracy = 0.991
-    
+
     EPOCH 96 ...
     Validation Accuracy = 0.989
-    
+
     EPOCH 97 ...
     Validation Accuracy = 0.991
-    
+
     EPOCH 98 ...
     Validation Accuracy = 0.992
-    
+
     EPOCH 99 ...
     Validation Accuracy = 0.990
-    
+
     EPOCH 100 ...
     Validation Accuracy = 0.991
-    
+
     Test Accuracy = 0.951
-    
+
               network name  epochs validation accuracy       loss test accuracy
     0   deepnetmergelayers     1.0                16.8  51.548096         0.951
     1   deepnetmergelayers     2.0                33.2  42.540958         0.951
@@ -4513,7 +4509,7 @@ predict(sess, lenet_tensor_ops, data.images_from_internet, data, cfg, top_k=5)
     97  deepnetmergelayers    98.0                99.2   0.642968         0.951
     98  deepnetmergelayers    99.0                99.0   0.638855         0.951
     99  deepnetmergelayers   100.0                99.1   0.654870         0.951
-    
+
     [100 rows x 5 columns]
 
 
@@ -4522,7 +4518,7 @@ predict(sess, lenet_tensor_ops, data.images_from_internet, data, cfg, top_k=5)
 
 
 
-![png](/img/blog/traffic_sign_classsifier/Traffic_Sign_Classifier_94_2.png)
+![png](/img/blog/traffic_sign_classifier/Traffic_Sign_Classifier_94_2.png)
 
 
     Predicting from Random Images: Number of Images: 48
@@ -4673,195 +4669,195 @@ predict(sess, lenet_tensor_ops, data.images_from_internet, data, cfg, top_k=5)
 
 
 
-![png](/img/blog/traffic_sign_classsifier/Traffic_Sign_Classifier_94_4.png)
+![png](/img/blog/traffic_sign_classifier/Traffic_Sign_Classifier_94_4.png)
 
 
 
-![png](/img/blog/traffic_sign_classsifier/Traffic_Sign_Classifier_94_5.png)
+![png](/img/blog/traffic_sign_classifier/Traffic_Sign_Classifier_94_5.png)
 
 
 
-![png](/img/blog/traffic_sign_classsifier/Traffic_Sign_Classifier_94_6.png)
+![png](/img/blog/traffic_sign_classifier/Traffic_Sign_Classifier_94_6.png)
 
 
 
-![png](/img/blog/traffic_sign_classsifier/Traffic_Sign_Classifier_94_7.png)
+![png](/img/blog/traffic_sign_classifier/Traffic_Sign_Classifier_94_7.png)
 
 
 
-![png](/img/blog/traffic_sign_classsifier/Traffic_Sign_Classifier_94_8.png)
+![png](/img/blog/traffic_sign_classifier/Traffic_Sign_Classifier_94_8.png)
 
 
 
-![png](/img/blog/traffic_sign_classsifier/Traffic_Sign_Classifier_94_9.png)
+![png](/img/blog/traffic_sign_classifier/Traffic_Sign_Classifier_94_9.png)
 
 
 
-![png](/img/blog/traffic_sign_classsifier/Traffic_Sign_Classifier_94_10.png)
+![png](/img/blog/traffic_sign_classifier/Traffic_Sign_Classifier_94_10.png)
 
 
 
-![png](/img/blog/traffic_sign_classsifier/Traffic_Sign_Classifier_94_11.png)
+![png](/img/blog/traffic_sign_classifier/Traffic_Sign_Classifier_94_11.png)
 
 
 
-![png](/img/blog/traffic_sign_classsifier/Traffic_Sign_Classifier_94_12.png)
+![png](/img/blog/traffic_sign_classifier/Traffic_Sign_Classifier_94_12.png)
 
 
 
-![png](/img/blog/traffic_sign_classsifier/Traffic_Sign_Classifier_94_13.png)
+![png](/img/blog/traffic_sign_classifier/Traffic_Sign_Classifier_94_13.png)
 
 
 
-![png](/img/blog/traffic_sign_classsifier/Traffic_Sign_Classifier_94_14.png)
+![png](/img/blog/traffic_sign_classifier/Traffic_Sign_Classifier_94_14.png)
 
 
 
-![png](/img/blog/traffic_sign_classsifier/Traffic_Sign_Classifier_94_15.png)
+![png](/img/blog/traffic_sign_classifier/Traffic_Sign_Classifier_94_15.png)
 
 
 
-![png](/img/blog/traffic_sign_classsifier/Traffic_Sign_Classifier_94_16.png)
+![png](/img/blog/traffic_sign_classifier/Traffic_Sign_Classifier_94_16.png)
 
 
 
-![png](/img/blog/traffic_sign_classsifier/Traffic_Sign_Classifier_94_17.png)
+![png](/img/blog/traffic_sign_classifier/Traffic_Sign_Classifier_94_17.png)
 
 
 
-![png](/img/blog/traffic_sign_classsifier/Traffic_Sign_Classifier_94_18.png)
+![png](/img/blog/traffic_sign_classifier/Traffic_Sign_Classifier_94_18.png)
 
 
 
-![png](/img/blog/traffic_sign_classsifier/Traffic_Sign_Classifier_94_19.png)
+![png](/img/blog/traffic_sign_classifier/Traffic_Sign_Classifier_94_19.png)
 
 
 
-![png](/img/blog/traffic_sign_classsifier/Traffic_Sign_Classifier_94_20.png)
+![png](/img/blog/traffic_sign_classifier/Traffic_Sign_Classifier_94_20.png)
 
 
 
-![png](/img/blog/traffic_sign_classsifier/Traffic_Sign_Classifier_94_21.png)
+![png](/img/blog/traffic_sign_classifier/Traffic_Sign_Classifier_94_21.png)
 
 
 
-![png](/img/blog/traffic_sign_classsifier/Traffic_Sign_Classifier_94_22.png)
+![png](/img/blog/traffic_sign_classifier/Traffic_Sign_Classifier_94_22.png)
 
 
 
-![png](/img/blog/traffic_sign_classsifier/Traffic_Sign_Classifier_94_23.png)
+![png](/img/blog/traffic_sign_classifier/Traffic_Sign_Classifier_94_23.png)
 
 
 
-![png](/img/blog/traffic_sign_classsifier/Traffic_Sign_Classifier_94_24.png)
+![png](/img/blog/traffic_sign_classifier/Traffic_Sign_Classifier_94_24.png)
 
 
 
-![png](/img/blog/traffic_sign_classsifier/Traffic_Sign_Classifier_94_25.png)
+![png](/img/blog/traffic_sign_classifier/Traffic_Sign_Classifier_94_25.png)
 
 
 
-![png](/img/blog/traffic_sign_classsifier/Traffic_Sign_Classifier_94_26.png)
+![png](/img/blog/traffic_sign_classifier/Traffic_Sign_Classifier_94_26.png)
 
 
 
-![png](/img/blog/traffic_sign_classsifier/Traffic_Sign_Classifier_94_27.png)
+![png](/img/blog/traffic_sign_classifier/Traffic_Sign_Classifier_94_27.png)
 
 
 
-![png](/img/blog/traffic_sign_classsifier/Traffic_Sign_Classifier_94_28.png)
+![png](/img/blog/traffic_sign_classifier/Traffic_Sign_Classifier_94_28.png)
 
 
 
-![png](/img/blog/traffic_sign_classsifier/Traffic_Sign_Classifier_94_29.png)
+![png](/img/blog/traffic_sign_classifier/Traffic_Sign_Classifier_94_29.png)
 
 
 
-![png](/img/blog/traffic_sign_classsifier/Traffic_Sign_Classifier_94_30.png)
+![png](/img/blog/traffic_sign_classifier/Traffic_Sign_Classifier_94_30.png)
 
 
 
-![png](/img/blog/traffic_sign_classsifier/Traffic_Sign_Classifier_94_31.png)
+![png](/img/blog/traffic_sign_classifier/Traffic_Sign_Classifier_94_31.png)
 
 
 
-![png](/img/blog/traffic_sign_classsifier/Traffic_Sign_Classifier_94_32.png)
+![png](/img/blog/traffic_sign_classifier/Traffic_Sign_Classifier_94_32.png)
 
 
 
-![png](/img/blog/traffic_sign_classsifier/Traffic_Sign_Classifier_94_33.png)
+![png](/img/blog/traffic_sign_classifier/Traffic_Sign_Classifier_94_33.png)
 
 
 
-![png](/img/blog/traffic_sign_classsifier/Traffic_Sign_Classifier_94_34.png)
+![png](/img/blog/traffic_sign_classifier/Traffic_Sign_Classifier_94_34.png)
 
 
 
-![png](/img/blog/traffic_sign_classsifier/Traffic_Sign_Classifier_94_35.png)
+![png](/img/blog/traffic_sign_classifier/Traffic_Sign_Classifier_94_35.png)
 
 
 
-![png](/img/blog/traffic_sign_classsifier/Traffic_Sign_Classifier_94_36.png)
+![png](/img/blog/traffic_sign_classifier/Traffic_Sign_Classifier_94_36.png)
 
 
 
-![png](/img/blog/traffic_sign_classsifier/Traffic_Sign_Classifier_94_37.png)
+![png](/img/blog/traffic_sign_classifier/Traffic_Sign_Classifier_94_37.png)
 
 
 
-![png](/img/blog/traffic_sign_classsifier/Traffic_Sign_Classifier_94_38.png)
+![png](/img/blog/traffic_sign_classifier/Traffic_Sign_Classifier_94_38.png)
 
 
 
-![png](/img/blog/traffic_sign_classsifier/Traffic_Sign_Classifier_94_39.png)
+![png](/img/blog/traffic_sign_classifier/Traffic_Sign_Classifier_94_39.png)
 
 
 
-![png](/img/blog/traffic_sign_classsifier/Traffic_Sign_Classifier_94_40.png)
+![png](/img/blog/traffic_sign_classifier/Traffic_Sign_Classifier_94_40.png)
 
 
 
-![png](/img/blog/traffic_sign_classsifier/Traffic_Sign_Classifier_94_41.png)
+![png](/img/blog/traffic_sign_classifier/Traffic_Sign_Classifier_94_41.png)
 
 
 
-![png](/img/blog/traffic_sign_classsifier/Traffic_Sign_Classifier_94_42.png)
+![png](/img/blog/traffic_sign_classifier/Traffic_Sign_Classifier_94_42.png)
 
 
 
-![png](/img/blog/traffic_sign_classsifier/Traffic_Sign_Classifier_94_43.png)
+![png](/img/blog/traffic_sign_classifier/Traffic_Sign_Classifier_94_43.png)
 
 
 
-![png](/img/blog/traffic_sign_classsifier/Traffic_Sign_Classifier_94_44.png)
+![png](/img/blog/traffic_sign_classifier/Traffic_Sign_Classifier_94_44.png)
 
 
 
-![png](/img/blog/traffic_sign_classsifier/Traffic_Sign_Classifier_94_45.png)
+![png](/img/blog/traffic_sign_classifier/Traffic_Sign_Classifier_94_45.png)
 
 
 
-![png](/img/blog/traffic_sign_classsifier/Traffic_Sign_Classifier_94_46.png)
+![png](/img/blog/traffic_sign_classifier/Traffic_Sign_Classifier_94_46.png)
 
 
 
-![png](/img/blog/traffic_sign_classsifier/Traffic_Sign_Classifier_94_47.png)
+![png](/img/blog/traffic_sign_classifier/Traffic_Sign_Classifier_94_47.png)
 
 
 
-![png](/img/blog/traffic_sign_classsifier/Traffic_Sign_Classifier_94_48.png)
+![png](/img/blog/traffic_sign_classifier/Traffic_Sign_Classifier_94_48.png)
 
 
 
-![png](/img/blog/traffic_sign_classsifier/Traffic_Sign_Classifier_94_49.png)
+![png](/img/blog/traffic_sign_classifier/Traffic_Sign_Classifier_94_49.png)
 
 
 
-![png](/img/blog/traffic_sign_classsifier/Traffic_Sign_Classifier_94_50.png)
+![png](/img/blog/traffic_sign_classifier/Traffic_Sign_Classifier_94_50.png)
 
 
 
-![png](/img/blog/traffic_sign_classsifier/Traffic_Sign_Classifier_94_51.png)
+![png](/img/blog/traffic_sign_classifier/Traffic_Sign_Classifier_94_51.png)
 
 
 ### Accuracy
@@ -5028,195 +5024,195 @@ predict(sess, lenet_tensor_ops, data.images_from_internet, data, cfg, top_k=5)
 
 
 
-![png](/img/blog/traffic_sign_classsifier/Traffic_Sign_Classifier_97_1.png)
+![png](/img/blog/traffic_sign_classifier/Traffic_Sign_Classifier_97_1.png)
 
 
 
-![png](/img/blog/traffic_sign_classsifier/Traffic_Sign_Classifier_97_2.png)
+![png](/img/blog/traffic_sign_classifier/Traffic_Sign_Classifier_97_2.png)
 
 
 
-![png](/img/blog/traffic_sign_classsifier/Traffic_Sign_Classifier_97_3.png)
+![png](/img/blog/traffic_sign_classifier/Traffic_Sign_Classifier_97_3.png)
 
 
 
-![png](/img/blog/traffic_sign_classsifier/Traffic_Sign_Classifier_97_4.png)
+![png](/img/blog/traffic_sign_classifier/Traffic_Sign_Classifier_97_4.png)
 
 
 
-![png](/img/blog/traffic_sign_classsifier/Traffic_Sign_Classifier_97_5.png)
+![png](/img/blog/traffic_sign_classifier/Traffic_Sign_Classifier_97_5.png)
 
 
 
-![png](/img/blog/traffic_sign_classsifier/Traffic_Sign_Classifier_97_6.png)
+![png](/img/blog/traffic_sign_classifier/Traffic_Sign_Classifier_97_6.png)
 
 
 
-![png](/img/blog/traffic_sign_classsifier/Traffic_Sign_Classifier_97_7.png)
+![png](/img/blog/traffic_sign_classifier/Traffic_Sign_Classifier_97_7.png)
 
 
 
-![png](/img/blog/traffic_sign_classsifier/Traffic_Sign_Classifier_97_8.png)
+![png](/img/blog/traffic_sign_classifier/Traffic_Sign_Classifier_97_8.png)
 
 
 
-![png](/img/blog/traffic_sign_classsifier/Traffic_Sign_Classifier_97_9.png)
+![png](/img/blog/traffic_sign_classifier/Traffic_Sign_Classifier_97_9.png)
 
 
 
-![png](/img/blog/traffic_sign_classsifier/Traffic_Sign_Classifier_97_10.png)
+![png](/img/blog/traffic_sign_classifier/Traffic_Sign_Classifier_97_10.png)
 
 
 
-![png](/img/blog/traffic_sign_classsifier/Traffic_Sign_Classifier_97_11.png)
+![png](/img/blog/traffic_sign_classifier/Traffic_Sign_Classifier_97_11.png)
 
 
 
-![png](/img/blog/traffic_sign_classsifier/Traffic_Sign_Classifier_97_12.png)
+![png](/img/blog/traffic_sign_classifier/Traffic_Sign_Classifier_97_12.png)
 
 
 
-![png](/img/blog/traffic_sign_classsifier/Traffic_Sign_Classifier_97_13.png)
+![png](/img/blog/traffic_sign_classifier/Traffic_Sign_Classifier_97_13.png)
 
 
 
-![png](/img/blog/traffic_sign_classsifier/Traffic_Sign_Classifier_97_14.png)
+![png](/img/blog/traffic_sign_classifier/Traffic_Sign_Classifier_97_14.png)
 
 
 
-![png](/img/blog/traffic_sign_classsifier/Traffic_Sign_Classifier_97_15.png)
+![png](/img/blog/traffic_sign_classifier/Traffic_Sign_Classifier_97_15.png)
 
 
 
-![png](/img/blog/traffic_sign_classsifier/Traffic_Sign_Classifier_97_16.png)
+![png](/img/blog/traffic_sign_classifier/Traffic_Sign_Classifier_97_16.png)
 
 
 
-![png](/img/blog/traffic_sign_classsifier/Traffic_Sign_Classifier_97_17.png)
+![png](/img/blog/traffic_sign_classifier/Traffic_Sign_Classifier_97_17.png)
 
 
 
-![png](/img/blog/traffic_sign_classsifier/Traffic_Sign_Classifier_97_18.png)
+![png](/img/blog/traffic_sign_classifier/Traffic_Sign_Classifier_97_18.png)
 
 
 
-![png](/img/blog/traffic_sign_classsifier/Traffic_Sign_Classifier_97_19.png)
+![png](/img/blog/traffic_sign_classifier/Traffic_Sign_Classifier_97_19.png)
 
 
 
-![png](/img/blog/traffic_sign_classsifier/Traffic_Sign_Classifier_97_20.png)
+![png](/img/blog/traffic_sign_classifier/Traffic_Sign_Classifier_97_20.png)
 
 
 
-![png](/img/blog/traffic_sign_classsifier/Traffic_Sign_Classifier_97_21.png)
+![png](/img/blog/traffic_sign_classifier/Traffic_Sign_Classifier_97_21.png)
 
 
 
-![png](/img/blog/traffic_sign_classsifier/Traffic_Sign_Classifier_97_22.png)
+![png](/img/blog/traffic_sign_classifier/Traffic_Sign_Classifier_97_22.png)
 
 
 
-![png](/img/blog/traffic_sign_classsifier/Traffic_Sign_Classifier_97_23.png)
+![png](/img/blog/traffic_sign_classifier/Traffic_Sign_Classifier_97_23.png)
 
 
 
-![png](/img/blog/traffic_sign_classsifier/Traffic_Sign_Classifier_97_24.png)
+![png](/img/blog/traffic_sign_classifier/Traffic_Sign_Classifier_97_24.png)
 
 
 
-![png](/img/blog/traffic_sign_classsifier/Traffic_Sign_Classifier_97_25.png)
+![png](/img/blog/traffic_sign_classifier/Traffic_Sign_Classifier_97_25.png)
 
 
 
-![png](/img/blog/traffic_sign_classsifier/Traffic_Sign_Classifier_97_26.png)
+![png](/img/blog/traffic_sign_classifier/Traffic_Sign_Classifier_97_26.png)
 
 
 
-![png](/img/blog/traffic_sign_classsifier/Traffic_Sign_Classifier_97_27.png)
+![png](/img/blog/traffic_sign_classifier/Traffic_Sign_Classifier_97_27.png)
 
 
 
-![png](/img/blog/traffic_sign_classsifier/Traffic_Sign_Classifier_97_28.png)
+![png](/img/blog/traffic_sign_classifier/Traffic_Sign_Classifier_97_28.png)
 
 
 
-![png](/img/blog/traffic_sign_classsifier/Traffic_Sign_Classifier_97_29.png)
+![png](/img/blog/traffic_sign_classifier/Traffic_Sign_Classifier_97_29.png)
 
 
 
-![png](/img/blog/traffic_sign_classsifier/Traffic_Sign_Classifier_97_30.png)
+![png](/img/blog/traffic_sign_classifier/Traffic_Sign_Classifier_97_30.png)
 
 
 
-![png](/img/blog/traffic_sign_classsifier/Traffic_Sign_Classifier_97_31.png)
+![png](/img/blog/traffic_sign_classifier/Traffic_Sign_Classifier_97_31.png)
 
 
 
-![png](/img/blog/traffic_sign_classsifier/Traffic_Sign_Classifier_97_32.png)
+![png](/img/blog/traffic_sign_classifier/Traffic_Sign_Classifier_97_32.png)
 
 
 
-![png](/img/blog/traffic_sign_classsifier/Traffic_Sign_Classifier_97_33.png)
+![png](/img/blog/traffic_sign_classifier/Traffic_Sign_Classifier_97_33.png)
 
 
 
-![png](/img/blog/traffic_sign_classsifier/Traffic_Sign_Classifier_97_34.png)
+![png](/img/blog/traffic_sign_classifier/Traffic_Sign_Classifier_97_34.png)
 
 
 
-![png](/img/blog/traffic_sign_classsifier/Traffic_Sign_Classifier_97_35.png)
+![png](/img/blog/traffic_sign_classifier/Traffic_Sign_Classifier_97_35.png)
 
 
 
-![png](/img/blog/traffic_sign_classsifier/Traffic_Sign_Classifier_97_36.png)
+![png](/img/blog/traffic_sign_classifier/Traffic_Sign_Classifier_97_36.png)
 
 
 
-![png](/img/blog/traffic_sign_classsifier/Traffic_Sign_Classifier_97_37.png)
+![png](/img/blog/traffic_sign_classifier/Traffic_Sign_Classifier_97_37.png)
 
 
 
-![png](/img/blog/traffic_sign_classsifier/Traffic_Sign_Classifier_97_38.png)
+![png](/img/blog/traffic_sign_classifier/Traffic_Sign_Classifier_97_38.png)
 
 
 
-![png](/img/blog/traffic_sign_classsifier/Traffic_Sign_Classifier_97_39.png)
+![png](/img/blog/traffic_sign_classifier/Traffic_Sign_Classifier_97_39.png)
 
 
 
-![png](/img/blog/traffic_sign_classsifier/Traffic_Sign_Classifier_97_40.png)
+![png](/img/blog/traffic_sign_classifier/Traffic_Sign_Classifier_97_40.png)
 
 
 
-![png](/img/blog/traffic_sign_classsifier/Traffic_Sign_Classifier_97_41.png)
+![png](/img/blog/traffic_sign_classifier/Traffic_Sign_Classifier_97_41.png)
 
 
 
-![png](/img/blog/traffic_sign_classsifier/Traffic_Sign_Classifier_97_42.png)
+![png](/img/blog/traffic_sign_classifier/Traffic_Sign_Classifier_97_42.png)
 
 
 
-![png](/img/blog/traffic_sign_classsifier/Traffic_Sign_Classifier_97_43.png)
+![png](/img/blog/traffic_sign_classifier/Traffic_Sign_Classifier_97_43.png)
 
 
 
-![png](/img/blog/traffic_sign_classsifier/Traffic_Sign_Classifier_97_44.png)
+![png](/img/blog/traffic_sign_classifier/Traffic_Sign_Classifier_97_44.png)
 
 
 
-![png](/img/blog/traffic_sign_classsifier/Traffic_Sign_Classifier_97_45.png)
+![png](/img/blog/traffic_sign_classifier/Traffic_Sign_Classifier_97_45.png)
 
 
 
-![png](/img/blog/traffic_sign_classsifier/Traffic_Sign_Classifier_97_46.png)
+![png](/img/blog/traffic_sign_classifier/Traffic_Sign_Classifier_97_46.png)
 
 
 
-![png](/img/blog/traffic_sign_classsifier/Traffic_Sign_Classifier_97_47.png)
+![png](/img/blog/traffic_sign_classifier/Traffic_Sign_Classifier_97_47.png)
 
 
 
-![png](/img/blog/traffic_sign_classsifier/Traffic_Sign_Classifier_97_48.png)
+![png](/img/blog/traffic_sign_classifier/Traffic_Sign_Classifier_97_48.png)
 
 
 ### Accuracy
@@ -5243,11 +5239,11 @@ For an example of what feature map outputs look like, check out NVIDIA's results
 <figure>
  <img src="visualize_cnn.png" width="380" alt="Combined Image" />
  <figcaption>
- <p></p> 
- <p style="text-align: center;"> Your output should look something like this (above)</p> 
+ <p></p>
+ <p style="text-align: center;"> Your output should look something like this (above)</p>
  </figcaption>
 </figure>
- <p></p> 
+ <p></p>
 
 
 
@@ -5300,7 +5296,7 @@ plt.imshow(img)
 
 
 
-![png](/img/blog/traffic_sign_classsifier/Traffic_Sign_Classifier_103_1.png)
+![png](/img/blog/traffic_sign_classifier/Traffic_Sign_Classifier_103_1.png)
 
 
 
@@ -5313,7 +5309,7 @@ outputFeatureMap(sess, tensor_ops, imgs, cfg.NETWORK_PARAMS["conv2"])
 
 
 
-![png](/img/blog/traffic_sign_classsifier/Traffic_Sign_Classifier_104_1.png)
+![png](/img/blog/traffic_sign_classifier/Traffic_Sign_Classifier_104_1.png)
 
 
 ### Question 9
@@ -5329,7 +5325,7 @@ From the images above its really hard to tell what we are viewing so I couldn't 
 
 ### Project Writeup
 
-Once you have completed the code implementation, document your results in a project writeup using this [template](https://github.com/udacity/CarND-Traffic-Sign-Classifier-Project/blob/master/writeup_template.md) as a guide. The writeup can be in a markdown or pdf file. 
+Once you have completed the code implementation, document your results in a project writeup using this [template](https://github.com/udacity/CarND-Traffic-Sign-Classifier-Project/blob/master/writeup_template.md) as a guide. The writeup can be in a markdown or pdf file.
 
 # References
 
