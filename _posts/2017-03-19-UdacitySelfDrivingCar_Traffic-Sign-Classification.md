@@ -258,6 +258,9 @@ augmentation could be performed which I wasn't sure could be handled with ImgAug
 Original Image:
 ![alt text](/img/blog/traffic_sign_classsifier/original_sample_img.png "Original Sample Image from Training Data")
 
+{: .center}
+![Diagram showing inheritance](/img/blog/znode/simple_inheritance_1.png "Overall Inheritance")
+
 * Random rotations between -10 and 10 degrees.
 ![alt text](/img/blog/traffic_sign_classsifier/rotate_image.png "Rotated Image")
 * Random translation between -10 and 10 pixels in any direction.
