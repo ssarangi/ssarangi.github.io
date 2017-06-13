@@ -256,6 +256,7 @@ augmentation could be performed which I wasn't sure could be handled with ImgAug
 ## Techniques
 
 Original Image:
+{: .center}
 ![alt text](/img/blog/traffic_sign_classsifier/original_sample_img.png "Original Sample Image from Training Data")
 
 {: .center}
