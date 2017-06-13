@@ -171,7 +171,7 @@ plt.show()
 
 
 
-![png](Traffic_Sign_Classifier_files/Traffic_Sign_Classifier_7_2.png)
+![png](./img/blog/traffic_sign_classsifier/Traffic_Sign_Classifier_7_2.png)
 
 
 ### Signnames Corresponding to Integer Labels
@@ -233,7 +233,7 @@ plt.show()
 ```
 
 
-![png](Traffic_Sign_Classifier_files/Traffic_Sign_Classifier_10_0.png)
+![png](./img/blog/traffic_sign_classsifier/Traffic_Sign_Classifier_10_0.png)
 
 
 ## Input Data Augmentation
@@ -2445,195 +2445,195 @@ predict(sess, lenet_tensor_ops, data.images_from_internet, data, cfg, top_k=5)
 
 
 
-![png](Traffic_Sign_Classifier_files/Traffic_Sign_Classifier_85_4.png)
+![png](./img/blog/traffic_sign_classsifier/Traffic_Sign_Classifier_85_4.png)
 
 
 
-![png](Traffic_Sign_Classifier_files/Traffic_Sign_Classifier_85_5.png)
+![png](./img/blog/traffic_sign_classsifier/Traffic_Sign_Classifier_85_5.png)
 
 
 
-![png](Traffic_Sign_Classifier_files/Traffic_Sign_Classifier_85_6.png)
+![png](./img/blog/traffic_sign_classsifier/Traffic_Sign_Classifier_85_6.png)
 
 
 
-![png](Traffic_Sign_Classifier_files/Traffic_Sign_Classifier_85_7.png)
+![png](./img/blog/traffic_sign_classsifier/Traffic_Sign_Classifier_85_7.png)
 
 
 
-![png](Traffic_Sign_Classifier_files/Traffic_Sign_Classifier_85_8.png)
+![png](./img/blog/traffic_sign_classsifier/Traffic_Sign_Classifier_85_8.png)
 
 
 
-![png](Traffic_Sign_Classifier_files/Traffic_Sign_Classifier_85_9.png)
+![png](./img/blog/traffic_sign_classsifier/Traffic_Sign_Classifier_85_9.png)
 
 
 
-![png](Traffic_Sign_Classifier_files/Traffic_Sign_Classifier_85_10.png)
+![png](./img/blog/traffic_sign_classsifier/Traffic_Sign_Classifier_85_10.png)
 
 
 
-![png](Traffic_Sign_Classifier_files/Traffic_Sign_Classifier_85_11.png)
+![png](./img/blog/traffic_sign_classsifier/Traffic_Sign_Classifier_85_11.png)
 
 
 
-![png](Traffic_Sign_Classifier_files/Traffic_Sign_Classifier_85_12.png)
+![png](./img/blog/traffic_sign_classsifier/Traffic_Sign_Classifier_85_12.png)
 
 
 
-![png](Traffic_Sign_Classifier_files/Traffic_Sign_Classifier_85_13.png)
+![png](./img/blog/traffic_sign_classsifier/Traffic_Sign_Classifier_85_13.png)
 
 
 
-![png](Traffic_Sign_Classifier_files/Traffic_Sign_Classifier_85_14.png)
+![png](./img/blog/traffic_sign_classsifier/Traffic_Sign_Classifier_85_14.png)
 
 
 
-![png](Traffic_Sign_Classifier_files/Traffic_Sign_Classifier_85_15.png)
+![png](./img/blog/traffic_sign_classsifier/Traffic_Sign_Classifier_85_15.png)
 
 
 
-![png](Traffic_Sign_Classifier_files/Traffic_Sign_Classifier_85_16.png)
+![png](./img/blog/traffic_sign_classsifier/Traffic_Sign_Classifier_85_16.png)
 
 
 
-![png](Traffic_Sign_Classifier_files/Traffic_Sign_Classifier_85_17.png)
+![png](./img/blog/traffic_sign_classsifier/Traffic_Sign_Classifier_85_17.png)
 
 
 
-![png](Traffic_Sign_Classifier_files/Traffic_Sign_Classifier_85_18.png)
+![png](./img/blog/traffic_sign_classsifier/Traffic_Sign_Classifier_85_18.png)
 
 
 
-![png](Traffic_Sign_Classifier_files/Traffic_Sign_Classifier_85_19.png)
+![png](./img/blog/traffic_sign_classsifier/Traffic_Sign_Classifier_85_19.png)
 
 
 
-![png](Traffic_Sign_Classifier_files/Traffic_Sign_Classifier_85_20.png)
+![png](./img/blog/traffic_sign_classsifier/Traffic_Sign_Classifier_85_20.png)
 
 
 
-![png](Traffic_Sign_Classifier_files/Traffic_Sign_Classifier_85_21.png)
+![png](./img/blog/traffic_sign_classsifier/Traffic_Sign_Classifier_85_21.png)
 
 
 
-![png](Traffic_Sign_Classifier_files/Traffic_Sign_Classifier_85_22.png)
+![png](./img/blog/traffic_sign_classsifier/Traffic_Sign_Classifier_85_22.png)
 
 
 
-![png](Traffic_Sign_Classifier_files/Traffic_Sign_Classifier_85_23.png)
+![png](./img/blog/traffic_sign_classsifier/Traffic_Sign_Classifier_85_23.png)
 
 
 
-![png](Traffic_Sign_Classifier_files/Traffic_Sign_Classifier_85_24.png)
+![png](./img/blog/traffic_sign_classsifier/Traffic_Sign_Classifier_85_24.png)
 
 
 
-![png](Traffic_Sign_Classifier_files/Traffic_Sign_Classifier_85_25.png)
+![png](./img/blog/traffic_sign_classsifier/Traffic_Sign_Classifier_85_25.png)
 
 
 
-![png](Traffic_Sign_Classifier_files/Traffic_Sign_Classifier_85_26.png)
+![png](./img/blog/traffic_sign_classsifier/Traffic_Sign_Classifier_85_26.png)
 
 
 
-![png](Traffic_Sign_Classifier_files/Traffic_Sign_Classifier_85_27.png)
+![png](./img/blog/traffic_sign_classsifier/Traffic_Sign_Classifier_85_27.png)
 
 
 
-![png](Traffic_Sign_Classifier_files/Traffic_Sign_Classifier_85_28.png)
+![png](./img/blog/traffic_sign_classsifier/Traffic_Sign_Classifier_85_28.png)
 
 
 
-![png](Traffic_Sign_Classifier_files/Traffic_Sign_Classifier_85_29.png)
+![png](./img/blog/traffic_sign_classsifier/Traffic_Sign_Classifier_85_29.png)
 
 
 
-![png](Traffic_Sign_Classifier_files/Traffic_Sign_Classifier_85_30.png)
+![png](./img/blog/traffic_sign_classsifier/Traffic_Sign_Classifier_85_30.png)
 
 
 
-![png](Traffic_Sign_Classifier_files/Traffic_Sign_Classifier_85_31.png)
+![png](./img/blog/traffic_sign_classsifier/Traffic_Sign_Classifier_85_31.png)
 
 
 
-![png](Traffic_Sign_Classifier_files/Traffic_Sign_Classifier_85_32.png)
+![png](./img/blog/traffic_sign_classsifier/Traffic_Sign_Classifier_85_32.png)
 
 
 
-![png](Traffic_Sign_Classifier_files/Traffic_Sign_Classifier_85_33.png)
+![png](./img/blog/traffic_sign_classsifier/Traffic_Sign_Classifier_85_33.png)
 
 
 
-![png](Traffic_Sign_Classifier_files/Traffic_Sign_Classifier_85_34.png)
+![png](./img/blog/traffic_sign_classsifier/Traffic_Sign_Classifier_85_34.png)
 
 
 
-![png](Traffic_Sign_Classifier_files/Traffic_Sign_Classifier_85_35.png)
+![png](./img/blog/traffic_sign_classsifier/Traffic_Sign_Classifier_85_35.png)
 
 
 
-![png](Traffic_Sign_Classifier_files/Traffic_Sign_Classifier_85_36.png)
+![png](./img/blog/traffic_sign_classsifier/Traffic_Sign_Classifier_85_36.png)
 
 
 
-![png](Traffic_Sign_Classifier_files/Traffic_Sign_Classifier_85_37.png)
+![png](./img/blog/traffic_sign_classsifier/Traffic_Sign_Classifier_85_37.png)
 
 
 
-![png](Traffic_Sign_Classifier_files/Traffic_Sign_Classifier_85_38.png)
+![png](./img/blog/traffic_sign_classsifier/Traffic_Sign_Classifier_85_38.png)
 
 
 
-![png](Traffic_Sign_Classifier_files/Traffic_Sign_Classifier_85_39.png)
+![png](./img/blog/traffic_sign_classsifier/Traffic_Sign_Classifier_85_39.png)
 
 
 
-![png](Traffic_Sign_Classifier_files/Traffic_Sign_Classifier_85_40.png)
+![png](./img/blog/traffic_sign_classsifier/Traffic_Sign_Classifier_85_40.png)
 
 
 
-![png](Traffic_Sign_Classifier_files/Traffic_Sign_Classifier_85_41.png)
+![png](./img/blog/traffic_sign_classsifier/Traffic_Sign_Classifier_85_41.png)
 
 
 
-![png](Traffic_Sign_Classifier_files/Traffic_Sign_Classifier_85_42.png)
+![png](./img/blog/traffic_sign_classsifier/Traffic_Sign_Classifier_85_42.png)
 
 
 
-![png](Traffic_Sign_Classifier_files/Traffic_Sign_Classifier_85_43.png)
+![png](./img/blog/traffic_sign_classsifier/Traffic_Sign_Classifier_85_43.png)
 
 
 
-![png](Traffic_Sign_Classifier_files/Traffic_Sign_Classifier_85_44.png)
+![png](./img/blog/traffic_sign_classsifier/Traffic_Sign_Classifier_85_44.png)
 
 
 
-![png](Traffic_Sign_Classifier_files/Traffic_Sign_Classifier_85_45.png)
+![png](./img/blog/traffic_sign_classsifier/Traffic_Sign_Classifier_85_45.png)
 
 
 
-![png](Traffic_Sign_Classifier_files/Traffic_Sign_Classifier_85_46.png)
+![png](./img/blog/traffic_sign_classsifier/Traffic_Sign_Classifier_85_46.png)
 
 
 
-![png](Traffic_Sign_Classifier_files/Traffic_Sign_Classifier_85_47.png)
+![png](./img/blog/traffic_sign_classsifier/Traffic_Sign_Classifier_85_47.png)
 
 
 
-![png](Traffic_Sign_Classifier_files/Traffic_Sign_Classifier_85_48.png)
+![png](./img/blog/traffic_sign_classsifier/Traffic_Sign_Classifier_85_48.png)
 
 
 
-![png](Traffic_Sign_Classifier_files/Traffic_Sign_Classifier_85_49.png)
+![png](./img/blog/traffic_sign_classsifier/Traffic_Sign_Classifier_85_49.png)
 
 
 
-![png](Traffic_Sign_Classifier_files/Traffic_Sign_Classifier_85_50.png)
+![png](./img/blog/traffic_sign_classsifier/Traffic_Sign_Classifier_85_50.png)
 
 
 
-![png](Traffic_Sign_Classifier_files/Traffic_Sign_Classifier_85_51.png)
+![png](./img/blog/traffic_sign_classsifier/Traffic_Sign_Classifier_85_51.png)
 
 
 ### Accuracy
@@ -3033,7 +3033,7 @@ predict(sess, lenet_tensor_ops, data.images_from_internet, data, cfg, top_k=5)
 
 
 
-![png](Traffic_Sign_Classifier_files/Traffic_Sign_Classifier_88_2.png)
+![png](./img/blog/traffic_sign_classsifier/Traffic_Sign_Classifier_88_2.png)
 
 
     Predicting from Random Images: Number of Images: 48
@@ -3184,195 +3184,195 @@ predict(sess, lenet_tensor_ops, data.images_from_internet, data, cfg, top_k=5)
 
 
 
-![png](Traffic_Sign_Classifier_files/Traffic_Sign_Classifier_88_4.png)
+![png](./img/blog/traffic_sign_classsifier/Traffic_Sign_Classifier_88_4.png)
 
 
 
-![png](Traffic_Sign_Classifier_files/Traffic_Sign_Classifier_88_5.png)
+![png](./img/blog/traffic_sign_classsifier/Traffic_Sign_Classifier_88_5.png)
 
 
 
-![png](Traffic_Sign_Classifier_files/Traffic_Sign_Classifier_88_6.png)
+![png](./img/blog/traffic_sign_classsifier/Traffic_Sign_Classifier_88_6.png)
 
 
 
-![png](Traffic_Sign_Classifier_files/Traffic_Sign_Classifier_88_7.png)
+![png](./img/blog/traffic_sign_classsifier/Traffic_Sign_Classifier_88_7.png)
 
 
 
-![png](Traffic_Sign_Classifier_files/Traffic_Sign_Classifier_88_8.png)
+![png](./img/blog/traffic_sign_classsifier/Traffic_Sign_Classifier_88_8.png)
 
 
 
-![png](Traffic_Sign_Classifier_files/Traffic_Sign_Classifier_88_9.png)
+![png](./img/blog/traffic_sign_classsifier/Traffic_Sign_Classifier_88_9.png)
 
 
 
-![png](Traffic_Sign_Classifier_files/Traffic_Sign_Classifier_88_10.png)
+![png](./img/blog/traffic_sign_classsifier/Traffic_Sign_Classifier_88_10.png)
 
 
 
-![png](Traffic_Sign_Classifier_files/Traffic_Sign_Classifier_88_11.png)
+![png](./img/blog/traffic_sign_classsifier/Traffic_Sign_Classifier_88_11.png)
 
 
 
-![png](Traffic_Sign_Classifier_files/Traffic_Sign_Classifier_88_12.png)
+![png](./img/blog/traffic_sign_classsifier/Traffic_Sign_Classifier_88_12.png)
 
 
 
-![png](Traffic_Sign_Classifier_files/Traffic_Sign_Classifier_88_13.png)
+![png](./img/blog/traffic_sign_classsifier/Traffic_Sign_Classifier_88_13.png)
 
 
 
-![png](Traffic_Sign_Classifier_files/Traffic_Sign_Classifier_88_14.png)
+![png](./img/blog/traffic_sign_classsifier/Traffic_Sign_Classifier_88_14.png)
 
 
 
-![png](Traffic_Sign_Classifier_files/Traffic_Sign_Classifier_88_15.png)
+![png](./img/blog/traffic_sign_classsifier/Traffic_Sign_Classifier_88_15.png)
 
 
 
-![png](Traffic_Sign_Classifier_files/Traffic_Sign_Classifier_88_16.png)
+![png](./img/blog/traffic_sign_classsifier/Traffic_Sign_Classifier_88_16.png)
 
 
 
-![png](Traffic_Sign_Classifier_files/Traffic_Sign_Classifier_88_17.png)
+![png](./img/blog/traffic_sign_classsifier/Traffic_Sign_Classifier_88_17.png)
 
 
 
-![png](Traffic_Sign_Classifier_files/Traffic_Sign_Classifier_88_18.png)
+![png](./img/blog/traffic_sign_classsifier/Traffic_Sign_Classifier_88_18.png)
 
 
 
-![png](Traffic_Sign_Classifier_files/Traffic_Sign_Classifier_88_19.png)
+![png](./img/blog/traffic_sign_classsifier/Traffic_Sign_Classifier_88_19.png)
 
 
 
-![png](Traffic_Sign_Classifier_files/Traffic_Sign_Classifier_88_20.png)
+![png](./img/blog/traffic_sign_classsifier/Traffic_Sign_Classifier_88_20.png)
 
 
 
-![png](Traffic_Sign_Classifier_files/Traffic_Sign_Classifier_88_21.png)
+![png](./img/blog/traffic_sign_classsifier/Traffic_Sign_Classifier_88_21.png)
 
 
 
-![png](Traffic_Sign_Classifier_files/Traffic_Sign_Classifier_88_22.png)
+![png](./img/blog/traffic_sign_classsifier/Traffic_Sign_Classifier_88_22.png)
 
 
 
-![png](Traffic_Sign_Classifier_files/Traffic_Sign_Classifier_88_23.png)
+![png](./img/blog/traffic_sign_classsifier/Traffic_Sign_Classifier_88_23.png)
 
 
 
-![png](Traffic_Sign_Classifier_files/Traffic_Sign_Classifier_88_24.png)
+![png](./img/blog/traffic_sign_classsifier/Traffic_Sign_Classifier_88_24.png)
 
 
 
-![png](Traffic_Sign_Classifier_files/Traffic_Sign_Classifier_88_25.png)
+![png](./img/blog/traffic_sign_classsifier/Traffic_Sign_Classifier_88_25.png)
 
 
 
-![png](Traffic_Sign_Classifier_files/Traffic_Sign_Classifier_88_26.png)
+![png](./img/blog/traffic_sign_classsifier/Traffic_Sign_Classifier_88_26.png)
 
 
 
-![png](Traffic_Sign_Classifier_files/Traffic_Sign_Classifier_88_27.png)
+![png](./img/blog/traffic_sign_classsifier/Traffic_Sign_Classifier_88_27.png)
 
 
 
-![png](Traffic_Sign_Classifier_files/Traffic_Sign_Classifier_88_28.png)
+![png](./img/blog/traffic_sign_classsifier/Traffic_Sign_Classifier_88_28.png)
 
 
 
-![png](Traffic_Sign_Classifier_files/Traffic_Sign_Classifier_88_29.png)
+![png](./img/blog/traffic_sign_classsifier/Traffic_Sign_Classifier_88_29.png)
 
 
 
-![png](Traffic_Sign_Classifier_files/Traffic_Sign_Classifier_88_30.png)
+![png](./img/blog/traffic_sign_classsifier/Traffic_Sign_Classifier_88_30.png)
 
 
 
-![png](Traffic_Sign_Classifier_files/Traffic_Sign_Classifier_88_31.png)
+![png](./img/blog/traffic_sign_classsifier/Traffic_Sign_Classifier_88_31.png)
 
 
 
-![png](Traffic_Sign_Classifier_files/Traffic_Sign_Classifier_88_32.png)
+![png](./img/blog/traffic_sign_classsifier/Traffic_Sign_Classifier_88_32.png)
 
 
 
-![png](Traffic_Sign_Classifier_files/Traffic_Sign_Classifier_88_33.png)
+![png](./img/blog/traffic_sign_classsifier/Traffic_Sign_Classifier_88_33.png)
 
 
 
-![png](Traffic_Sign_Classifier_files/Traffic_Sign_Classifier_88_34.png)
+![png](./img/blog/traffic_sign_classsifier/Traffic_Sign_Classifier_88_34.png)
 
 
 
-![png](Traffic_Sign_Classifier_files/Traffic_Sign_Classifier_88_35.png)
+![png](./img/blog/traffic_sign_classsifier/Traffic_Sign_Classifier_88_35.png)
 
 
 
-![png](Traffic_Sign_Classifier_files/Traffic_Sign_Classifier_88_36.png)
+![png](./img/blog/traffic_sign_classsifier/Traffic_Sign_Classifier_88_36.png)
 
 
 
-![png](Traffic_Sign_Classifier_files/Traffic_Sign_Classifier_88_37.png)
+![png](./img/blog/traffic_sign_classsifier/Traffic_Sign_Classifier_88_37.png)
 
 
 
-![png](Traffic_Sign_Classifier_files/Traffic_Sign_Classifier_88_38.png)
+![png](./img/blog/traffic_sign_classsifier/Traffic_Sign_Classifier_88_38.png)
 
 
 
-![png](Traffic_Sign_Classifier_files/Traffic_Sign_Classifier_88_39.png)
+![png](./img/blog/traffic_sign_classsifier/Traffic_Sign_Classifier_88_39.png)
 
 
 
-![png](Traffic_Sign_Classifier_files/Traffic_Sign_Classifier_88_40.png)
+![png](./img/blog/traffic_sign_classsifier/Traffic_Sign_Classifier_88_40.png)
 
 
 
-![png](Traffic_Sign_Classifier_files/Traffic_Sign_Classifier_88_41.png)
+![png](./img/blog/traffic_sign_classsifier/Traffic_Sign_Classifier_88_41.png)
 
 
 
-![png](Traffic_Sign_Classifier_files/Traffic_Sign_Classifier_88_42.png)
+![png](./img/blog/traffic_sign_classsifier/Traffic_Sign_Classifier_88_42.png)
 
 
 
-![png](Traffic_Sign_Classifier_files/Traffic_Sign_Classifier_88_43.png)
+![png](./img/blog/traffic_sign_classsifier/Traffic_Sign_Classifier_88_43.png)
 
 
 
-![png](Traffic_Sign_Classifier_files/Traffic_Sign_Classifier_88_44.png)
+![png](./img/blog/traffic_sign_classsifier/Traffic_Sign_Classifier_88_44.png)
 
 
 
-![png](Traffic_Sign_Classifier_files/Traffic_Sign_Classifier_88_45.png)
+![png](./img/blog/traffic_sign_classsifier/Traffic_Sign_Classifier_88_45.png)
 
 
 
-![png](Traffic_Sign_Classifier_files/Traffic_Sign_Classifier_88_46.png)
+![png](./img/blog/traffic_sign_classsifier/Traffic_Sign_Classifier_88_46.png)
 
 
 
-![png](Traffic_Sign_Classifier_files/Traffic_Sign_Classifier_88_47.png)
+![png](./img/blog/traffic_sign_classsifier/Traffic_Sign_Classifier_88_47.png)
 
 
 
-![png](Traffic_Sign_Classifier_files/Traffic_Sign_Classifier_88_48.png)
+![png](./img/blog/traffic_sign_classsifier/Traffic_Sign_Classifier_88_48.png)
 
 
 
-![png](Traffic_Sign_Classifier_files/Traffic_Sign_Classifier_88_49.png)
+![png](./img/blog/traffic_sign_classsifier/Traffic_Sign_Classifier_88_49.png)
 
 
 
-![png](Traffic_Sign_Classifier_files/Traffic_Sign_Classifier_88_50.png)
+![png](./img/blog/traffic_sign_classsifier/Traffic_Sign_Classifier_88_50.png)
 
 
 
-![png](Traffic_Sign_Classifier_files/Traffic_Sign_Classifier_88_51.png)
+![png](./img/blog/traffic_sign_classsifier/Traffic_Sign_Classifier_88_51.png)
 
 
 ### Accuracy
@@ -3773,7 +3773,7 @@ predict(sess, lenet_tensor_ops, data.images_from_internet, data, cfg, top_k=5)
 
 
 
-![png](Traffic_Sign_Classifier_files/Traffic_Sign_Classifier_91_2.png)
+![png](./img/blog/traffic_sign_classsifier/Traffic_Sign_Classifier_91_2.png)
 
 
     Predicting from Random Images: Number of Images: 48
@@ -3924,195 +3924,195 @@ predict(sess, lenet_tensor_ops, data.images_from_internet, data, cfg, top_k=5)
 
 
 
-![png](Traffic_Sign_Classifier_files/Traffic_Sign_Classifier_91_4.png)
+![png](./img/blog/traffic_sign_classsifier/Traffic_Sign_Classifier_91_4.png)
 
 
 
-![png](Traffic_Sign_Classifier_files/Traffic_Sign_Classifier_91_5.png)
+![png](./img/blog/traffic_sign_classsifier/Traffic_Sign_Classifier_91_5.png)
 
 
 
-![png](Traffic_Sign_Classifier_files/Traffic_Sign_Classifier_91_6.png)
+![png](./img/blog/traffic_sign_classsifier/Traffic_Sign_Classifier_91_6.png)
 
 
 
-![png](Traffic_Sign_Classifier_files/Traffic_Sign_Classifier_91_7.png)
+![png](./img/blog/traffic_sign_classsifier/Traffic_Sign_Classifier_91_7.png)
 
 
 
-![png](Traffic_Sign_Classifier_files/Traffic_Sign_Classifier_91_8.png)
+![png](./img/blog/traffic_sign_classsifier/Traffic_Sign_Classifier_91_8.png)
 
 
 
-![png](Traffic_Sign_Classifier_files/Traffic_Sign_Classifier_91_9.png)
+![png](./img/blog/traffic_sign_classsifier/Traffic_Sign_Classifier_91_9.png)
 
 
 
-![png](Traffic_Sign_Classifier_files/Traffic_Sign_Classifier_91_10.png)
+![png](./img/blog/traffic_sign_classsifier/Traffic_Sign_Classifier_91_10.png)
 
 
 
-![png](Traffic_Sign_Classifier_files/Traffic_Sign_Classifier_91_11.png)
+![png](./img/blog/traffic_sign_classsifier/Traffic_Sign_Classifier_91_11.png)
 
 
 
-![png](Traffic_Sign_Classifier_files/Traffic_Sign_Classifier_91_12.png)
+![png](./img/blog/traffic_sign_classsifier/Traffic_Sign_Classifier_91_12.png)
 
 
 
-![png](Traffic_Sign_Classifier_files/Traffic_Sign_Classifier_91_13.png)
+![png](./img/blog/traffic_sign_classsifier/Traffic_Sign_Classifier_91_13.png)
 
 
 
-![png](Traffic_Sign_Classifier_files/Traffic_Sign_Classifier_91_14.png)
+![png](./img/blog/traffic_sign_classsifier/Traffic_Sign_Classifier_91_14.png)
 
 
 
-![png](Traffic_Sign_Classifier_files/Traffic_Sign_Classifier_91_15.png)
+![png](./img/blog/traffic_sign_classsifier/Traffic_Sign_Classifier_91_15.png)
 
 
 
-![png](Traffic_Sign_Classifier_files/Traffic_Sign_Classifier_91_16.png)
+![png](./img/blog/traffic_sign_classsifier/Traffic_Sign_Classifier_91_16.png)
 
 
 
-![png](Traffic_Sign_Classifier_files/Traffic_Sign_Classifier_91_17.png)
+![png](./img/blog/traffic_sign_classsifier/Traffic_Sign_Classifier_91_17.png)
 
 
 
-![png](Traffic_Sign_Classifier_files/Traffic_Sign_Classifier_91_18.png)
+![png](./img/blog/traffic_sign_classsifier/Traffic_Sign_Classifier_91_18.png)
 
 
 
-![png](Traffic_Sign_Classifier_files/Traffic_Sign_Classifier_91_19.png)
+![png](./img/blog/traffic_sign_classsifier/Traffic_Sign_Classifier_91_19.png)
 
 
 
-![png](Traffic_Sign_Classifier_files/Traffic_Sign_Classifier_91_20.png)
+![png](./img/blog/traffic_sign_classsifier/Traffic_Sign_Classifier_91_20.png)
 
 
 
-![png](Traffic_Sign_Classifier_files/Traffic_Sign_Classifier_91_21.png)
+![png](./img/blog/traffic_sign_classsifier/Traffic_Sign_Classifier_91_21.png)
 
 
 
-![png](Traffic_Sign_Classifier_files/Traffic_Sign_Classifier_91_22.png)
+![png](./img/blog/traffic_sign_classsifier/Traffic_Sign_Classifier_91_22.png)
 
 
 
-![png](Traffic_Sign_Classifier_files/Traffic_Sign_Classifier_91_23.png)
+![png](./img/blog/traffic_sign_classsifier/Traffic_Sign_Classifier_91_23.png)
 
 
 
-![png](Traffic_Sign_Classifier_files/Traffic_Sign_Classifier_91_24.png)
+![png](./img/blog/traffic_sign_classsifier/Traffic_Sign_Classifier_91_24.png)
 
 
 
-![png](Traffic_Sign_Classifier_files/Traffic_Sign_Classifier_91_25.png)
+![png](./img/blog/traffic_sign_classsifier/Traffic_Sign_Classifier_91_25.png)
 
 
 
-![png](Traffic_Sign_Classifier_files/Traffic_Sign_Classifier_91_26.png)
+![png](./img/blog/traffic_sign_classsifier/Traffic_Sign_Classifier_91_26.png)
 
 
 
-![png](Traffic_Sign_Classifier_files/Traffic_Sign_Classifier_91_27.png)
+![png](./img/blog/traffic_sign_classsifier/Traffic_Sign_Classifier_91_27.png)
 
 
 
-![png](Traffic_Sign_Classifier_files/Traffic_Sign_Classifier_91_28.png)
+![png](./img/blog/traffic_sign_classsifier/Traffic_Sign_Classifier_91_28.png)
 
 
 
-![png](Traffic_Sign_Classifier_files/Traffic_Sign_Classifier_91_29.png)
+![png](./img/blog/traffic_sign_classsifier/Traffic_Sign_Classifier_91_29.png)
 
 
 
-![png](Traffic_Sign_Classifier_files/Traffic_Sign_Classifier_91_30.png)
+![png](./img/blog/traffic_sign_classsifier/Traffic_Sign_Classifier_91_30.png)
 
 
 
-![png](Traffic_Sign_Classifier_files/Traffic_Sign_Classifier_91_31.png)
+![png](./img/blog/traffic_sign_classsifier/Traffic_Sign_Classifier_91_31.png)
 
 
 
-![png](Traffic_Sign_Classifier_files/Traffic_Sign_Classifier_91_32.png)
+![png](./img/blog/traffic_sign_classsifier/Traffic_Sign_Classifier_91_32.png)
 
 
 
-![png](Traffic_Sign_Classifier_files/Traffic_Sign_Classifier_91_33.png)
+![png](./img/blog/traffic_sign_classsifier/Traffic_Sign_Classifier_91_33.png)
 
 
 
-![png](Traffic_Sign_Classifier_files/Traffic_Sign_Classifier_91_34.png)
+![png](./img/blog/traffic_sign_classsifier/Traffic_Sign_Classifier_91_34.png)
 
 
 
-![png](Traffic_Sign_Classifier_files/Traffic_Sign_Classifier_91_35.png)
+![png](./img/blog/traffic_sign_classsifier/Traffic_Sign_Classifier_91_35.png)
 
 
 
-![png](Traffic_Sign_Classifier_files/Traffic_Sign_Classifier_91_36.png)
+![png](./img/blog/traffic_sign_classsifier/Traffic_Sign_Classifier_91_36.png)
 
 
 
-![png](Traffic_Sign_Classifier_files/Traffic_Sign_Classifier_91_37.png)
+![png](./img/blog/traffic_sign_classsifier/Traffic_Sign_Classifier_91_37.png)
 
 
 
-![png](Traffic_Sign_Classifier_files/Traffic_Sign_Classifier_91_38.png)
+![png](./img/blog/traffic_sign_classsifier/Traffic_Sign_Classifier_91_38.png)
 
 
 
-![png](Traffic_Sign_Classifier_files/Traffic_Sign_Classifier_91_39.png)
+![png](./img/blog/traffic_sign_classsifier/Traffic_Sign_Classifier_91_39.png)
 
 
 
-![png](Traffic_Sign_Classifier_files/Traffic_Sign_Classifier_91_40.png)
+![png](./img/blog/traffic_sign_classsifier/Traffic_Sign_Classifier_91_40.png)
 
 
 
-![png](Traffic_Sign_Classifier_files/Traffic_Sign_Classifier_91_41.png)
+![png](./img/blog/traffic_sign_classsifier/Traffic_Sign_Classifier_91_41.png)
 
 
 
-![png](Traffic_Sign_Classifier_files/Traffic_Sign_Classifier_91_42.png)
+![png](./img/blog/traffic_sign_classsifier/Traffic_Sign_Classifier_91_42.png)
 
 
 
-![png](Traffic_Sign_Classifier_files/Traffic_Sign_Classifier_91_43.png)
+![png](./img/blog/traffic_sign_classsifier/Traffic_Sign_Classifier_91_43.png)
 
 
 
-![png](Traffic_Sign_Classifier_files/Traffic_Sign_Classifier_91_44.png)
+![png](./img/blog/traffic_sign_classsifier/Traffic_Sign_Classifier_91_44.png)
 
 
 
-![png](Traffic_Sign_Classifier_files/Traffic_Sign_Classifier_91_45.png)
+![png](./img/blog/traffic_sign_classsifier/Traffic_Sign_Classifier_91_45.png)
 
 
 
-![png](Traffic_Sign_Classifier_files/Traffic_Sign_Classifier_91_46.png)
+![png](./img/blog/traffic_sign_classsifier/Traffic_Sign_Classifier_91_46.png)
 
 
 
-![png](Traffic_Sign_Classifier_files/Traffic_Sign_Classifier_91_47.png)
+![png](./img/blog/traffic_sign_classsifier/Traffic_Sign_Classifier_91_47.png)
 
 
 
-![png](Traffic_Sign_Classifier_files/Traffic_Sign_Classifier_91_48.png)
+![png](./img/blog/traffic_sign_classsifier/Traffic_Sign_Classifier_91_48.png)
 
 
 
-![png](Traffic_Sign_Classifier_files/Traffic_Sign_Classifier_91_49.png)
+![png](./img/blog/traffic_sign_classsifier/Traffic_Sign_Classifier_91_49.png)
 
 
 
-![png](Traffic_Sign_Classifier_files/Traffic_Sign_Classifier_91_50.png)
+![png](./img/blog/traffic_sign_classsifier/Traffic_Sign_Classifier_91_50.png)
 
 
 
-![png](Traffic_Sign_Classifier_files/Traffic_Sign_Classifier_91_51.png)
+![png](./img/blog/traffic_sign_classsifier/Traffic_Sign_Classifier_91_51.png)
 
 
 ### Accuracy
@@ -4518,7 +4518,7 @@ predict(sess, lenet_tensor_ops, data.images_from_internet, data, cfg, top_k=5)
 
 
 
-![png](Traffic_Sign_Classifier_files/Traffic_Sign_Classifier_94_2.png)
+![png](./img/blog/traffic_sign_classsifier/Traffic_Sign_Classifier_94_2.png)
 
 
     Predicting from Random Images: Number of Images: 48
@@ -4669,195 +4669,195 @@ predict(sess, lenet_tensor_ops, data.images_from_internet, data, cfg, top_k=5)
 
 
 
-![png](Traffic_Sign_Classifier_files/Traffic_Sign_Classifier_94_4.png)
+![png](./img/blog/traffic_sign_classsifier/Traffic_Sign_Classifier_94_4.png)
 
 
 
-![png](Traffic_Sign_Classifier_files/Traffic_Sign_Classifier_94_5.png)
+![png](./img/blog/traffic_sign_classsifier/Traffic_Sign_Classifier_94_5.png)
 
 
 
-![png](Traffic_Sign_Classifier_files/Traffic_Sign_Classifier_94_6.png)
+![png](./img/blog/traffic_sign_classsifier/Traffic_Sign_Classifier_94_6.png)
 
 
 
-![png](Traffic_Sign_Classifier_files/Traffic_Sign_Classifier_94_7.png)
+![png](./img/blog/traffic_sign_classsifier/Traffic_Sign_Classifier_94_7.png)
 
 
 
-![png](Traffic_Sign_Classifier_files/Traffic_Sign_Classifier_94_8.png)
+![png](./img/blog/traffic_sign_classsifier/Traffic_Sign_Classifier_94_8.png)
 
 
 
-![png](Traffic_Sign_Classifier_files/Traffic_Sign_Classifier_94_9.png)
+![png](./img/blog/traffic_sign_classsifier/Traffic_Sign_Classifier_94_9.png)
 
 
 
-![png](Traffic_Sign_Classifier_files/Traffic_Sign_Classifier_94_10.png)
+![png](./img/blog/traffic_sign_classsifier/Traffic_Sign_Classifier_94_10.png)
 
 
 
-![png](Traffic_Sign_Classifier_files/Traffic_Sign_Classifier_94_11.png)
+![png](./img/blog/traffic_sign_classsifier/Traffic_Sign_Classifier_94_11.png)
 
 
 
-![png](Traffic_Sign_Classifier_files/Traffic_Sign_Classifier_94_12.png)
+![png](./img/blog/traffic_sign_classsifier/Traffic_Sign_Classifier_94_12.png)
 
 
 
-![png](Traffic_Sign_Classifier_files/Traffic_Sign_Classifier_94_13.png)
+![png](./img/blog/traffic_sign_classsifier/Traffic_Sign_Classifier_94_13.png)
 
 
 
-![png](Traffic_Sign_Classifier_files/Traffic_Sign_Classifier_94_14.png)
+![png](./img/blog/traffic_sign_classsifier/Traffic_Sign_Classifier_94_14.png)
 
 
 
-![png](Traffic_Sign_Classifier_files/Traffic_Sign_Classifier_94_15.png)
+![png](./img/blog/traffic_sign_classsifier/Traffic_Sign_Classifier_94_15.png)
 
 
 
-![png](Traffic_Sign_Classifier_files/Traffic_Sign_Classifier_94_16.png)
+![png](./img/blog/traffic_sign_classsifier/Traffic_Sign_Classifier_94_16.png)
 
 
 
-![png](Traffic_Sign_Classifier_files/Traffic_Sign_Classifier_94_17.png)
+![png](./img/blog/traffic_sign_classsifier/Traffic_Sign_Classifier_94_17.png)
 
 
 
-![png](Traffic_Sign_Classifier_files/Traffic_Sign_Classifier_94_18.png)
+![png](./img/blog/traffic_sign_classsifier/Traffic_Sign_Classifier_94_18.png)
 
 
 
-![png](Traffic_Sign_Classifier_files/Traffic_Sign_Classifier_94_19.png)
+![png](./img/blog/traffic_sign_classsifier/Traffic_Sign_Classifier_94_19.png)
 
 
 
-![png](Traffic_Sign_Classifier_files/Traffic_Sign_Classifier_94_20.png)
+![png](./img/blog/traffic_sign_classsifier/Traffic_Sign_Classifier_94_20.png)
 
 
 
-![png](Traffic_Sign_Classifier_files/Traffic_Sign_Classifier_94_21.png)
+![png](./img/blog/traffic_sign_classsifier/Traffic_Sign_Classifier_94_21.png)
 
 
 
-![png](Traffic_Sign_Classifier_files/Traffic_Sign_Classifier_94_22.png)
+![png](./img/blog/traffic_sign_classsifier/Traffic_Sign_Classifier_94_22.png)
 
 
 
-![png](Traffic_Sign_Classifier_files/Traffic_Sign_Classifier_94_23.png)
+![png](./img/blog/traffic_sign_classsifier/Traffic_Sign_Classifier_94_23.png)
 
 
 
-![png](Traffic_Sign_Classifier_files/Traffic_Sign_Classifier_94_24.png)
+![png](./img/blog/traffic_sign_classsifier/Traffic_Sign_Classifier_94_24.png)
 
 
 
-![png](Traffic_Sign_Classifier_files/Traffic_Sign_Classifier_94_25.png)
+![png](./img/blog/traffic_sign_classsifier/Traffic_Sign_Classifier_94_25.png)
 
 
 
-![png](Traffic_Sign_Classifier_files/Traffic_Sign_Classifier_94_26.png)
+![png](./img/blog/traffic_sign_classsifier/Traffic_Sign_Classifier_94_26.png)
 
 
 
-![png](Traffic_Sign_Classifier_files/Traffic_Sign_Classifier_94_27.png)
+![png](./img/blog/traffic_sign_classsifier/Traffic_Sign_Classifier_94_27.png)
 
 
 
-![png](Traffic_Sign_Classifier_files/Traffic_Sign_Classifier_94_28.png)
+![png](./img/blog/traffic_sign_classsifier/Traffic_Sign_Classifier_94_28.png)
 
 
 
-![png](Traffic_Sign_Classifier_files/Traffic_Sign_Classifier_94_29.png)
+![png](./img/blog/traffic_sign_classsifier/Traffic_Sign_Classifier_94_29.png)
 
 
 
-![png](Traffic_Sign_Classifier_files/Traffic_Sign_Classifier_94_30.png)
+![png](./img/blog/traffic_sign_classsifier/Traffic_Sign_Classifier_94_30.png)
 
 
 
-![png](Traffic_Sign_Classifier_files/Traffic_Sign_Classifier_94_31.png)
+![png](./img/blog/traffic_sign_classsifier/Traffic_Sign_Classifier_94_31.png)
 
 
 
-![png](Traffic_Sign_Classifier_files/Traffic_Sign_Classifier_94_32.png)
+![png](./img/blog/traffic_sign_classsifier/Traffic_Sign_Classifier_94_32.png)
 
 
 
-![png](Traffic_Sign_Classifier_files/Traffic_Sign_Classifier_94_33.png)
+![png](./img/blog/traffic_sign_classsifier/Traffic_Sign_Classifier_94_33.png)
 
 
 
-![png](Traffic_Sign_Classifier_files/Traffic_Sign_Classifier_94_34.png)
+![png](./img/blog/traffic_sign_classsifier/Traffic_Sign_Classifier_94_34.png)
 
 
 
-![png](Traffic_Sign_Classifier_files/Traffic_Sign_Classifier_94_35.png)
+![png](./img/blog/traffic_sign_classsifier/Traffic_Sign_Classifier_94_35.png)
 
 
 
-![png](Traffic_Sign_Classifier_files/Traffic_Sign_Classifier_94_36.png)
+![png](./img/blog/traffic_sign_classsifier/Traffic_Sign_Classifier_94_36.png)
 
 
 
-![png](Traffic_Sign_Classifier_files/Traffic_Sign_Classifier_94_37.png)
+![png](./img/blog/traffic_sign_classsifier/Traffic_Sign_Classifier_94_37.png)
 
 
 
-![png](Traffic_Sign_Classifier_files/Traffic_Sign_Classifier_94_38.png)
+![png](./img/blog/traffic_sign_classsifier/Traffic_Sign_Classifier_94_38.png)
 
 
 
-![png](Traffic_Sign_Classifier_files/Traffic_Sign_Classifier_94_39.png)
+![png](./img/blog/traffic_sign_classsifier/Traffic_Sign_Classifier_94_39.png)
 
 
 
-![png](Traffic_Sign_Classifier_files/Traffic_Sign_Classifier_94_40.png)
+![png](./img/blog/traffic_sign_classsifier/Traffic_Sign_Classifier_94_40.png)
 
 
 
-![png](Traffic_Sign_Classifier_files/Traffic_Sign_Classifier_94_41.png)
+![png](./img/blog/traffic_sign_classsifier/Traffic_Sign_Classifier_94_41.png)
 
 
 
-![png](Traffic_Sign_Classifier_files/Traffic_Sign_Classifier_94_42.png)
+![png](./img/blog/traffic_sign_classsifier/Traffic_Sign_Classifier_94_42.png)
 
 
 
-![png](Traffic_Sign_Classifier_files/Traffic_Sign_Classifier_94_43.png)
+![png](./img/blog/traffic_sign_classsifier/Traffic_Sign_Classifier_94_43.png)
 
 
 
-![png](Traffic_Sign_Classifier_files/Traffic_Sign_Classifier_94_44.png)
+![png](./img/blog/traffic_sign_classsifier/Traffic_Sign_Classifier_94_44.png)
 
 
 
-![png](Traffic_Sign_Classifier_files/Traffic_Sign_Classifier_94_45.png)
+![png](./img/blog/traffic_sign_classsifier/Traffic_Sign_Classifier_94_45.png)
 
 
 
-![png](Traffic_Sign_Classifier_files/Traffic_Sign_Classifier_94_46.png)
+![png](./img/blog/traffic_sign_classsifier/Traffic_Sign_Classifier_94_46.png)
 
 
 
-![png](Traffic_Sign_Classifier_files/Traffic_Sign_Classifier_94_47.png)
+![png](./img/blog/traffic_sign_classsifier/Traffic_Sign_Classifier_94_47.png)
 
 
 
-![png](Traffic_Sign_Classifier_files/Traffic_Sign_Classifier_94_48.png)
+![png](./img/blog/traffic_sign_classsifier/Traffic_Sign_Classifier_94_48.png)
 
 
 
-![png](Traffic_Sign_Classifier_files/Traffic_Sign_Classifier_94_49.png)
+![png](./img/blog/traffic_sign_classsifier/Traffic_Sign_Classifier_94_49.png)
 
 
 
-![png](Traffic_Sign_Classifier_files/Traffic_Sign_Classifier_94_50.png)
+![png](./img/blog/traffic_sign_classsifier/Traffic_Sign_Classifier_94_50.png)
 
 
 
-![png](Traffic_Sign_Classifier_files/Traffic_Sign_Classifier_94_51.png)
+![png](./img/blog/traffic_sign_classsifier/Traffic_Sign_Classifier_94_51.png)
 
 
 ### Accuracy
@@ -5024,195 +5024,195 @@ predict(sess, lenet_tensor_ops, data.images_from_internet, data, cfg, top_k=5)
 
 
 
-![png](Traffic_Sign_Classifier_files/Traffic_Sign_Classifier_97_1.png)
+![png](./img/blog/traffic_sign_classsifier/Traffic_Sign_Classifier_97_1.png)
 
 
 
-![png](Traffic_Sign_Classifier_files/Traffic_Sign_Classifier_97_2.png)
+![png](./img/blog/traffic_sign_classsifier/Traffic_Sign_Classifier_97_2.png)
 
 
 
-![png](Traffic_Sign_Classifier_files/Traffic_Sign_Classifier_97_3.png)
+![png](./img/blog/traffic_sign_classsifier/Traffic_Sign_Classifier_97_3.png)
 
 
 
-![png](Traffic_Sign_Classifier_files/Traffic_Sign_Classifier_97_4.png)
+![png](./img/blog/traffic_sign_classsifier/Traffic_Sign_Classifier_97_4.png)
 
 
 
-![png](Traffic_Sign_Classifier_files/Traffic_Sign_Classifier_97_5.png)
+![png](./img/blog/traffic_sign_classsifier/Traffic_Sign_Classifier_97_5.png)
 
 
 
-![png](Traffic_Sign_Classifier_files/Traffic_Sign_Classifier_97_6.png)
+![png](./img/blog/traffic_sign_classsifier/Traffic_Sign_Classifier_97_6.png)
 
 
 
-![png](Traffic_Sign_Classifier_files/Traffic_Sign_Classifier_97_7.png)
+![png](./img/blog/traffic_sign_classsifier/Traffic_Sign_Classifier_97_7.png)
 
 
 
-![png](Traffic_Sign_Classifier_files/Traffic_Sign_Classifier_97_8.png)
+![png](./img/blog/traffic_sign_classsifier/Traffic_Sign_Classifier_97_8.png)
 
 
 
-![png](Traffic_Sign_Classifier_files/Traffic_Sign_Classifier_97_9.png)
+![png](./img/blog/traffic_sign_classsifier/Traffic_Sign_Classifier_97_9.png)
 
 
 
-![png](Traffic_Sign_Classifier_files/Traffic_Sign_Classifier_97_10.png)
+![png](./img/blog/traffic_sign_classsifier/Traffic_Sign_Classifier_97_10.png)
 
 
 
-![png](Traffic_Sign_Classifier_files/Traffic_Sign_Classifier_97_11.png)
+![png](./img/blog/traffic_sign_classsifier/Traffic_Sign_Classifier_97_11.png)
 
 
 
-![png](Traffic_Sign_Classifier_files/Traffic_Sign_Classifier_97_12.png)
+![png](./img/blog/traffic_sign_classsifier/Traffic_Sign_Classifier_97_12.png)
 
 
 
-![png](Traffic_Sign_Classifier_files/Traffic_Sign_Classifier_97_13.png)
+![png](./img/blog/traffic_sign_classsifier/Traffic_Sign_Classifier_97_13.png)
 
 
 
-![png](Traffic_Sign_Classifier_files/Traffic_Sign_Classifier_97_14.png)
+![png](./img/blog/traffic_sign_classsifier/Traffic_Sign_Classifier_97_14.png)
 
 
 
-![png](Traffic_Sign_Classifier_files/Traffic_Sign_Classifier_97_15.png)
+![png](./img/blog/traffic_sign_classsifier/Traffic_Sign_Classifier_97_15.png)
 
 
 
-![png](Traffic_Sign_Classifier_files/Traffic_Sign_Classifier_97_16.png)
+![png](./img/blog/traffic_sign_classsifier/Traffic_Sign_Classifier_97_16.png)
 
 
 
-![png](Traffic_Sign_Classifier_files/Traffic_Sign_Classifier_97_17.png)
+![png](./img/blog/traffic_sign_classsifier/Traffic_Sign_Classifier_97_17.png)
 
 
 
-![png](Traffic_Sign_Classifier_files/Traffic_Sign_Classifier_97_18.png)
+![png](./img/blog/traffic_sign_classsifier/Traffic_Sign_Classifier_97_18.png)
 
 
 
-![png](Traffic_Sign_Classifier_files/Traffic_Sign_Classifier_97_19.png)
+![png](./img/blog/traffic_sign_classsifier/Traffic_Sign_Classifier_97_19.png)
 
 
 
-![png](Traffic_Sign_Classifier_files/Traffic_Sign_Classifier_97_20.png)
+![png](./img/blog/traffic_sign_classsifier/Traffic_Sign_Classifier_97_20.png)
 
 
 
-![png](Traffic_Sign_Classifier_files/Traffic_Sign_Classifier_97_21.png)
+![png](./img/blog/traffic_sign_classsifier/Traffic_Sign_Classifier_97_21.png)
 
 
 
-![png](Traffic_Sign_Classifier_files/Traffic_Sign_Classifier_97_22.png)
+![png](./img/blog/traffic_sign_classsifier/Traffic_Sign_Classifier_97_22.png)
 
 
 
-![png](Traffic_Sign_Classifier_files/Traffic_Sign_Classifier_97_23.png)
+![png](./img/blog/traffic_sign_classsifier/Traffic_Sign_Classifier_97_23.png)
 
 
 
-![png](Traffic_Sign_Classifier_files/Traffic_Sign_Classifier_97_24.png)
+![png](./img/blog/traffic_sign_classsifier/Traffic_Sign_Classifier_97_24.png)
 
 
 
-![png](Traffic_Sign_Classifier_files/Traffic_Sign_Classifier_97_25.png)
+![png](./img/blog/traffic_sign_classsifier/Traffic_Sign_Classifier_97_25.png)
 
 
 
-![png](Traffic_Sign_Classifier_files/Traffic_Sign_Classifier_97_26.png)
+![png](./img/blog/traffic_sign_classsifier/Traffic_Sign_Classifier_97_26.png)
 
 
 
-![png](Traffic_Sign_Classifier_files/Traffic_Sign_Classifier_97_27.png)
+![png](./img/blog/traffic_sign_classsifier/Traffic_Sign_Classifier_97_27.png)
 
 
 
-![png](Traffic_Sign_Classifier_files/Traffic_Sign_Classifier_97_28.png)
+![png](./img/blog/traffic_sign_classsifier/Traffic_Sign_Classifier_97_28.png)
 
 
 
-![png](Traffic_Sign_Classifier_files/Traffic_Sign_Classifier_97_29.png)
+![png](./img/blog/traffic_sign_classsifier/Traffic_Sign_Classifier_97_29.png)
 
 
 
-![png](Traffic_Sign_Classifier_files/Traffic_Sign_Classifier_97_30.png)
+![png](./img/blog/traffic_sign_classsifier/Traffic_Sign_Classifier_97_30.png)
 
 
 
-![png](Traffic_Sign_Classifier_files/Traffic_Sign_Classifier_97_31.png)
+![png](./img/blog/traffic_sign_classsifier/Traffic_Sign_Classifier_97_31.png)
 
 
 
-![png](Traffic_Sign_Classifier_files/Traffic_Sign_Classifier_97_32.png)
+![png](./img/blog/traffic_sign_classsifier/Traffic_Sign_Classifier_97_32.png)
 
 
 
-![png](Traffic_Sign_Classifier_files/Traffic_Sign_Classifier_97_33.png)
+![png](./img/blog/traffic_sign_classsifier/Traffic_Sign_Classifier_97_33.png)
 
 
 
-![png](Traffic_Sign_Classifier_files/Traffic_Sign_Classifier_97_34.png)
+![png](./img/blog/traffic_sign_classsifier/Traffic_Sign_Classifier_97_34.png)
 
 
 
-![png](Traffic_Sign_Classifier_files/Traffic_Sign_Classifier_97_35.png)
+![png](./img/blog/traffic_sign_classsifier/Traffic_Sign_Classifier_97_35.png)
 
 
 
-![png](Traffic_Sign_Classifier_files/Traffic_Sign_Classifier_97_36.png)
+![png](./img/blog/traffic_sign_classsifier/Traffic_Sign_Classifier_97_36.png)
 
 
 
-![png](Traffic_Sign_Classifier_files/Traffic_Sign_Classifier_97_37.png)
+![png](./img/blog/traffic_sign_classsifier/Traffic_Sign_Classifier_97_37.png)
 
 
 
-![png](Traffic_Sign_Classifier_files/Traffic_Sign_Classifier_97_38.png)
+![png](./img/blog/traffic_sign_classsifier/Traffic_Sign_Classifier_97_38.png)
 
 
 
-![png](Traffic_Sign_Classifier_files/Traffic_Sign_Classifier_97_39.png)
+![png](./img/blog/traffic_sign_classsifier/Traffic_Sign_Classifier_97_39.png)
 
 
 
-![png](Traffic_Sign_Classifier_files/Traffic_Sign_Classifier_97_40.png)
+![png](./img/blog/traffic_sign_classsifier/Traffic_Sign_Classifier_97_40.png)
 
 
 
-![png](Traffic_Sign_Classifier_files/Traffic_Sign_Classifier_97_41.png)
+![png](./img/blog/traffic_sign_classsifier/Traffic_Sign_Classifier_97_41.png)
 
 
 
-![png](Traffic_Sign_Classifier_files/Traffic_Sign_Classifier_97_42.png)
+![png](./img/blog/traffic_sign_classsifier/Traffic_Sign_Classifier_97_42.png)
 
 
 
-![png](Traffic_Sign_Classifier_files/Traffic_Sign_Classifier_97_43.png)
+![png](./img/blog/traffic_sign_classsifier/Traffic_Sign_Classifier_97_43.png)
 
 
 
-![png](Traffic_Sign_Classifier_files/Traffic_Sign_Classifier_97_44.png)
+![png](./img/blog/traffic_sign_classsifier/Traffic_Sign_Classifier_97_44.png)
 
 
 
-![png](Traffic_Sign_Classifier_files/Traffic_Sign_Classifier_97_45.png)
+![png](./img/blog/traffic_sign_classsifier/Traffic_Sign_Classifier_97_45.png)
 
 
 
-![png](Traffic_Sign_Classifier_files/Traffic_Sign_Classifier_97_46.png)
+![png](./img/blog/traffic_sign_classsifier/Traffic_Sign_Classifier_97_46.png)
 
 
 
-![png](Traffic_Sign_Classifier_files/Traffic_Sign_Classifier_97_47.png)
+![png](./img/blog/traffic_sign_classsifier/Traffic_Sign_Classifier_97_47.png)
 
 
 
-![png](Traffic_Sign_Classifier_files/Traffic_Sign_Classifier_97_48.png)
+![png](./img/blog/traffic_sign_classsifier/Traffic_Sign_Classifier_97_48.png)
 
 
 ### Accuracy
@@ -5296,7 +5296,7 @@ plt.imshow(img)
 
 
 
-![png](Traffic_Sign_Classifier_files/Traffic_Sign_Classifier_103_1.png)
+![png](./img/blog/traffic_sign_classsifier/Traffic_Sign_Classifier_103_1.png)
 
 
 
@@ -5309,7 +5309,7 @@ outputFeatureMap(sess, tensor_ops, imgs, cfg.NETWORK_PARAMS["conv2"])
 
 
 
-![png](Traffic_Sign_Classifier_files/Traffic_Sign_Classifier_104_1.png)
+![png](./img/blog/traffic_sign_classsifier/Traffic_Sign_Classifier_104_1.png)
 
 
 ### Question 9
