@@ -1,0 +1,140 @@
+---
+import Layout from "@/layouts/Layout.astro";
+import Header from "@/components/Header.astro";
+import Footer from "@/components/Footer.astro";
+import Main from "@/components/Main.astro";
+import config from "@/config";
+import data from "@/data/resume.json";
+
+const { first_name, last_name, city, state, email } = data.details[0];
+const name = `${first_name} ${last_name}`
+  .toLowerCase()
+  .replace(/\b\w/g, c => c.toUpperCase());
+type Block = {
+  org: string;
+  role: string;
+  location: string;
+  when: string;
+  summary?: string;
+  bullets?: string[];
+};
+const jobs = data.professional as Block[];
+const edu = data.education as Block[];
+const skills = data.skills as unknown as Record<
+  string,
+  { primary: string[]; secondary: string[] }
+>[];
+const patents = (data.patents[0] as { Patents: string[] }).Patents;
+const projects = (data.projects[0] as { projects: string[] }).projects;
+---
+
+<Layout
+  title={`Resume | ${config.site.title}`}
+  description={`Résumé of ${name}`}
+>
+  <Header />
+  <Main
+    pageTitle="Resume"
+    pageDesc={`${name} · ${city}, ${state} · ${email}`}
+    class="resume"
+  >
+    <p class="text-muted-foreground mb-6 text-sm print:hidden">
+      This résumé was last updated before I moved to AI infrastructure work. Use
+      your browser's “Print → Save as PDF” for a copy.
+    </p>
+
+    <section>
+      <h2 class="text-xl font-semibold">Summary</h2>
+      <p class="mt-2">{data.summary[0].summary}</p>
+    </section>
+
+    <section class="mt-8">
+      <h2 class="text-xl font-semibold">Professional</h2>
+      {
+        jobs.map(j => (
+          <article class="mt-5">
+            <div class="flex flex-wrap justify-between gap-x-4">
+              <>
+                <h3 class="font-semibold">{j.org}</h3>
+                <span class="text-muted-foreground">{j.when}</span>
+              </>
+            </div>
+            <div class="text-muted-foreground flex flex-wrap justify-between gap-x-4 text-sm">
+              <>
+                <span>{j.role}</span>
+                <span>{j.location}</span>
+              </>
+            </div>
+            {j.summary && <p class="mt-2">{j.summary}</p>}
+            {j.bullets && (
+              <ul class="mt-2 list-disc ps-5 text-[0.95rem]">
+                {j.bullets.map(b => (
+                  <li class="my-1">{b}</li>
+                ))}
+              </ul>
+            )}
+          </article>
+        ))
+      }
+    </section>
+
+    <section class="mt-8">
+      <h2 class="text-xl font-semibold">Skills</h2>
+      <dl class="mt-2 text-[0.95rem]">
+        {
+          skills.map(s =>
+            Object.entries(s).map(([k, v]) => (
+              <div class="mt-1 flex gap-3">
+                <>
+                  <dt class="w-24 flex-none font-medium">{k}</dt>
+                  <dd>{[...v.primary, ...v.secondary].join(" · ")}</dd>
+                </>
+              </div>
+            ))
+          )
+        }
+      </dl>
+    </section>
+
+    <section class="mt-8">
+      <h2 class="text-xl font-semibold">Patents pending</h2>
+      <ul class="mt-2 list-disc ps-5 text-[0.95rem]">
+        {patents.map(p => <li class="my-1">{p}</li>)}
+      </ul>
+    </section>
+
+    <section class="mt-8">
+      <h2 class="text-xl font-semibold">Education</h2>
+      {
+        edu.map(e => (
+          <article class="mt-3">
+            <div class="flex flex-wrap justify-between gap-x-4">
+              <>
+                <h3 class="font-semibold">{e.org}</h3>
+                <span class="text-muted-foreground">{e.when}</span>
+              </>
+            </div>
+            <div class="text-muted-foreground text-sm">
+              {e.role} · {e.location}
+            </div>
+            {e.bullets && (
+              <ul class="mt-1 list-disc ps-5 text-[0.95rem]">
+                {e.bullets.map(b => (
+                  <li>{b}</li>
+                ))}
+              </ul>
+            )}
+          </article>
+        ))
+      }
+    </section>
+
+    <section class="mt-8">
+      <h2 class="text-xl font-semibold">Projects</h2>
+      <ul class="mt-2 list-disc ps-5 text-[0.95rem]">
+        {projects.map(p => <li class="my-1">{p}</li>)}
+      </ul>
+    </section>
+  </Main>
+  <Footer />
+</Layout>

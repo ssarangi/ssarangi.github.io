@@ -1,0 +1,58 @@
+---
+type Props = { type?: "note" | "warn" | "finding"; title?: string };
+const { type = "note", title } = Astro.props;
+const meta = {
+  note: { label: "Note", glyph: "i" },
+  warn: { label: "Warning", glyph: "!" },
+  finding: { label: "Finding", glyph: "★" },
+}[type];
+---
+
+<aside
+  class={`callout-box callout-${type}`}
+  role="note"
+  aria-label={title ?? meta.label}
+>
+  <div class="callout-title">
+    <span aria-hidden="true">{meta.glyph}</span>
+    {title ?? meta.label}
+  </div>
+  <div class="callout-body"><slot /></div>
+</aside>
+
+<style>
+  .callout-box {
+    margin: 1.75rem 0;
+    padding: 0.9rem 1.1rem;
+    border: 1px solid var(--border);
+    border-inline-start: 3px solid var(--callout);
+    border-radius: 0.25rem;
+    background: color-mix(in srgb, var(--callout) 7%, var(--background));
+    font-size: 0.95em;
+    line-height: 1.6;
+  }
+  .callout-note {
+    --callout: var(--accent);
+  }
+  .callout-warn {
+    --callout: #c2790a;
+  }
+  .callout-finding {
+    --callout: var(--foreground);
+  }
+  .callout-title {
+    font-family: var(--font-app);
+    font-size: 0.72rem;
+    font-weight: 600;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: var(--muted-foreground);
+    margin-bottom: 0.3rem;
+  }
+  .callout-body :global(> :first-child) {
+    margin-top: 0;
+  }
+  .callout-body :global(> :last-child) {
+    margin-bottom: 0;
+  }
+</style>

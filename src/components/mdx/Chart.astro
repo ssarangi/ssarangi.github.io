@@ -1,0 +1,146 @@
+---
+/**
+ * Lightweight chart (Chart.js, loaded only on pages that render <Chart>).
+ * <Chart type="bar" labels={[...]} datasets={[{ label, data }]} title="..." yLabel="tok/s" />
+ */
+type Props = {
+  type?: "bar" | "line" | "scatter";
+  labels?: (string | number)[];
+  datasets: { label: string; data: (number | { x: number; y: number })[] }[];
+  title?: string;
+  xLabel?: string;
+  yLabel?: string;
+  height?: number;
+  caption?: string;
+};
+const {
+  type = "bar",
+  labels,
+  datasets,
+  title,
+  xLabel,
+  yLabel,
+  height = 300,
+  caption,
+} = Astro.props;
+const config = JSON.stringify({
+  type,
+  labels,
+  datasets,
+  title,
+  xLabel,
+  yLabel,
+});
+const id = `chart-${Math.random().toString(36).slice(2, 8)}`;
+---
+
+<figure class="my-8" data-pagefind-ignore>
+  <div class="chart-box" style={`height:${height}px`}>
+    <canvas
+      id={id}
+      data-chart={config}
+      role="img"
+      aria-label={title ?? caption ?? "Chart"}></canvas>
+  </div>
+  {
+    caption && (
+      <figcaption class="text-muted-foreground mt-2 text-center font-sans text-sm">
+        {caption}
+      </figcaption>
+    )
+  }
+</figure>
+
+<script>
+  import {
+    Chart,
+    BarController,
+    LineController,
+    ScatterController,
+    BarElement,
+    LineElement,
+    PointElement,
+    CategoryScale,
+    LinearScale,
+    Tooltip,
+    Legend,
+    Title,
+  } from "chart.js";
+  Chart.register(
+    BarController,
+    LineController,
+    ScatterController,
+    BarElement,
+    LineElement,
+    PointElement,
+    CategoryScale,
+    LinearScale,
+    Tooltip,
+    Legend,
+    Title
+  );
+
+  const css = (n: string) =>
+    getComputedStyle(document.documentElement).getPropertyValue(n).trim();
+  const charts = new Map<HTMLCanvasElement, Chart>();
+
+  function build() {
+    const fg = css("--foreground"),
+      muted = css("--muted-foreground"),
+      border = css("--border"),
+      accent = css("--accent");
+    // Accent first, then neutrals: a restrained palette.
+    const palette = [accent, fg, muted, "#c2790a"];
+    document
+      .querySelectorAll<HTMLCanvasElement>("canvas[data-chart]")
+      .forEach(el => {
+        charts.get(el)?.destroy();
+        const c = JSON.parse(el.dataset.chart!);
+        const datasets = c.datasets.map((d: any, i: number) => ({
+          ...d,
+          backgroundColor: palette[i % palette.length],
+          borderColor: palette[i % palette.length],
+          borderWidth: c.type === "line" ? 2 : 0,
+          tension: 0.25,
+          pointRadius: c.type === "bar" ? 0 : 3,
+        }));
+        charts.set(
+          el,
+          new Chart(el, {
+            type: c.type,
+            data: { labels: c.labels, datasets },
+            options: {
+              responsive: true,
+              maintainAspectRatio: false,
+              animation: false,
+              font: { family: getComputedStyle(document.body).fontFamily },
+              plugins: {
+                legend: { display: datasets.length > 1, labels: { color: fg } },
+                title: { display: !!c.title, text: c.title, color: fg },
+              },
+              scales: {
+                x: {
+                  title: { display: !!c.xLabel, text: c.xLabel, color: muted },
+                  ticks: { color: muted },
+                  grid: { color: border },
+                },
+                y: {
+                  title: { display: !!c.yLabel, text: c.yLabel, color: muted },
+                  ticks: { color: muted },
+                  grid: { color: border },
+                  beginAtZero: true,
+                },
+              },
+            },
+          })
+        );
+      });
+  }
+  build();
+  document.addEventListener("astro:page-load", build);
+  // Re-theme when the toggle flips data-theme.
+  new MutationObserver(build).observe(document.documentElement, {
+    attributes: true,
+    attributeFilter: ["data-theme"],
+  });
+</script>

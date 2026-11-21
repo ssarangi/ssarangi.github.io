@@ -1,0 +1,17 @@
+---
+import type { CollectionEntry } from "astro:content";
+import Giscus from "@/components/Giscus.astro";
+import { getAssetPath } from "@/utils/withBase";
+
+type Props = {
+  post: CollectionEntry<"posts">;
+};
+---
+
+<p class="text-muted-foreground mt-6 text-sm">
+  Enjoyed this? <a
+    class="text-accent hover:underline"
+    href={getAssetPath("rss.xml")}>Subscribe via RSS</a
+  >.
+</p>
+<Giscus />

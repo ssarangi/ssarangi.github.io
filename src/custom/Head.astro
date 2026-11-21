@@ -1,0 +1,25 @@
+---
+import { extras } from "@/site.config";
+type Props = { title: string; description: string };
+const a = extras.analytics;
+---
+
+{
+  a?.provider === "plausible" && (
+    <script
+      defer
+      data-domain={a.domain}
+      src="https://plausible.io/js/script.js"
+    />
+  )
+}
+{
+  a?.provider === "goatcounter" && (
+    <script
+      is:inline
+      data-goatcounter={`https://${a.code}.goatcounter.com/count`}
+      async
+      src="//gc.zgo.at/count.js"
+    />
+  )
+}
