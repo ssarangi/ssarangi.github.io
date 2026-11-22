@@ -24,60 +24,107 @@ const homePath = getRelativeLocaleUrl(locale, "");
 ---
 
 <Layout>
-  <Header />
+  <Header wide />
   <main
     id="main-content"
     data-layout="index"
     data-home-path={homePath}
-    class="app-layout my-1"
+    class="app-wide"
   >
-    <section id="hero" class="border-border border-b pt-8 pb-8">
-      <h1 class="my-4 text-3xl font-bold tracking-tight sm:my-6 sm:text-4xl">
-        Satyajit Sarangi
-      </h1>
-      <p class="text-lg">
-        Systems engineer writing about AI inference infrastructure.
-      </p>
-      <p class="text-muted-foreground mt-2">
-        Inference engines, tool-call parsing, LoRA, constrained decoding, and
-        the occasional compiler. Deep dives with code, math and benchmarks.
-      </p>
-      <ul class="mt-5 flex flex-wrap gap-x-5 gap-y-1 text-sm font-medium">
-        {
-          [
-            ["GitHub", "https://github.com/ssarangi"],
-            ["LinkedIn", "https://www.linkedin.com/in/satyajitsarangi/"],
-            ["X", "https://x.com/ssarangi"],
-            ["RSS", `${import.meta.env.BASE_URL.replace(/\/?$/, "/")}rss.xml`],
-            ["Email", "mailto:satyajit.sarangi@gmail.com"],
-          ].map(([label, href]) => (
-            <li>
-              <a
-                class="hover:text-accent underline decoration-dashed underline-offset-4"
-                {href}
-                rel="me"
-              >
-                {label}
-              </a>
-            </li>
-          ))
-        }
-      </ul>
+    <section
+      id="hero"
+      class="border-border grid gap-10 border-b pt-10 pb-12 lg:grid-cols-[1.4fr_1fr] lg:items-center"
+    >
+      <div>
+        <p
+          class="border-accent/40 text-accent inline-flex items-center gap-2 rounded-full border px-3 py-1 font-mono text-xs"
+        >
+          <span class="bg-accent size-1.5 rounded-full" aria-hidden="true"
+          ></span>
+          Now writing: inference engines &amp; tool-call parsing
+        </p>
+        <h1
+          class="mt-5 text-4xl leading-[1.1] font-bold tracking-tight sm:text-5xl"
+        >
+          From tokens to <span class="text-accent">kernels</span>.<br />
+          Notes on AI inference infrastructure.
+        </h1>
+        <p class="text-muted-foreground mt-5 max-w-xl text-lg">
+          I'm Satyajit, a systems engineer. I write long-form deep dives with
+          code, math and benchmarks on how inference stacks actually work.
+        </p>
+        <div class="mt-7 flex flex-wrap items-center gap-3">
+          <a
+            href={getRelativeLocaleUrl(locale, "posts")}
+            class="bg-accent text-accent-foreground rounded-lg px-5 py-2.5 font-semibold transition-opacity hover:opacity-90"
+          >
+            Read the posts
+          </a>
+          <a
+            href={getRelativeLocaleUrl(locale, "projects")}
+            class="border-border hover:border-accent rounded-lg border px-5 py-2.5 font-semibold transition-colors"
+          >
+            See projects
+          </a>
+        </div>
+        <ul class="mt-6 flex flex-wrap gap-x-5 gap-y-1 font-mono text-sm">
+          {
+            [
+              ["GitHub", "https://github.com/ssarangi"],
+              ["LinkedIn", "https://www.linkedin.com/in/satyajitsarangi/"],
+              ["X", "https://x.com/ssarangi"],
+              ["RSS", `${import.meta.env.BASE_URL.replace(/\/?$/, "/")}rss.xml`],
+              ["Email", "mailto:satyajit.sarangi@gmail.com"],
+            ].map(([label, href]) => (
+              <li>
+                <a class="text-muted-foreground hover:text-accent" {href} rel="me">
+                  {label}
+                </a>
+              </li>
+            ))
+          }
+        </ul>
+      </div>
+
+      <div
+        class="border-border bg-muted/40 rounded-xl border p-6"
+        aria-labelledby="focus-heading"
+      >
+        <h2
+          id="focus-heading"
+          class="mb-4 font-mono text-xs font-bold tracking-widest uppercase"
+        >
+          Focus areas
+        </h2>
+        <ul class="grid grid-cols-2 gap-x-4 gap-y-3 font-mono text-sm">
+          {
+            [
+              "Inference engines",
+              "Tool-call parsing",
+              "LoRA serving",
+              "Constrained decoding",
+              "Compilers & IR",
+              "Benchmarks",
+            ].map(item => (
+              <li class="flex gap-2">
+                <span class="text-accent" aria-hidden="true">
+                  &gt;
+                </span>
+                {item}
+              </li>
+            ))
+          }
+        </ul>
+      </div>
     </section>
 
     {
       featuredPosts.length > 0 && (
-        <section
-          id="featured"
-          class:list={[
-            "pt-12 pb-6",
-            { "border-border border-b": recentPosts.length > 0 },
-          ]}
-        >
-          <h2 class="text-2xl font-semibold tracking-wide">
-            {t.home.featured}
+        <section id="featured" class="pt-12">
+          <h2 class="font-mono text-xl font-bold tracking-tight">
+            <span class="text-accent">//</span> {t.home.featured}
           </h2>
-          <ul>
+          <ul class="mt-4 grid gap-x-5 md:grid-cols-2">
             {featuredPosts.map(data => (
               <Card variant="h3" {...data} />
             ))}
@@ -88,11 +135,11 @@ const homePath = getRelativeLocaleUrl(locale, "");
 
     {
       recentPosts.length > 0 && (
-        <section id="recent-posts" class="pt-12 pb-6">
-          <h2 class="text-2xl font-semibold tracking-wide">
-            {t.home.recentPosts}
+        <section id="recent-posts" class="pt-12">
+          <h2 class="font-mono text-xl font-bold tracking-tight">
+            <span class="text-accent">//</span> {t.home.recentPosts}
           </h2>
-          <ul>
+          <ul class="mt-4 grid gap-x-5 md:grid-cols-2">
             {recentPosts.slice(0, postsConfig.perIndex).map(data => (
               <Card variant="h3" {...data} />
             ))}
@@ -101,14 +148,14 @@ const homePath = getRelativeLocaleUrl(locale, "");
       )
     }
 
-    <div class="my-8 text-center">
+    <div class="my-10 text-center">
       <LinkButton href={getRelativeLocaleUrl(locale, "posts")}>
         {t.home.allPosts}
         <IconArrowRight class="inline-block rtl:-rotate-180" />
       </LinkButton>
     </div>
   </main>
-  <Footer />
+  <Footer wide />
 </Layout>
 
 <script>

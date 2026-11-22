@@ -13,6 +13,7 @@ import { useTranslations } from "@/i18n";
 import config from "@/config";
 
 const { site, features } = config;
+const { wide = false } = Astro.props as { wide?: boolean };
 
 const locale = Astro.currentLocale ?? config.site.lang;
 const t = useTranslations(locale);
@@ -43,16 +44,24 @@ const isActive = (path: string) => {
 </a>
 
 <header
-  class="app-layout flex flex-col items-center justify-between sm:flex-row"
+  class:list={[
+    wide ? "app-wide" : "app-layout",
+    "flex flex-col items-center justify-between sm:flex-row",
+  ]}
 >
   <div
     class="border-border bg-background relative flex w-full items-baseline justify-between border-b py-4 sm:items-center sm:py-6"
   >
     <a
       href={getRelativeLocaleUrl(locale, "")}
-      class="absolute py-1 text-xl leading-8 font-semibold whitespace-nowrap sm:static sm:my-auto sm:text-2xl sm:leading-none"
+      class="absolute flex items-center gap-2.5 py-1 font-mono text-lg leading-8 font-bold tracking-tight whitespace-nowrap sm:static sm:my-auto sm:text-xl sm:leading-none"
     >
-      {site.title}
+      <span
+        aria-hidden="true"
+        class="bg-accent text-accent-foreground grid size-8 place-items-center rounded-lg text-base"
+        >S</span
+      >
+      <span>{site.title}<span class="text-accent" aria-hidden="true">_</span></span>
     </a>
     <nav
       id="nav-menu"

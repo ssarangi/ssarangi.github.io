@@ -3,8 +3,7 @@ import { getCollection } from "astro:content";
 import type { GetStaticPathsOptions } from "astro";
 import Layout from "@/layouts/Layout.astro";
 import Header from "@/components/Header.astro";
-import Main from "@/components/Main.astro";
-import Breadcrumb from "@/components/Breadcrumb.astro";
+import BlogIndex from "@/components/BlogIndex.astro";
 import Card from "@/components/Card.astro";
 import Footer from "@/components/Footer.astro";
 import Pagination from "@/components/Pagination.astro";
@@ -38,20 +37,19 @@ const t = useTranslations(locale);
 ---
 
 <Layout title={`${t.pages.tagTitle}: ${tagName} | ${config.site.title}`}>
-  <Header />
+  <Header wide />
 
-  <Breadcrumb />
-
-  <Main
-    pageTitle={`${t.pages.tagTitle}: ${tagName}`}
-    pageDesc={`${t.pages.tagDesc} "${tagName}".`}
+    <BlogIndex
+    title={`${t.pages.tagTitle}: ${tagName}`}
+    desc={`${t.pages.tagDesc} "${tagName}".`}
+    active={Astro.params.tag}
   >
     <ul>
       {page.data.map(data => <Card {...data} />)}
     </ul>
-  </Main>
+  </BlogIndex>
 
   <Pagination {page} />
 
-  <Footer noMarginTop={page.lastPage > 1} />
+  <Footer wide noMarginTop={page.lastPage > 1} />
 </Layout>
