@@ -1,6 +1,8 @@
 ---
 import type { CollectionEntry } from "astro:content";
+import { getRelativeLocaleUrl } from "astro:i18n";
 import { getPostUrl } from "@/utils/getPostPaths";
+import { slugifyStr } from "@/utils/slugify";
 import { toTransitionName } from "@/utils/toTransitionName";
 import Datetime from "./Datetime.astro";
 
@@ -10,22 +12,47 @@ type Props = {
 
 const { variant: Heading = "h2", id, data, filePath } = Astro.props;
 
-const { title, description, ...props } = data;
+const { title, description, tags, series, ...props } = data;
+const locale = Astro.currentLocale;
 ---
 
-<li class="my-6">
-  <a
-    href={getPostUrl(id, filePath, Astro.currentLocale)}
-    class:list={[
-      "text-accent inline-block text-lg font-medium",
-      "decoration-dashed underline-offset-4 hover:underline",
-      "focus-visible:no-underline focus-visible:underline-offset-0",
-    ]}
+<li
+  class="border-border hover:border-accent/60 bg-muted/40 relative my-4 rounded-xl border p-5 transition-colors"
+>
+  <div
+    class="text-muted-foreground flex flex-wrap items-center gap-x-3 font-mono text-xs"
   >
-    <Heading transition:name={toTransitionName(id)}>
+    <Datetime {...props} />
+    {series && <span class="text-accent">// {series}</span>}
+  </div>
+  <Heading
+    class="mt-1 text-lg leading-snug font-semibold"
+    transition:name={toTransitionName(id)}
+  >
+    <a
+      href={getPostUrl(id, filePath, locale)}
+      class="text-foreground hover:text-accent decoration-accent underline-offset-4 after:absolute after:inset-0 hover:underline focus-visible:underline"
+    >
       {title}
-    </Heading>
-  </a>
-  <Datetime {...props} />
-  <p>{description}</p>
+    </a>
+  </Heading>
+  <p class="text-muted-foreground mt-1.5 text-[0.95rem] leading-relaxed">
+    {description}
+  </p>
+  {
+    tags.length > 0 && (
+      <ul class="relative z-10 mt-3 flex flex-wrap gap-2 font-mono text-xs">
+        {tags.slice(0, 4).map(tag => (
+          <li>
+            <a
+              class="text-accent border-accent/30 hover:bg-accent hover:text-accent-foreground inline-flex min-h-7 items-center rounded-full border px-2.5 transition-colors"
+              href={getRelativeLocaleUrl(locale ?? "en", `tags/${slugifyStr(tag)}/`)}
+            >
+              {tag}
+            </a>
+          </li>
+        ))}
+      </ul>
+    )
+  }
 </li>

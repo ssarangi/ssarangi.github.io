@@ -5,16 +5,17 @@ import { useTranslations } from "@/i18n";
 
 type Props = {
   noMarginTop?: boolean;
+  wide?: boolean;
 } & HTMLAttributes<"footer">;
 
-const { noMarginTop = false, class: className, ...attrs } = Astro.props;
+const { noMarginTop = false, wide = false, class: className, ...attrs } = Astro.props;
 
 const t = useTranslations(Astro.currentLocale);
 const currentYear = new Date().getFullYear();
 ---
 
 <footer
-  class:list={["app-layout", { "mt-auto": !noMarginTop }, className]}
+  class:list={[wide ? "app-wide" : "app-layout", { "mt-auto": !noMarginTop }, className]}
   {...attrs}
 >
   <div
