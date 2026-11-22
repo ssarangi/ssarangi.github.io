@@ -30,8 +30,6 @@ seriesOrder: 4
 [harder_challenge_frame]: /img/blog/advanced_lane_finding/harder_challenge_frame.png "Harder Challenge Frame"
 
 [video_project]: /img/blog/advanced_lane_finding/output_project_video.mp4 "Project Video"
-[video_challenge]: /img/blog/advanced_lane_finding/output_challenge_video.mp4 "Challenge Video"
-[video_harder_challenge]: /img/blog/advanced_lane_finding/output_harder_challenge_video.mp4 "Harder Challenge Video"
 
 ## Introduction
 Lane finding is an important algorithm for autonomous vehicles especially in high traffic areas where the margin of error is very low. Keeping true to the lane is important for the car and this problem has many implications. Udacity's first project for lane finding from the Self Driving Car Nanodegree was an excellent introduction to this topic but it quickly made me realize how fragile the whole system was and how quickly the algorithm starts to fail. This was the 2nd project which explores the topic further by using some more advanced topics as compared to what was presented in the first project.
@@ -168,12 +166,12 @@ The algorithm tried out in the above sections tend to work well with the project
 ### Challenge Video:
 The biggest problem with the challenge video was the shadows under the bridge where the thresholding seems to detect either way too many regions or not detect the yellow lane lines properly.
 ![alt text][challenge_frame]
-![alt text][video_challenge]
+*(The output video was missing from the original repository and could not be migrated.)*
 
 ### Harder Challenge Video:
 The harder challenge has a greater problem with the core algorithm itself. The problem is that the lane curves very highly. The problem why this becomes problematic is because the right lane curves into the region of the left lane and hence the right lane is mistakenly recognized as a part of the left lane.
 ![alt text][harder_challenge_frame]
-![alt text][video_harder_challenge]
+*(The output video was missing from the original repository and could not be migrated.)*
 
 ## Conclusion
 Lane finding is definitely a hard problem which is pretty evident from just the input images provided so considering different lighting conditions and weather conditions as well as road conditions it could be extremely challenging to recognize lane lines accurately. I intend to return to the harder challenges and tweak the techniques to see if I can get a better solution by doing that.
