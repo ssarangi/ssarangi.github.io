@@ -1,0 +1,28 @@
+---
+// Sidenote: floats into the margin on wide screens, inline callout below that.
+---
+
+<aside class="sidenote"><slot /></aside>
+
+<style>
+  .sidenote {
+    margin: 1rem 0;
+    padding-inline-start: 0.9rem;
+    border-inline-start: 2px solid var(--border);
+    color: var(--muted-foreground);
+    font-family: var(--font-app);
+    font-size: 0.85rem;
+    line-height: 1.5;
+  }
+  .sidenote :global(p) {
+    margin: 0;
+  }
+  @media (min-width: 1480px) {
+    .sidenote {
+      float: right;
+      clear: right;
+      width: 15rem;
+      margin: 0 -17.5rem 1rem 0;
+    }
+  }
+</style>

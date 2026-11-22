@@ -1,0 +1,36 @@
+/* Design tokens. Near-black / near-white plus ONE accent. */
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-border: var(--border);
+  --font-app: "Inter Variable", "Inter Fallback", system-ui, sans-serif;
+  --font-serif:
+    "Source Serif 4 Variable", "Source Serif Fallback", Georgia, serif;
+  --font-mono:
+    "JetBrains Mono", ui-monospace, "SF Mono", Menlo, Consolas, monospace;
+}
+
+:root,
+[data-theme="light"] {
+  --background: #fcfcfb;
+  --foreground: #1b1b1d;
+  --accent: #1f5fd1;
+  --accent-foreground: #ffffff;
+  --muted: #efefed;
+  --muted-foreground: #5f6368;
+  --border: #e4e4e0;
+}
+
+[data-theme="dark"] {
+  --background: #131315;
+  --foreground: #e8e8ea;
+  --accent: #7aa7ff;
+  --accent-foreground: #0b0b0c;
+  --muted: #232327;
+  --muted-foreground: #a0a3aa;
+  --border: #2c2c31;
+}

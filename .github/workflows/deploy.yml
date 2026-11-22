@@ -1,0 +1,44 @@
+name: Deploy to GitHub Pages
+
+on:
+  push:
+    branches: [master]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: pages
+  cancel-in-progress: true
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Install, build (astro check + build + Pagefind index)
+        uses: withastro/action@v5
+        with:
+          node-version: 22
+          package-manager: npm
+          # Mermaid diagrams are rendered at build time with headless Chromium.
+          # `npm run build` = astro check + astro build + Pagefind indexing.
+          build-cmd: npx playwright install --with-deps chromium && npm run build
+      - name: Check internal links (lychee)
+        uses: lycheeverse/lychee-action@v2
+        with:
+          args: --offline --no-progress --root-dir "$(pwd)/dist" './dist/**/*.html'
+          fail: true
+
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - id: deployment
+        uses: actions/deploy-pages@v4

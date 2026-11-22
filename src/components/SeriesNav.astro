@@ -1,0 +1,74 @@
+---
+import { getCollection, type CollectionEntry } from "astro:content";
+import { getPostUrl } from "@/utils/getPostPaths";
+import { postFilter } from "@/utils/postFilter";
+
+type Props = { post: CollectionEntry<"posts"> };
+const { post } = Astro.props;
+const name = post.data.series;
+
+const members = name
+  ? (await getCollection("posts"))
+      .filter(p => p.data.series === name && postFilter(p))
+      .sort((a, b) => (a.data.seriesOrder ?? 0) - (b.data.seriesOrder ?? 0))
+  : [];
+const idx = members.findIndex(p => p.id === post.id);
+const prev = idx > 0 ? members[idx - 1] : null;
+const next = idx >= 0 && idx < members.length - 1 ? members[idx + 1] : null;
+---
+
+{
+  members.length > 1 && (
+    <nav
+      aria-label={`Series: ${name}`}
+      class="series-nav border-border bg-muted/40 my-8 rounded border p-4 font-sans text-sm"
+      data-pagefind-ignore
+    >
+      <p class="text-muted-foreground mb-2 text-xs tracking-wide uppercase">
+        Series · {name} · part {idx + 1} of {members.length}
+      </p>
+      <ol class="m-0 list-none space-y-1 p-0">
+        {members.map(m => (
+          <li>
+            {m.id === post.id ? (
+              <span aria-current="page" class="font-semibold">
+                {m.data.title}
+              </span>
+            ) : (
+              <a
+                class="text-accent hover:underline"
+                href={getPostUrl(m.id, m.filePath)}
+              >
+                {m.data.title}
+              </a>
+            )}
+          </li>
+        ))}
+      </ol>
+      {(prev || next) && (
+        <div class="mt-3 flex justify-between gap-4">
+          {prev ? (
+            <a
+              class="text-accent hover:underline"
+              href={getPostUrl(prev.id, prev.filePath)}
+            >
+              ← Previous in series
+            </a>
+          ) : (
+            <span />
+          )}
+          {next ? (
+            <a
+              class="text-accent hover:underline"
+              href={getPostUrl(next.id, next.filePath)}
+            >
+              Next in series →
+            </a>
+          ) : (
+            <span />
+          )}
+        </div>
+      )}
+    </nav>
+  )
+}

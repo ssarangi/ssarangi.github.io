@@ -1,0 +1,49 @@
+---
+import { Image } from "astro:assets";
+import type { ImageMetadata } from "astro";
+
+type Props = {
+  /** A local import (optimised by Astro) or a /public path string. */
+  src: ImageMetadata | string;
+  alt: string;
+  caption?: string;
+  width?: number;
+  height?: number;
+};
+import sharp from "sharp";
+import path from "node:path";
+
+const { src, alt, caption } = Astro.props;
+let { width, height } = Astro.props;
+if (typeof src === "string" && src.startsWith("/") && !(width && height)) {
+  const meta = await sharp(path.join(process.cwd(), "public", src)).metadata();
+  width = meta.width;
+  height = meta.pageHeight ?? meta.height;
+}
+---
+
+<figure class="my-8">
+  {
+    typeof src === "string" ? (
+      <img
+        {src}
+        {alt}
+        {width}
+        {height}
+        loading="lazy"
+        decoding="async"
+        class="mx-auto h-auto max-w-full bg-white"
+      />
+    ) : (
+      <Image {src} {alt} loading="lazy" class="mx-auto" />
+    )
+  }
+  {
+    caption && (
+      <figcaption class="text-muted-foreground mt-2 text-center font-sans text-sm">
+        {caption}
+      </figcaption>
+    )
+  }
+  <slot />
+</figure>

@@ -1,0 +1,257 @@
+@plugin "@tailwindcss/typography";
+
+@layer base {
+  /* ===== Override default Tailwind Typography styles ===== */
+  .app-prose {
+    @apply prose;
+    font-family: var(--font-serif);
+    font-size: 1.1875rem;
+    line-height: 1.75;
+    font-optical-sizing: auto;
+    --tw-prose-body: var(--foreground);
+
+    h1,
+    h2,
+    h3,
+    h4,
+    th {
+      @apply text-foreground mb-3;
+    }
+
+    h2,
+    h3,
+    h4,
+    th {
+      font-family: var(--font-app);
+      letter-spacing: -0.015em;
+    }
+    h2 {
+      @apply mt-12 text-[1.6rem] font-semibold;
+    }
+    h3 {
+      @apply mt-9 text-xl font-semibold;
+    }
+    h4 {
+      @apply mt-7 text-base font-semibold tracking-wide uppercase;
+    }
+
+    p,
+    strong,
+    ol,
+    ul,
+    figcaption,
+    table,
+    code {
+      @apply text-foreground;
+    }
+
+    a {
+      @apply text-foreground hover:text-accent wrap-break-word decoration-dashed underline-offset-4 focus-visible:no-underline;
+    }
+
+    ul {
+      @apply overflow-x-clip;
+    }
+
+    li {
+      @apply marker:text-accent;
+    }
+
+    hr {
+      @apply border-border;
+    }
+
+    img {
+      @apply border-border mx-auto border;
+    }
+
+    img[role="button"] {
+      @apply cursor-zoom-in;
+
+      &:focus-visible {
+        @apply outline-2 outline-offset-2 outline-dashed;
+      }
+    }
+
+    figcaption {
+      @apply opacity-75;
+    }
+
+    table {
+      th,
+      td {
+        @apply border-border border p-2;
+      }
+
+      th {
+        @apply py-1.5;
+      }
+
+      th[align="center"],
+      td[align="center"] {
+        text-align: center;
+      }
+
+      th[align="right"],
+      td[align="right"] {
+        text-align: right;
+      }
+
+      th[align="left"],
+      td[align="left"] {
+        text-align: left;
+      }
+    }
+
+    .table-wrapper {
+      @apply outline-accent my-7 overflow-x-auto focus-visible:outline-2 focus-visible:-outline-offset-2 focus-visible:outline-dashed;
+
+      table {
+        @apply my-0;
+      }
+    }
+
+    code,
+    pre {
+      font-family: var(--font-mono);
+    }
+    code {
+      @apply bg-muted/75 text-foreground rounded px-1 py-0.5 text-[0.85em] wrap-break-word before:content-none after:content-none;
+    }
+    pre {
+      @apply text-[0.82rem] leading-relaxed;
+    }
+    blockquote {
+      @apply text-foreground not-italic;
+      font-weight: 400;
+      quotes: none;
+    }
+    blockquote p:first-of-type::before,
+    blockquote p:last-of-type::after {
+      content: none;
+    }
+    table {
+      font-family: var(--font-app);
+      @apply text-[0.9rem];
+    }
+    sup a,
+    a[data-footnote-ref] {
+      @apply no-underline;
+    }
+    section[data-footnotes] {
+      @apply border-border mt-12 border-t pt-4 text-[0.95rem];
+    }
+    section[data-footnotes] h2 {
+      @apply sr-only;
+    }
+
+    .astro-code code {
+      @apply flex-[1_0_100%] bg-inherit p-0;
+    }
+
+    blockquote {
+      @apply border-s-accent/80 wrap-break-word opacity-80;
+    }
+
+    details:not(.callout) {
+      @apply text-foreground inline-block cursor-pointer select-none [&_p]:hidden [&_ul]:my-0!;
+    }
+
+    summary {
+      @apply focus-visible:outline-accent focus-visible:no-underline focus-visible:outline-2 focus-visible:outline-offset-1 focus-visible:outline-dashed;
+    }
+
+    pre {
+      @apply focus-visible:outline-accent focus-visible:border-transparent focus-visible:outline-2 focus-visible:outline-dashed;
+    }
+  }
+
+  /* ===== Code Blocks & Syntax Highlighting ===== */
+  .astro-code {
+    @apply outline-border flex border bg-(--shiki-light-bg) text-(--shiki-light) [&_span]:text-(--shiki-light);
+  }
+
+  html[data-theme="dark"] .astro-code {
+    @apply bg-(--shiki-dark-bg) text-(--shiki-dark) [&_span]:text-(--shiki-dark);
+  }
+
+  /* Styles for Shiki transformers */
+  /* https://shiki.style/packages/transformers */
+  .astro-code {
+    .line.diff.add {
+      @apply relative inline-block w-full bg-green-400/20 before:absolute before:-left-3 before:text-green-500 before:content-['+'];
+    }
+    .line.diff.remove {
+      @apply relative inline-block w-full bg-red-500/20 before:absolute before:-left-3 before:text-red-500 before:content-['-'];
+    }
+    .line.highlighted {
+      @apply inline-block w-full bg-slate-400/20;
+    }
+    .highlighted-word {
+      @apply border-border rounded-sm border px-0.5 py-px;
+    }
+  }
+}
+
+/* ===== Math ===== */
+.katex-display {
+  overflow-x: auto;
+  overflow-y: hidden;
+  padding: 0.25rem 0;
+}
+
+/* ===== Mermaid (build-time inline SVG, themed via CSS variables) ===== */
+.mermaid-figure,
+svg[id^="mermaid"] {
+  max-width: 100%;
+  height: auto;
+  margin-inline: auto;
+}
+svg[id^="mermaid"] {
+  /* Font must match the one used to measure text at build time (astro.config.ts). */
+  font-family: Arial, Helvetica, sans-serif !important;
+}
+svg[id^="mermaid"] .edgeLabel *,
+svg[id^="mermaid"] .labelBkg {
+  background-color: var(--background) !important;
+}
+svg[id^="mermaid"] .node rect,
+svg[id^="mermaid"] .node circle,
+svg[id^="mermaid"] .node ellipse,
+svg[id^="mermaid"] .node polygon,
+svg[id^="mermaid"] .node path,
+svg[id^="mermaid"] .cluster rect,
+svg[id^="mermaid"] .actor,
+svg[id^="mermaid"] .labelBox {
+  fill: var(--muted) !important;
+  stroke: var(--border) !important;
+}
+svg[id^="mermaid"] .label,
+svg[id^="mermaid"] .nodeLabel,
+svg[id^="mermaid"] .edgeLabel,
+svg[id^="mermaid"] text,
+svg[id^="mermaid"] span,
+svg[id^="mermaid"] p {
+  color: var(--foreground) !important;
+  fill: var(--foreground) !important;
+}
+svg[id^="mermaid"] .edgeLabel,
+svg[id^="mermaid"] .edgeLabel rect {
+  background-color: var(--background) !important;
+  fill: var(--background) !important;
+}
+svg[id^="mermaid"] .flowchart-link,
+svg[id^="mermaid"] .messageLine0,
+svg[id^="mermaid"] .messageLine1,
+svg[id^="mermaid"] .edgePath path {
+  stroke: var(--muted-foreground) !important;
+}
+svg[id^="mermaid"] marker path,
+svg[id^="mermaid"] .arrowheadPath {
+  fill: var(--muted-foreground) !important;
+  stroke: var(--muted-foreground) !important;
+}
+.app-prose p:has(> svg[id^="mermaid"]),
+.app-prose :is(div, figure):has(> svg[id^="mermaid"]) {
+  @apply my-7 overflow-x-auto;
+}
