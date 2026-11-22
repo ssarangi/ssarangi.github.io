@@ -17,7 +17,7 @@ I'm not trying to out-write the excellent blogs already on these topics. I'm try
 
 Start by building a tiny GPT myself, then add the serving tricks by hand. Seeing the cost go down when I add a KV cache is a better introduction than reading about it.
 
-- [ ] **0.1 A tiny GPT on a 2016 GPU.** Follow Karpathy's nanoGPT on the character-level Shakespeare set. Run it with `compile=False` and fp16 or fp32 (Pascal has no bf16 and no Triton).
+- [ ] **0.1 A tiny GPT on a 2016 GPU.** Follow Karpathy's nanoGPT on the character-level Shakespeare set. Run it with `compile=False` and fp16 or fp32 (Pascal has no native bf16 and no Triton support).
 - [ ] **0.2 Adding a KV cache.** Write generation with and without the cache. Check that the logits match, then plot tokens/s against sequence length.
 - [ ] **0.3 Batching and padding.** Generate for several prompts at once and see what padding costs.
 - [ ] **0.4 Where the memory goes.** Derive the KV-cache size formula and check it against measured GPU memory.
@@ -31,7 +31,7 @@ Start by building a tiny GPT myself, then add the serving tricks by hand. Seeing
 - [ ] **1.2 Benchmarking honestly.** A load generator with open-loop and closed-loop traffic, reporting p50/p95/p99. Reused by every later post.
 - [ ] **1.3 Why decoding is memory-bound.** Tokens/s against batch size and quantization, compared with the memory-bandwidth estimate.
 - [ ] **1.4 Sampling from scratch.** Temperature, top-k, top-p and min-p, with an interactive slider.
-- [ ] **1.5 Running inference on a 2016 GPU.** Why fp16 is slow on Pascal, what int8 and 4-bit change, and how much model fits in 8 GB.
+- [ ] **1.5 Running inference on a 2016 GPU.** What fp16, int8 and 4-bit actually change on Pascal (fp16 matmuls measured about the same speed as fp32 on my card), and how much model fits in 8 GB.
 - [ ] **1.6 Why temperature 0 isn't deterministic.** The same prompt under different batch sizes drifts.
 
 ## Series 2: Structured output and tool calls
